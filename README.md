@@ -15,6 +15,8 @@ This tool lets you play with your company brand colors to check if they are acce
 
 ![Colour Contrast Demonstration](Assets/Colour-Contrast.gif)
 
-## Icon Picker
+## Icon Browser
 
-TBC
+Choose from thousands of available icons, choose their colours, download them, and get the code to add directly into your Power App!
+
+![Icon Browser Demonstration](Assets/Icon-Browser.gif)
