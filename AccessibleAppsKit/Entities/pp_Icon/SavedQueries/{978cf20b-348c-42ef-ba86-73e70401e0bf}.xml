@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{978cf20b-348c-42ef-ba86-73e70401e0bf}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="pp_name" select="1" icon="1" preview="1">
+        <row name="result" id="pp_iconid">
+          <cell name="pp_name" width="300" />
+          <cell name="pp_set" width="100" />
+          <cell name="pp_id" width="100" />
+          <cell name="pp_icon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="pp_icon">
+          <attribute name="pp_iconid" />
+          <attribute name="pp_name" />
+          <order attribute="pp_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="pp_icon" />
+          <attribute name="pp_id" />
+          <attribute name="pp_set" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Icons" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

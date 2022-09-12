@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.22083.150" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>AccessibleAppsKit</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Accessible Apps Kit" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.2</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>pensplace</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="PensPlace" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="PensPlace" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>pp</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>29246</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="pp_appthemes" behavior="0" />
+      <RootComponent type="1" schemaName="pp_colors" behavior="0" />
+      <RootComponent type="1" schemaName="pp_icon" behavior="0" />
+      <RootComponent type="1" schemaName="pp_myfavouriteicon" behavior="0" />
+      <RootComponent type="1" schemaName="pp_themeicon" behavior="0" />
+      <RootComponent type="1" schemaName="pp_themetypes" behavior="0" />
+      <RootComponent type="300" schemaName="pp_accessibleappskit_397ad" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="aaduser" displayName="AAD User" solution="MetadataExtension (1.0.2.21)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="300" schemaName="cat_powercatcomponentlibrary_0be3a" displayName="Power CAT Component Library" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.Breadcrumb" displayName="cat_PowerCAT.Breadcrumb" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.CommandBar" displayName="cat_PowerCAT.CommandBar" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.ContextMenu" displayName="cat_PowerCAT.ContextMenu" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.Elevation" displayName="cat_PowerCAT.Elevation" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.FluentDetailsList" displayName="cat_PowerCAT.FluentDetailsList" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.Icon" displayName="cat_PowerCAT.Icon" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.KeyboardShortcuts" displayName="cat_PowerCAT.KeyboardShortcuts" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.Nav" displayName="cat_PowerCAT.Nav" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.Picker" displayName="cat_PowerCAT.Picker" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="cat_PowerCAT.Pivot" displayName="cat_PowerCAT.Pivot" solution="CreatorKitCore (1.0.20220729.1)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="pp_PensPlace.CanvasDownload" displayName="pp_PensPlace.CanvasDownload" solution="IconMenuBuilderV2 (2.0.0.7)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="pp_PensPlace.ColorPicker" displayName="pp_PensPlace.ColorPicker" solution="IconMenuBuilderV2 (2.0.0.7)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="pp_PensPlace.CopyText" displayName="pp_PensPlace.CopyText" solution="IconMenuBuilderV2 (2.0.0.7)" />
+        <Dependent type="300" schemaName="pp_accessibleappskit_397ad" displayName="Accessible Apps Kit" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>
