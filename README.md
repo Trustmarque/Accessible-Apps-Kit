@@ -13,10 +13,10 @@ This tool lets you play with your company brand colors to check if they are acce
 - Trit
 - Achro
 
-![Colour Contrast Demonstration](Assets/Colour-Contrast.gif)
+![Colour Contrast Demonstration](Assets/short-color-demo.gif)
 
 ## Icon Browser
 
 Choose from thousands of available icons, choose their colours, download them, and get the code to add directly into your Power App!
 
-![Icon Browser Demonstration](Assets/Icon-Browser.gif)
+![Icon Browser Demonstration](Assets/short-icon-browser.gif)
