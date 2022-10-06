@@ -1,3 +1,7 @@
+# Coming Soon!
+
+Our initial release for the kit is targeted for October 12th, Star this repository to be notified!
+
 # Accessible Apps Kit
 
 The Accessible Apps Kit has been built by the Trustmarque team to help you get started providing accessible experiences in the Power Platform.
