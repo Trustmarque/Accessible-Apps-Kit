@@ -1,0 +1,64 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://uk-001.azure-apim.net/apim/tm-5fcolorfyit-5f8a45c0360df7547e" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="Defaulttitle" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Default title">Coloyfyit API</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://uk-001.azure-apim.net/apim/tm-5fcolorfyit-5f8a45c0360df7547e" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="GetWebsiteColors_responses_default_def_colors_def_items_def_Hex_def" />
+      <integer name="GetWebsiteColors_responses_default_def_colors_def_items_def_Rgb_def_r_def" />
+      <integer name="GetWebsiteColors_responses_default_def_colors_def_items_def_Rgb_def_g_def" />
+      <integer name="GetWebsiteColors_responses_default_def_colors_def_items_def_Rgb_def_b_def" />
+      <object name="GetWebsiteColors_responses_default_def_colors_def_items_def_Rgb_def">
+        <property name="r" type="integer" />
+        <property name="g" type="integer" />
+        <property name="b" type="integer" />
+      </object>
+      <integer name="GetWebsiteColors_responses_default_def_colors_def_items_def_Hsv_def_h_def" />
+      <integer name="GetWebsiteColors_responses_default_def_colors_def_items_def_Hsv_def_s_def" />
+      <integer name="GetWebsiteColors_responses_default_def_colors_def_items_def_Hsv_def_v_def" />
+      <object name="GetWebsiteColors_responses_default_def_colors_def_items_def_Hsv_def">
+        <property name="h" type="integer" />
+        <property name="s" type="integer" />
+        <property name="v" type="integer" />
+      </object>
+      <integer name="GetWebsiteColors_responses_default_def_colors_def_items_def_Count_def" />
+      <string name="GetWebsiteColors_responses_default_def_colors_def_items_def_Sources_def_items_def" />
+      <array type="string" name="GetWebsiteColors_responses_default_def_colors_def_items_def_Sources_def" />
+      <object name="GetWebsiteColors_responses_default_def_colors_def_items_def">
+        <property name="Hex" type="string" />
+        <property name="Rgb" typeRef="GetWebsiteColors_responses_default_def_colors_def_items_def_Rgb_def" />
+        <property name="Hsv" typeRef="GetWebsiteColors_responses_default_def_colors_def_items_def_Hsv_def" />
+        <property name="Count" type="integer" />
+        <property name="Sources" typeRef="GetWebsiteColors_responses_default_def_colors_def_items_def_Sources_def" />
+      </object>
+      <array typeRef="GetWebsiteColors_responses_default_def_colors_def_items_def" name="GetWebsiteColors_responses_default_def_colors_def" />
+      <string name="GetWebsiteColors_responses_default_def_sortby_def" />
+      <string name="GetWebsiteColors_responses_default_def_sortdir_def" />
+      <object name="GetWebsiteColors_responses_default_def">
+        <property name="colors" typeRef="GetWebsiteColors_responses_default_def_colors_def" />
+        <property name="sortby" type="string" />
+        <property name="sortdir" type="string" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://uk-001.azure-apim.net/apim/tm-5fcolorfyit-5f8a45c0360df7547e">
+    <resource path="/{connectionId}/swatches/list.json">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetWebsiteColors" actionName="GetWebsiteColors" siena:isDeprecated="false">
+        <doc title="GetWebsiteColors" />
+        <request>
+          <param style="query" name="url" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetWebsiteColors_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_tm-5fcolorfyit-5f8a45c0360df7547e" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tm_settransformses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tm_settransforms",
+    "MaxGetRowsCount": 2000,
+    "Name": "Set Transforms",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tm_IconSetId": "Icon Set",
+      "tm_reference": "Reference",
+      "tm_settransforms_AsyncOperations": "System Jobs",
+      "tm_settransforms_BulkDeleteFailures": "Bulk Delete Failures",
+      "tm_settransforms_DuplicateBaseRecord": "Duplicate Records (tm_settransforms_DuplicateBaseRecord)",
+      "tm_settransforms_DuplicateMatchingRecord": "Duplicate Records (tm_settransforms_DuplicateMatchingRecord)",
+      "tm_settransforms_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tm_settransforms_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tm_settransforms_ProcessSession": "Process Sessions",
+      "tm_settransforms_SyncErrors": "Sync Errors",
+      "tm_settransformsid": "Set Transforms",
+      "tm_transformfrom": "Transform From",
+      "tm_transformto": "Transform To",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Set Transforms",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Set Transforms (Views)",
+    "Name": "_tm_settransforms_views",
+    "RelatedEntityName": "Set Transforms",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5a6b5afe-021d-47b1-8d9f-922553c231f1": "Set Transforms Advanced Find View",
+      "5ce3d355-70c7-4dc1-a2c5-43c58b8f9a49": "Set Transforms Associated View",
+      "b473ef92-a721-4fad-86ce-80c8983e37e2": "Inactive Set Transforms",
+      "cb1949fd-bf5d-4415-9bbc-ff6750cdbe75": "Active Set Transforms",
+      "cd157845-d077-4f03-b1b8-987896a35ae1": "Set Transforms Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Set Transforms)",
+    "Name": "tm_settransforms_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Set Transforms"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Set Transforms",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Set Transforms)",
+    "Name": "tm_settransforms_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Set Transforms"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Set Transforms",
+    "Type": "OptionSetInfo"
+  }
+]

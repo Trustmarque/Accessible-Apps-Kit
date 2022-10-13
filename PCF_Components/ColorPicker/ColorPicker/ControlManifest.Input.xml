@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <control namespace="pcf" constructor="ColorPicker" version="0.0.5" display-name-key="TM Color Picker" description-key="Color Picker control using React" control-type="standard">
+    <property name="inputValue" display-name-key="Input Text" description-key="Select the input text for the control" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="defaultColor" display-name-key="Default Color" description-key="Default color for the picker, must be in hex format (eg: #ffffff)." of-type="SingleLine.Text" usage="input" required="true" default-value="#ffffff" />
+    <resources>
+      <code path="index.ts" order="1" />
+    </resources>
+  </control>
+</manifest>

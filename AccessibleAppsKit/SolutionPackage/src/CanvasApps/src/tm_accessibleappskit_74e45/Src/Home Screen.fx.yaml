@@ -1,0 +1,223 @@
+"'Home Screen' As screen":
+
+    conScreen_hs As groupContainer.verticalAutoLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        X: =0.00
+        ZIndex: =1
+
+        conHeader_hs As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            FillPortions: =0
+            Height: =65
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            cmbHeader_hs As Header:
+                ContentWidth: =Parent.Width
+                Height: =65
+                LeftButtonImage: |-
+                    =
+                    "data:image/svg+xml;," & EncodeUrl("<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'><defs><style>.cls-1{fill:#fff;}.cls-2{fill:url(#linear-gradient-2);}.cls-2,.cls-3{mix-blend-mode:multiply;opacity:.1;}.cls-3{fill:url(#linear-gradient);}.cls-4{isolation:isolate;}</style><linearGradient id='linear-gradient' x1='-182.54' y1='-36.31' x2='-182.54' y2='-16.54' gradientTransform='translate(226.77 29.42)' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='#010101'/><stop offset='1' stop-color='#010101' stop-opacity='0'/></linearGradient><linearGradient id='linear-gradient-2' x1='-343.35' y1='-937.2' x2='-343.35' y2='-917.43' gradientTransform='translate(399.12 1005.31)' xlink:href='#linear-gradient'/></defs><g class='cls-4'><g id='Layer_1'><g><g><polygon class='cls-1' points='75 25 75 0 25 0 0 25 0 75 25 75 25 25 75 25'/><polygon class='cls-1' points='75 25 75 75 25 75 25 100 75 100 100 75 100 25 75 25'/></g><rect class='cls-3' x='31.73' y='-6.73' width='25' height='38.46' transform='translate(31.73 56.73) rotate(-90)'/><rect class='cls-2' x='43.27' y='68.27' width='25' height='38.46' transform='translate(143.27 31.73) rotate(90)'/></g></g></g></svg>")
+                OnRightButtonSelect: =Navigate('Icon Set Admin Screen',ScreenTransition.Fade)
+                Text: ="Accessible Apps Kit"
+                Theme: =AppTheme
+                Width: =Parent.Width
+
+        SubheaderContainer_hs As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =44
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =2
+
+            lblHeader_hs As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                FillPortions: =1
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =FontSizes.Title
+                Text: |-
+                    ="Chosen Theme: " & If(IsBlank(gblChosenTheme),"No theme chosen",gblChosenTheme.'Theme Name')
+                ZIndex: =1
+
+            "Icon7 As 'Fluent Icon (1.0.8)'":
+                AccessibilityLabel: ="Clear the chosen theme"
+                DisplayMode: =DisplayMode.Edit
+                Height: =40
+                IconName: ="Cancel"
+                IconType: ='''PowerCAT.Icon.IconType'''.IconButon
+                LayoutMinHeight: =200
+                LayoutMinWidth: =200
+                OnChange: =Set(gblChosenTheme,Blank())
+                TextAlignment: ='''PowerCAT.Icon.TextAlignment'''.Right
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+        conMain_hs As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =3
+
+            galHomeNav_hs As gallery.galleryHorizontal:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =435
+                Items: |-
+                    =Table(
+                        {
+                        ID:1,
+                        Name:"App Themes",
+                        Screen: 'App Themes Screen',
+                        Icon:"data:image/svg+xml," & EncodeUrl( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><title>folder_type_theme_opened</title><path d='M27.4,5.5H18.2L16.1,9.7H4.3v4H.5L4.3,26.5H29.5V5.5ZM20.2,7.6h7.1V9.7H19.2Zm5.5,6.1H6.6V11.8H27.4v7.6Z' style='fill:#dbaf7b'/><path d='M27.3,16.881A7.815,7.815,0,0,1,28.875,18.3a4.666,4.666,0,0,1,.17,6.087,5.186,5.186,0,0,1-3.162,1.765,9.328,9.328,0,0,1-3.381-.073,11,11,0,0,0-1.609-.176.9.9,0,0,0-1.046.724l0,.015a.944.944,0,0,0,.18.742,10.477,10.477,0,0,0,.848,1.108,2.175,2.175,0,0,1,.529.99.787.787,0,0,1-.491.946,6.371,6.371,0,0,1-3.139.552,14.984,14.984,0,0,1-7.736-2.555,6.838,6.838,0,0,1-2.928-4.416,5.869,5.869,0,0,1,1-4.544,10.176,10.176,0,0,1,4.318-3.6,15.053,15.053,0,0,1,11.67-.6C24.137,15.285,27.228,16.942,27.3,16.881Z' style='fill:#a86749'/><path d='M11.246,22.676a2.47,2.47,0,0,1,1.595.514,1.126,1.126,0,0,1,.32,1.533,1.088,1.088,0,0,1-.32.328,2.768,2.768,0,0,1-3.2,0,1.128,1.128,0,0,1-.329-1.535,1.086,1.086,0,0,1,.336-.342A2.458,2.458,0,0,1,11.246,22.676Z' style='fill:#3783ff'/><path d='M10.965,21.431a1.92,1.92,0,0,1-1.172-.371.9.9,0,0,1-.3-1.214.867.867,0,0,1,.29-.3,2.113,2.113,0,0,1,2.458.025.887.887,0,0,1,.235,1.212.864.864,0,0,1-.225.234A1.954,1.954,0,0,1,10.965,21.431Z' style='fill:#4de94c'/><path d='M14.109,18.49a1.462,1.462,0,0,1-1.072-.385.721.721,0,0,1-.087-1,.814.814,0,0,1,.087-.089,1.656,1.656,0,0,1,2.124,0,.721.721,0,0,1,.087,1,.678.678,0,0,1-.128.123A1.482,1.482,0,0,1,14.109,18.49Z' style='fill:#fe0'/><path d='M15.858,25.412a2.8,2.8,0,0,1,1.793.568,1.234,1.234,0,0,1,.373,1.677,1.2,1.2,0,0,1-.373.382,3.158,3.158,0,0,1-3.6,0,1.237,1.237,0,0,1-.39-1.678,1.214,1.214,0,0,1,.4-.4A2.8,2.8,0,0,1,15.858,25.412Z' style='fill:#4c1ac6'/><path d='M31,13.466a5.779,5.779,0,0,1-1.151,1.909A46.73,46.73,0,0,1,26.1,19.459a.512.512,0,0,1-.537.189.677.677,0,0,1-.251-.153q-.429-.409-.844-.833a.475.475,0,0,1-.076-.653.557.557,0,0,1,.052-.057A.664.664,0,0,1,24.5,17.9,48.492,48.492,0,0,1,28.6,14.2a8.543,8.543,0,0,1,1.421-.946,2.557,2.557,0,0,1,.507-.189.353.353,0,0,1,.463.187l0,.007v.007Z' style='fill:#2a3e4f'/><path d='M20,22.963a.08.08,0,0,1,.03.006A2.259,2.259,0,0,0,23,22.5a1.539,1.539,0,0,0,.412-1.21,1.173,1.173,0,0,0-1-1.006,1.025,1.025,0,0,0-.923.408,1.546,1.546,0,0,0-.284.657A2.574,2.574,0,0,1,20,22.938Z' style='fill:#7e8c8d'/><path d='M25.16,19.792c-.326-.327-.656-.651-.985-.976a.236.236,0,0,0-.33-.053l-.006,0a.252.252,0,0,0-.062.072q-.419.544-.831,1.092a.219.219,0,0,0,.008.3l.011.01q.369.366.739.728a.223.223,0,0,0,.313.029l0,0c.375-.277.751-.554,1.12-.839a.8.8,0,0,0,.136-.2A1.111,1.111,0,0,0,25.16,19.792Z' style='fill:#f89b36'/><path d='M17.864,17.121a1.145,1.145,0,0,1-.859-.321.617.617,0,0,1-.048-.856c.016-.018.032-.034.048-.05a1.286,1.286,0,0,1,1.7,0,.617.617,0,0,1,.048.857.583.583,0,0,1-.08.077A1.167,1.167,0,0,1,17.864,17.121Z' style='fill:#ff8c00'/><path d='M20,22.963s3.915-1.136,2.659-2.614c0,0-.857-.393-1.454,1.007A3.932,3.932,0,0,1,20,22.963Z' style='fill:#8f9fa0'/><path d='M23.305,20.585l1.374-1.272-.5-.5a.239.239,0,0,0-.335-.045l-.008.006a.221.221,0,0,0-.055.063c-.2.259-1.153,1.07-.813,1.407Z' style='fill:#e9bb42'/><path d='M24.877,19.073,31,13.254s.041-.393-.468-.2-.8-.177-6.093,4.9a.441.441,0,0,0,.024.71Z' style='fill:#32495d'/><path d='M21.721,17.41a1.152,1.152,0,0,1-.859-.321.617.617,0,0,1-.048-.857.555.555,0,0,1,.048-.049,1.286,1.286,0,0,1,1.7,0,.617.617,0,0,1,.048.855.549.549,0,0,1-.082.078A1.156,1.156,0,0,1,21.721,17.41Z' style='fill:#f60000'/></svg>")
+                    },
+                        
+                    {
+                        ID:2,
+                        Name:"Colors",
+                        Screen: 'Color Workbench Screen',
+                        Icon:"data:image/svg+xml," & EncodeUrl("<svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'> <g filter='url(#filter0_iii_18_4328)'> <path  d='M22.0526 6.11356C15.2792 2.7341 7.25079 4.03853 3.59187 9.95092C-0.0670421 15.8633 2.26304 23.7301 8.79879 27.5228C12.0101 29.3856 17.194 31.2887 19.3003 28.7513C21.3651 26.2653 18.3193 24.6902 19.0299 23.3143C20.1741 21.1008 25.2916 24.0048 28.6391 20.4266C32.411 16.3927 28.6483 9.40591 22.0526 6.11356ZM24.0796 19.1051C22.317 19.1051 21.0498 17.8468 21.0498 16.1403C21.0498 14.4338 22.317 13.1756 24.0796 13.1756C25.8422 13.1756 27.1095 14.4338 27.1095 16.1403C27.1095 17.8468 25.8422 19.1051 24.0796 19.1051Z' fill='url(#paint0_linear_18_4328)'/> </g> <g filter='url(#filter1_f_18_4328)'> <path  d='M8.10744 15.3438C9.31714 15.3438 10.2978 14.3632 10.2978 13.1535C10.2978 11.9438 9.31714 10.9631 8.10744 10.9631C6.89774 10.9631 5.91708 11.9438 5.91708 13.1535C5.91708 14.3632 6.89774 15.3438 8.10744 15.3438Z' fill='#CB758C'/> </g> <g filter='url(#filter2_f_18_4328)'> <path  d='M14.084 11.3204C15.2937 11.3204 16.2744 10.3397 16.2744 9.13005C16.2744 7.92035 15.2937 6.9397 14.084 6.9397C12.8743 6.9397 11.8936 7.92035 11.8936 9.13005C11.8936 10.3397 12.8743 11.3204 14.084 11.3204Z' fill='#CB758C'/> </g> <g filter='url(#filter3_f_18_4328)'> <path  d='M13.5918 26.951C14.8015 26.951 15.7822 25.9704 15.7822 24.7607C15.7822 23.551 14.8015 22.5703 13.5918 22.5703C12.3821 22.5703 11.4015 23.551 11.4015 24.7607C11.4015 25.9704 12.3821 26.951 13.5918 26.951Z' fill='#CB758C'/> </g> <g filter='url(#filter4_f_18_4328)'> <path  d='M8.44896 21.951C9.65866 21.951 10.6393 20.9704 10.6393 19.7607C10.6393 18.551 9.65866 17.5703 8.44896 17.5703C7.23926 17.5703 6.25861 18.551 6.25861 19.7607C6.25861 20.9704 7.23926 21.951 8.44896 21.951Z' fill='#EDB88B'/> </g> <g filter='url(#filter5_f_18_4328)'> <path  d='M8.52708 14.9823C9.73678 14.9823 10.7174 14.0016 10.7174 12.7919C10.7174 11.5822 9.73678 10.6016 8.52708 10.6016C7.31739 10.6016 6.33673 11.5822 6.33673 12.7919C6.33673 14.0016 7.31739 14.9823 8.52708 14.9823Z' fill='#EDB88B'/> </g> <g filter='url(#filter6_f_18_4328)'> <path  d='M14.699 10.9631C15.9087 10.9631 16.8893 9.98245 16.8893 8.77275C16.8893 7.56305 15.9087 6.5824 14.699 6.5824C13.4893 6.5824 12.5086 7.56305 12.5086 8.77275C12.5086 9.98245 13.4893 10.9631 14.699 10.9631Z' fill='#EDB88B'/> </g> <g filter='url(#filter7_ii_18_4328)'> <path  d='M14.3893 11.2812C15.632 11.2812 16.6393 10.2739 16.6393 9.03125C16.6393 7.78861 15.632 6.78125 14.3893 6.78125C13.1467 6.78125 12.1393 7.78861 12.1393 9.03125C12.1393 10.2739 13.1467 11.2812 14.3893 11.2812Z' fill='url(#paint1_linear_18_4328)'/> </g> <g filter='url(#filter8_ii_18_4328)'> <path  d='M8.38931 15.2812C9.63195 15.2812 10.6393 14.2739 10.6393 13.0312C10.6393 11.7886 9.63195 10.7812 8.38931 10.7812C7.14667 10.7812 6.13931 11.7886 6.13931 13.0312C6.13931 14.2739 7.14667 15.2812 8.38931 15.2812Z' fill='url(#paint2_linear_18_4328)'/> </g> <g filter='url(#filter9_f_18_4328)'> <path  d='M8.10744 22.4432C9.31714 22.4432 10.2978 21.4626 10.2978 20.2529C10.2978 19.0432 9.31714 18.0625 8.10744 18.0625C6.89774 18.0625 5.91708 19.0432 5.91708 20.2529C5.91708 21.4626 6.89774 22.4432 8.10744 22.4432Z' fill='#CB758C'/> </g> <g filter='url(#filter10_ii_18_4328)'> <path  d='M8.38931 22.2812C9.63195 22.2812 10.6393 21.2739 10.6393 20.0312C10.6393 18.7886 9.63195 17.7812 8.38931 17.7812C7.14667 17.7812 6.13931 18.7886 6.13931 20.0312C6.13931 21.2739 7.14667 22.2812 8.38931 22.2812Z' fill='url(#paint3_linear_18_4328)'/> </g> <g filter='url(#filter11_ii_18_4328)'> <path  d='M13.8893 26.7812C15.132 26.7812 16.1393 25.7739 16.1393 24.5312C16.1393 23.2886 15.132 22.2812 13.8893 22.2812C12.6467 22.2812 11.6393 23.2886 11.6393 24.5312C11.6393 25.7739 12.6467 26.7812 13.8893 26.7812Z' fill='url(#paint4_linear_18_4328)'/> </g> <defs> <filter id='filter0_iii_18_4328' x='1.56069' y='3.98125' width='29.0286' height='26.2947' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='0.45' dy='0.3'/> <feGaussianBlur stdDeviation='0.225'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 0.647059 0 0 0 0 0.458824 0 0 0 1 0'/> <feBlend mode='normal' in2='shape' result='effect1_innerShadow_18_4328'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='0.3' dy='-0.3'/> <feGaussianBlur stdDeviation='0.225'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 0.937255 0 0 0 0 0.501961 0 0 0 0 0.588235 0 0 0 1 0'/> <feBlend mode='normal' in2='effect1_innerShadow_18_4328' result='effect2_innerShadow_18_4328'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='-0.3' dy='0.3'/> <feGaussianBlur stdDeviation='0.225'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 0.835294 0 0 0 0 0.615686 0 0 0 1 0'/> <feBlend mode='normal' in2='effect2_innerShadow_18_4328' result='effect3_innerShadow_18_4328'/> </filter> <filter id='filter1_f_18_4328' x='5.41708' y='10.4631' width='5.38071' height='5.38074' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feGaussianBlur stdDeviation='0.25' result='effect1_foregroundBlur_18_4328'/> </filter> <filter id='filter2_f_18_4328' x='11.3936' y='6.4397' width='5.38071' height='5.38074' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feGaussianBlur stdDeviation='0.25' result='effect1_foregroundBlur_18_4328'/> </filter> <filter id='filter3_f_18_4328' x='10.9015' y='22.0703' width='5.38071' height='5.38074' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feGaussianBlur stdDeviation='0.25' result='effect1_foregroundBlur_18_4328'/> </filter> <filter id='filter4_f_18_4328' x='5.75861' y='17.0703' width='5.38071' height='5.38074' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feGaussianBlur stdDeviation='0.25' result='effect1_foregroundBlur_18_4328'/> </filter> <filter id='filter5_f_18_4328' x='5.83673' y='10.1016' width='5.38071' height='5.38074' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feGaussianBlur stdDeviation='0.25' result='effect1_foregroundBlur_18_4328'/> </filter> <filter id='filter6_f_18_4328' x='12.0086' y='6.0824' width='5.38071' height='5.38074' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feGaussianBlur stdDeviation='0.25' result='effect1_foregroundBlur_18_4328'/> </filter> <filter id='filter7_ii_18_4328' x='11.8393' y='6.78125' width='5.1' height='4.8' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='-0.3' dy='0.3'/> <feGaussianBlur stdDeviation='0.225'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 0.87451 0 0 0 0 0.490196 0 0 0 0 0.984314 0 0 0 1 0'/> <feBlend mode='normal' in2='shape' result='effect1_innerShadow_18_4328'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='0.3'/> <feGaussianBlur stdDeviation='0.5'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 0.635294 0 0 0 0 0.258824 0 0 0 0 0.639216 0 0 0 1 0'/> <feBlend mode='normal' in2='effect1_innerShadow_18_4328' result='effect2_innerShadow_18_4328'/> </filter> <filter id='filter8_ii_18_4328' x='5.83931' y='10.7812' width='5.1' height='4.8' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='-0.3' dy='0.3'/> <feGaussianBlur stdDeviation='0.225'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 0.34902 0 0 0 0 0.619608 0 0 0 1 0'/> <feBlend mode='normal' in2='shape' result='effect1_innerShadow_18_4328'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='0.3'/> <feGaussianBlur stdDeviation='0.5'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 0.807843 0 0 0 0 0.172549 0 0 0 0 0.415686 0 0 0 1 0'/> <feBlend mode='normal' in2='effect1_innerShadow_18_4328' result='effect2_innerShadow_18_4328'/> </filter> <filter id='filter9_f_18_4328' x='5.41708' y='17.5625' width='5.38071' height='5.38074' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feGaussianBlur stdDeviation='0.25' result='effect1_foregroundBlur_18_4328'/> </filter> <filter id='filter10_ii_18_4328' x='5.83931' y='17.7812' width='5.1' height='4.8' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='-0.3' dy='0.3'/> <feGaussianBlur stdDeviation='0.225'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 0.364706 0 0 0 0 0.894118 0 0 0 0 0.737255 0 0 0 1 0'/> <feBlend mode='normal' in2='shape' result='effect1_innerShadow_18_4328'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='0.3'/> <feGaussianBlur stdDeviation='0.5'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 0.247059 0 0 0 0 0.533333 0 0 0 0 0.694118 0 0 0 1 0'/> <feBlend mode='normal' in2='effect1_innerShadow_18_4328' result='effect2_innerShadow_18_4328'/> </filter> <filter id='filter11_ii_18_4328' x='11.3393' y='22.2812' width='5.1' height='4.8' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'> <feFlood flood-opacity='0' result='BackgroundImageFix'/> <feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='-0.3' dy='0.3'/> <feGaussianBlur stdDeviation='0.225'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 0.364706 0 0 0 0 0.752941 0 0 0 0 0.945098 0 0 0 1 0'/> <feBlend mode='normal' in2='shape' result='effect1_innerShadow_18_4328'/> <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/> <feOffset dx='0.3'/> <feGaussianBlur stdDeviation='0.5'/> <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/> <feColorMatrix type='matrix' values='0 0 0 0 0.266667 0 0 0 0 0.4 0 0 0 0 0.917647 0 0 0 1 0'/> <feBlend mode='normal' in2='effect1_innerShadow_18_4328' result='effect2_innerShadow_18_4328'/> </filter> <linearGradient id='paint0_linear_18_4328' x1='24.0796' y1='7.18425' x2='13.7254' y2='29.7166' gradientUnits='userSpaceOnUse'> <stop stop-color='#FFB9A1'/> <stop offset='1' stop-color='#FFB4AD'/> </linearGradient> <linearGradient id='paint1_linear_18_4328' x1='13.0715' y1='6.78125' x2='15.1393' y2='11.7934' gradientUnits='userSpaceOnUse'> <stop stop-color='#CC67F1'/> <stop offset='1' stop-color='#C950FC'/> </linearGradient> <linearGradient id='paint2_linear_18_4328' x1='7.07155' y1='10.7813' x2='9.13927' y2='15.7934' gradientUnits='userSpaceOnUse'> <stop stop-color='#F9399F'/> <stop offset='1' stop-color='#FD328C'/> </linearGradient> <linearGradient id='paint3_linear_18_4328' x1='7.07155' y1='17.7813' x2='9.13927' y2='22.7934' gradientUnits='userSpaceOnUse'> <stop stop-color='#47CFA8'/> <stop offset='1' stop-color='#48ABEB'/> </linearGradient> <linearGradient id='paint4_linear_18_4328' x1='12.5715' y1='22.2813' x2='14.6393' y2='27.2934' gradientUnits='userSpaceOnUse'> <stop stop-color='#49B1F1'/> <stop offset='1' stop-color='#4982FE'/> </linearGradient> </defs> </svg>")
+                    },{
+                        ID:3,
+                        Name:"Icons",
+                        Screen: 'Icons Workbench Screen',
+                        Icon: 
+                    "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path  transform='rotate (0)' transform-origin='center'  d='M17.1022 9.59632C17.3253 9.33705 17.5208 9.05344 17.6843 8.75H20.0024C21.107 8.75 22.0024 7.85457 22.0024 6.75C22.0024 6.19772 21.5547 5.75 21.0024 5.75H18.1911C17.8315 3.48301 15.8682 1.75 13.5 1.75C10.8766 1.75 8.75 3.87665 8.75 6.5C8.75 7.41729 9.01001 8.27385 9.46036 9H4.5C3.67157 9 3 9.67157 3 10.5V11.25C3 15.116 6.13401 18.25 10 18.25H10.9669C10.9851 18.2084 11.0038 18.1668 11.023 18.1251C10.7388 17.5824 10.5 16.8667 10.5 16.0001C10.5 14.7645 11.1131 13.535 11.9773 12.6132C12.8751 11.6556 14.1725 10.8836 15.7703 10.672C16.6441 10.5563 17.4238 10.5034 18.1184 10.4947C17.8337 10.1408 17.49 9.83634 17.1022 9.59632ZM12.2401 17.9537C11.5018 19.063 11.0659 20.2397 11.007 21.205C10.9818 21.6184 11.2965 21.974 11.71 21.9992C12.1234 22.0244 12.479 21.7097 12.5042 21.2963C12.5356 20.7821 12.746 20.0852 13.1497 19.3453C13.7425 19.9653 14.671 20.5037 16 20.5037C17.3038 20.5037 18.2798 20.0471 18.999 19.3139C19.6917 18.6078 20.1037 17.6883 20.3958 16.826C20.5436 16.3898 20.6665 15.9497 20.7777 15.5399L20.835 15.3284C20.9252 14.9944 21.0083 14.6871 21.0963 14.4028C21.2029 14.0589 21.306 13.7855 21.4157 13.5778C21.5269 13.3675 21.6186 13.2757 21.6759 13.2376C21.9204 13.0756 22.0479 12.7859 22.0024 12.4962C21.957 12.2065 21.7468 11.9699 21.4644 11.8905C20.4398 11.6025 18.7024 11.2925 15.9016 11.6634C14.5532 11.8419 13.4614 12.4923 12.7068 13.2972C11.9666 14.0867 11.5 15.083 11.5 16C11.5 16.3773 11.5578 16.7179 11.6475 17.0191C11.8633 16.6975 12.1065 16.3814 12.3743 16.0764C13.5587 14.7275 15.2694 13.5423 17.3787 13.0149C17.6466 12.948 17.9181 13.1108 17.9851 13.3787C18.052 13.6466 17.8892 13.9181 17.6213 13.9851C15.7306 14.4577 14.1913 15.5225 13.1257 16.7362C12.774 17.1368 12.4785 17.548 12.2401 17.9537Z' fill='#004F67FF'/> </svg>")
+                    },{
+                        ID:4,
+                        Name:"Fonts",
+                        Screen: 'Font Workbench Screen',
+                        Icon:/*"data:image/svg+xml," & EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' id='mdi-format-font' viewBox='0 0 24 24'><path fill='#141414FF'  d='M17,8H20V20H21V21H17V20H18V17H14L12.5,20H14V21H10V20H11L17,8M18,9L14.5,16H18V9M5,3H10C11.11,3 12,3.89 12,5V16H9V11H6V16H3V5C3,3.89 3.89,3 5,3M6,5V9H9V5H6Z' /></svg>")*/"data:image/svg+xml," & EncodeUrl( "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><title>file_type_light_font</title><path fill='"&Mid(Color1JSON,2,7)&"' d='M12.677,17.781l-2.626-6.256L7.357,17.781ZM19.4,24.292H12.331V22.927l.458-.023a1.847,1.847,0,0,0,.972-.2.313.313,0,0,0,.145-.263,4.158,4.158,0,0,0-.419-1.4l-.812-1.931H7.322L6.4,21.259a3.319,3.319,0,0,0-.349,1.157c0,.036,0,.119.154.241a2.481,2.481,0,0,0,1.191.247l.448.033v1.354H2V22.981l.4-.07A2.188,2.188,0,0,0,3.4,22.593a6.318,6.318,0,0,0,1.18-2.066L10.155,7.491H11.2l5.512,13.174A5.255,5.255,0,0,0,17.761,22.5a1.959,1.959,0,0,0,1.19.4l.454.027Z'/><path fill='"&Mid(Color1JSON,2,7)&"' d='M25.841,21.56V17.575a22.542,22.542,0,0,0-2.226.97,3.845,3.845,0,0,0-1.29,1.05,2.03,2.03,0,0,0-.388,1.2,1.951,1.951,0,0,0,.491,1.362,1.49,1.49,0,0,0,1.13.544A4.142,4.142,0,0,0,25.841,21.56Zm-3.333,2.949a2.833,2.833,0,0,1-2.139-.893,3.206,3.206,0,0,1-.833-2.285,2.959,2.959,0,0,1,.415-1.577,5,5,0,0,1,1.791-1.625,23.876,23.876,0,0,1,3.617-1.588v-.074a2.905,2.905,0,0,0-.383-1.833,1.325,1.325,0,0,0-1.075-.412,1.155,1.155,0,0,0-.816.26.687.687,0,0,0-.277.536l.023.646a1.62,1.62,0,0,1-.4,1.158,1.481,1.481,0,0,1-2.1-.019,1.634,1.634,0,0,1-.391-1.134,2.8,2.8,0,0,1,1.182-2.177,4.813,4.813,0,0,1,3.125-.932,5.381,5.381,0,0,1,2.508.524,2.628,2.628,0,0,1,1.213,1.346,6.391,6.391,0,0,1,.244,2.2v3.55a14.665,14.665,0,0,0,.051,1.749.661.661,0,0,0,.054.2c.085-.078.284-.225.864-.806L30,20.495v1.967l-.1.128c-.958,1.283-1.883,1.907-2.83,1.907a1.6,1.6,0,0,1-1.257-.557,1.788,1.788,0,0,1-.358-.74,9.688,9.688,0,0,1-1.433.977A3.579,3.579,0,0,1,22.508,24.509Z'/></svg>")
+                    })
+                OnSelect: =If(IsBlank(gblChosenTheme) And ThisItem.ID >1,false,Navigate(ThisItem.Screen,ScreenTransition.Fade))
+                TemplateSize: =391
+                Width: =1596
+                X: =(Parent.Width-Self.Width)/2
+                Y: =50
+                ZIndex: =1
+
+                "eleHomeNav_hs As 'Fluent Elevation (1.0.8)'":
+                    Depth: ='''PowerCAT.Elevation.Depth'''.Depth16
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =225
+                    HoverDepth: =If(IsBlank(gblChosenTheme) And ThisItem.ID >1,'''PowerCAT.Elevation.HoverDepth'''.Depth16,'''PowerCAT.Elevation.HoverDepth'''.Depth64)
+                    Width: =250
+                    X: =68
+                    Y: =44
+                    ZIndex: =2
+
+                lblWorkbenchHeader_hs As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =ThisTheme.Color1
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =ThisTheme.Font
+                    FontWeight: =FontWeight.Semibold
+                    Height: =48
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =FontSizes.SubTitle
+                    Text: =ThisItem.Name
+                    Width: =250
+                    X: =68
+                    Y: =44
+                    ZIndex: =3
+
+                imgIcon_hs As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =144
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: =ThisItem.Icon
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =144
+                    X: =121
+                    Y: =92
+                    ZIndex: =4
+
+                btnButtonOverlay_hs As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderThickness: |
+                        =0
+                    Color: =
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =ThisTheme.Color5Alpha
+                    DisabledFill: =ThisTheme.Color5Alpha
+                    DisplayMode: =If(IsBlank(gblChosenTheme) And ThisItem.ID >1,DisplayMode.Disabled,DisplayMode.Edit)
+                    Fill: =If(IsBlank(gblChosenTheme) And ThisItem.ID >1, ThisTheme.Color5Alpha,Transparent)
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    FocusedBorderThickness: =0
+                    Font: =Font.'Segoe UI'
+                    Height: =225
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =Self.Fill
+                    OnSelect: =Select(Parent)
+                    PressedBorderColor: =Self.Fill
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: |
+                        =Self.Fill
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =15
+                    Text: =""
+                    Width: =250
+                    X: =68
+                    Y: =44
+                    ZIndex: =5
+

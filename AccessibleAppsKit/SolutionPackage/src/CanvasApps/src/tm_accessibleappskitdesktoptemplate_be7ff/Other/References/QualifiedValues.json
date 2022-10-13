@@ -1,0 +1,53 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_tm_appthemes_forms",
+      "Namespace": "App Themes (Forms)",
+      "Values": {
+        "Information": "083ee5ca-2b97-41b6-81d2-f85306121288"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_iconset_forms",
+      "Namespace": "Icon Sets (Forms)",
+      "Values": {
+        "Information": "03e2f2d0-2260-4a7f-be80-9c49b2f82a45"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_icon_forms",
+      "Namespace": "Icons (Forms)",
+      "Values": {
+        "Information": "12f01219-1c2f-4f73-9eb3-d079689ae7bc"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_myfavouriteicon_forms",
+      "Namespace": "My Favourite Icons (Forms)",
+      "Values": {
+        "Information": "f3683c54-5cb9-4290-b4ad-da5c58405c2d"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_settransforms_forms",
+      "Namespace": "Set Transforms (Forms)",
+      "Values": {
+        "Information": "045b84bc-9e1b-4021-8974-912ef1fbc94e"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_themecolor_forms",
+      "Namespace": "Theme Colors (Forms)",
+      "Values": {
+        "Information": "c0a5ac36-deeb-457b-accd-a4d4e65ad051"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_themeicon_forms",
+      "Namespace": "Theme Icons (Forms)",
+      "Values": {
+        "Information": "4977ac8e-b7fc-4646-90db-d045f130663e"
+      }
+    }
+  ]
+}

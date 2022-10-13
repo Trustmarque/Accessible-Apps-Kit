@@ -1,0 +1,366 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://uk-001.azure-apim.net/apim/tm-5fthe-20color-20api-5f8a45c0360df7547e" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="Defaulttitle" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Default title">Generate Colour Schemes from The Color API</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://uk-001.azure-apim.net/apim/tm-5fthe-20color-20api-5f8a45c0360df7547e" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="getScheme_responses_default_def_mode_def" />
+      <string name="getScheme_responses_default_def_count_def" />
+      <string name="getScheme_responses_default_def_colors_def_items_def_hex_def_value_def" />
+      <string name="getScheme_responses_default_def_colors_def_items_def_hex_def_clean_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_hex_def">
+        <property name="value" type="string" />
+        <property name="clean" type="string" />
+      </object>
+      <number name="getScheme_responses_default_def_colors_def_items_def_rgb_def_fraction_def_r_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_rgb_def_fraction_def_g_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_rgb_def_fraction_def_b_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_rgb_def_fraction_def">
+        <property name="r" type="number" />
+        <property name="g" type="number" />
+        <property name="b" type="number" />
+      </object>
+      <integer name="getScheme_responses_default_def_colors_def_items_def_rgb_def_r_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_rgb_def_g_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_rgb_def_b_def" />
+      <string name="getScheme_responses_default_def_colors_def_items_def_rgb_def_value_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_rgb_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_colors_def_items_def_rgb_def_fraction_def" />
+        <property name="r" type="integer" />
+        <property name="g" type="integer" />
+        <property name="b" type="integer" />
+        <property name="value" type="string" />
+      </object>
+      <number name="getScheme_responses_default_def_colors_def_items_def_hsl_def_fraction_def_h_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_hsl_def_fraction_def_s_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_hsl_def_fraction_def_l_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_hsl_def_fraction_def">
+        <property name="h" type="number" />
+        <property name="s" type="number" />
+        <property name="l" type="number" />
+      </object>
+      <integer name="getScheme_responses_default_def_colors_def_items_def_hsl_def_h_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_hsl_def_s_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_hsl_def_l_def" />
+      <string name="getScheme_responses_default_def_colors_def_items_def_hsl_def_value_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_hsl_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_colors_def_items_def_hsl_def_fraction_def" />
+        <property name="h" type="integer" />
+        <property name="s" type="integer" />
+        <property name="l" type="integer" />
+        <property name="value" type="string" />
+      </object>
+      <number name="getScheme_responses_default_def_colors_def_items_def_hsv_def_fraction_def_h_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_hsv_def_fraction_def_s_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_hsv_def_fraction_def_v_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_hsv_def_fraction_def">
+        <property name="h" type="number" />
+        <property name="s" type="number" />
+        <property name="v" type="number" />
+      </object>
+      <string name="getScheme_responses_default_def_colors_def_items_def_hsv_def_value_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_hsv_def_h_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_hsv_def_s_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_hsv_def_v_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_hsv_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_colors_def_items_def_hsv_def_fraction_def" />
+        <property name="value" type="string" />
+        <property name="h" type="integer" />
+        <property name="s" type="integer" />
+        <property name="v" type="integer" />
+      </object>
+      <string name="getScheme_responses_default_def_colors_def_items_def_name_def_value_def" />
+      <string name="getScheme_responses_default_def_colors_def_items_def_name_def_closest_named_hex_def" />
+      <boolean name="getScheme_responses_default_def_colors_def_items_def_name_def_exact_match_name_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_name_def_distance_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_name_def">
+        <property name="value" type="string" />
+        <property name="closest_named_hex" type="string" />
+        <property name="exact_match_name" type="boolean" />
+        <property name="distance" type="integer" />
+      </object>
+      <number name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_fraction_def_c_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_fraction_def_m_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_fraction_def_y_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_fraction_def_k_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_fraction_def">
+        <property name="c" type="number" />
+        <property name="m" type="number" />
+        <property name="y" type="number" />
+        <property name="k" type="number" />
+      </object>
+      <string name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_value_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_c_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_m_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_y_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_cmyk_def_k_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_cmyk_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_colors_def_items_def_cmyk_def_fraction_def" />
+        <property name="value" type="string" />
+        <property name="c" type="integer" />
+        <property name="m" type="integer" />
+        <property name="y" type="integer" />
+        <property name="k" type="integer" />
+      </object>
+      <number name="getScheme_responses_default_def_colors_def_items_def_XYZ_def_fraction_def_X_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_XYZ_def_fraction_def_Y_def" />
+      <number name="getScheme_responses_default_def_colors_def_items_def_XYZ_def_fraction_def_Z_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_XYZ_def_fraction_def">
+        <property name="X" type="number" />
+        <property name="Y" type="number" />
+        <property name="Z" type="number" />
+      </object>
+      <string name="getScheme_responses_default_def_colors_def_items_def_XYZ_def_value_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_XYZ_def_X_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_XYZ_def_Y_def" />
+      <integer name="getScheme_responses_default_def_colors_def_items_def_XYZ_def_Z_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_XYZ_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_colors_def_items_def_XYZ_def_fraction_def" />
+        <property name="value" type="string" />
+        <property name="X" type="integer" />
+        <property name="Y" type="integer" />
+        <property name="Z" type="integer" />
+      </object>
+      <string name="getScheme_responses_default_def_colors_def_items_def_image_def_bare_def" />
+      <string name="getScheme_responses_default_def_colors_def_items_def_image_def_named_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_image_def">
+        <property name="bare" type="string" />
+        <property name="named" type="string" />
+      </object>
+      <string name="getScheme_responses_default_def_colors_def_items_def_contrast_def_value_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def_contrast_def">
+        <property name="value" type="string" />
+      </object>
+      <string name="getScheme_responses_default_def_colors_def_items_def__links_def_self_def_href_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def__links_def_self_def">
+        <property name="href" type="string" />
+      </object>
+      <object name="getScheme_responses_default_def_colors_def_items_def__links_def">
+        <property name="self" typeRef="getScheme_responses_default_def_colors_def_items_def__links_def_self_def" />
+      </object>
+      <object name="getScheme_responses_default_def_colors_def_items_def__embedded_def" />
+      <object name="getScheme_responses_default_def_colors_def_items_def">
+        <property name="hex" typeRef="getScheme_responses_default_def_colors_def_items_def_hex_def" />
+        <property name="rgb" typeRef="getScheme_responses_default_def_colors_def_items_def_rgb_def" />
+        <property name="hsl" typeRef="getScheme_responses_default_def_colors_def_items_def_hsl_def" />
+        <property name="hsv" typeRef="getScheme_responses_default_def_colors_def_items_def_hsv_def" />
+        <property name="name" typeRef="getScheme_responses_default_def_colors_def_items_def_name_def" />
+        <property name="cmyk" typeRef="getScheme_responses_default_def_colors_def_items_def_cmyk_def" />
+        <property name="XYZ" typeRef="getScheme_responses_default_def_colors_def_items_def_XYZ_def" />
+        <property name="image" typeRef="getScheme_responses_default_def_colors_def_items_def_image_def" />
+        <property name="contrast" typeRef="getScheme_responses_default_def_colors_def_items_def_contrast_def" />
+        <property name="_links" typeRef="getScheme_responses_default_def_colors_def_items_def__links_def" />
+        <property name="_embedded" typeRef="getScheme_responses_default_def_colors_def_items_def__embedded_def" />
+      </object>
+      <array typeRef="getScheme_responses_default_def_colors_def_items_def" name="getScheme_responses_default_def_colors_def" />
+      <string name="getScheme_responses_default_def_seed_def_hex_def_value_def" />
+      <string name="getScheme_responses_default_def_seed_def_hex_def_clean_def" />
+      <object name="getScheme_responses_default_def_seed_def_hex_def">
+        <property name="value" type="string" />
+        <property name="clean" type="string" />
+      </object>
+      <number name="getScheme_responses_default_def_seed_def_rgb_def_fraction_def_r_def" />
+      <number name="getScheme_responses_default_def_seed_def_rgb_def_fraction_def_g_def" />
+      <number name="getScheme_responses_default_def_seed_def_rgb_def_fraction_def_b_def" />
+      <object name="getScheme_responses_default_def_seed_def_rgb_def_fraction_def">
+        <property name="r" type="number" />
+        <property name="g" type="number" />
+        <property name="b" type="number" />
+      </object>
+      <integer name="getScheme_responses_default_def_seed_def_rgb_def_r_def" />
+      <integer name="getScheme_responses_default_def_seed_def_rgb_def_g_def" />
+      <integer name="getScheme_responses_default_def_seed_def_rgb_def_b_def" />
+      <string name="getScheme_responses_default_def_seed_def_rgb_def_value_def" />
+      <object name="getScheme_responses_default_def_seed_def_rgb_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_seed_def_rgb_def_fraction_def" />
+        <property name="r" type="integer" />
+        <property name="g" type="integer" />
+        <property name="b" type="integer" />
+        <property name="value" type="string" />
+      </object>
+      <number name="getScheme_responses_default_def_seed_def_hsl_def_fraction_def_h_def" />
+      <number name="getScheme_responses_default_def_seed_def_hsl_def_fraction_def_s_def" />
+      <number name="getScheme_responses_default_def_seed_def_hsl_def_fraction_def_l_def" />
+      <object name="getScheme_responses_default_def_seed_def_hsl_def_fraction_def">
+        <property name="h" type="number" />
+        <property name="s" type="number" />
+        <property name="l" type="number" />
+      </object>
+      <integer name="getScheme_responses_default_def_seed_def_hsl_def_h_def" />
+      <integer name="getScheme_responses_default_def_seed_def_hsl_def_s_def" />
+      <integer name="getScheme_responses_default_def_seed_def_hsl_def_l_def" />
+      <string name="getScheme_responses_default_def_seed_def_hsl_def_value_def" />
+      <object name="getScheme_responses_default_def_seed_def_hsl_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_seed_def_hsl_def_fraction_def" />
+        <property name="h" type="integer" />
+        <property name="s" type="integer" />
+        <property name="l" type="integer" />
+        <property name="value" type="string" />
+      </object>
+      <number name="getScheme_responses_default_def_seed_def_hsv_def_fraction_def_h_def" />
+      <number name="getScheme_responses_default_def_seed_def_hsv_def_fraction_def_s_def" />
+      <number name="getScheme_responses_default_def_seed_def_hsv_def_fraction_def_v_def" />
+      <object name="getScheme_responses_default_def_seed_def_hsv_def_fraction_def">
+        <property name="h" type="number" />
+        <property name="s" type="number" />
+        <property name="v" type="number" />
+      </object>
+      <string name="getScheme_responses_default_def_seed_def_hsv_def_value_def" />
+      <integer name="getScheme_responses_default_def_seed_def_hsv_def_h_def" />
+      <integer name="getScheme_responses_default_def_seed_def_hsv_def_s_def" />
+      <integer name="getScheme_responses_default_def_seed_def_hsv_def_v_def" />
+      <object name="getScheme_responses_default_def_seed_def_hsv_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_seed_def_hsv_def_fraction_def" />
+        <property name="value" type="string" />
+        <property name="h" type="integer" />
+        <property name="s" type="integer" />
+        <property name="v" type="integer" />
+      </object>
+      <string name="getScheme_responses_default_def_seed_def_name_def_value_def" />
+      <string name="getScheme_responses_default_def_seed_def_name_def_closest_named_hex_def" />
+      <boolean name="getScheme_responses_default_def_seed_def_name_def_exact_match_name_def" />
+      <integer name="getScheme_responses_default_def_seed_def_name_def_distance_def" />
+      <object name="getScheme_responses_default_def_seed_def_name_def">
+        <property name="value" type="string" />
+        <property name="closest_named_hex" type="string" />
+        <property name="exact_match_name" type="boolean" />
+        <property name="distance" type="integer" />
+      </object>
+      <number name="getScheme_responses_default_def_seed_def_cmyk_def_fraction_def_c_def" />
+      <number name="getScheme_responses_default_def_seed_def_cmyk_def_fraction_def_m_def" />
+      <number name="getScheme_responses_default_def_seed_def_cmyk_def_fraction_def_y_def" />
+      <number name="getScheme_responses_default_def_seed_def_cmyk_def_fraction_def_k_def" />
+      <object name="getScheme_responses_default_def_seed_def_cmyk_def_fraction_def">
+        <property name="c" type="number" />
+        <property name="m" type="number" />
+        <property name="y" type="number" />
+        <property name="k" type="number" />
+      </object>
+      <string name="getScheme_responses_default_def_seed_def_cmyk_def_value_def" />
+      <integer name="getScheme_responses_default_def_seed_def_cmyk_def_c_def" />
+      <integer name="getScheme_responses_default_def_seed_def_cmyk_def_m_def" />
+      <integer name="getScheme_responses_default_def_seed_def_cmyk_def_y_def" />
+      <integer name="getScheme_responses_default_def_seed_def_cmyk_def_k_def" />
+      <object name="getScheme_responses_default_def_seed_def_cmyk_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_seed_def_cmyk_def_fraction_def" />
+        <property name="value" type="string" />
+        <property name="c" type="integer" />
+        <property name="m" type="integer" />
+        <property name="y" type="integer" />
+        <property name="k" type="integer" />
+      </object>
+      <number name="getScheme_responses_default_def_seed_def_XYZ_def_fraction_def_X_def" />
+      <number name="getScheme_responses_default_def_seed_def_XYZ_def_fraction_def_Y_def" />
+      <number name="getScheme_responses_default_def_seed_def_XYZ_def_fraction_def_Z_def" />
+      <object name="getScheme_responses_default_def_seed_def_XYZ_def_fraction_def">
+        <property name="X" type="number" />
+        <property name="Y" type="number" />
+        <property name="Z" type="number" />
+      </object>
+      <string name="getScheme_responses_default_def_seed_def_XYZ_def_value_def" />
+      <integer name="getScheme_responses_default_def_seed_def_XYZ_def_X_def" />
+      <integer name="getScheme_responses_default_def_seed_def_XYZ_def_Y_def" />
+      <integer name="getScheme_responses_default_def_seed_def_XYZ_def_Z_def" />
+      <object name="getScheme_responses_default_def_seed_def_XYZ_def">
+        <property name="fraction" typeRef="getScheme_responses_default_def_seed_def_XYZ_def_fraction_def" />
+        <property name="value" type="string" />
+        <property name="X" type="integer" />
+        <property name="Y" type="integer" />
+        <property name="Z" type="integer" />
+      </object>
+      <string name="getScheme_responses_default_def_seed_def_image_def_bare_def" />
+      <string name="getScheme_responses_default_def_seed_def_image_def_named_def" />
+      <object name="getScheme_responses_default_def_seed_def_image_def">
+        <property name="bare" type="string" />
+        <property name="named" type="string" />
+      </object>
+      <string name="getScheme_responses_default_def_seed_def_contrast_def_value_def" />
+      <object name="getScheme_responses_default_def_seed_def_contrast_def">
+        <property name="value" type="string" />
+      </object>
+      <string name="getScheme_responses_default_def_seed_def__links_def_self_def_href_def" />
+      <object name="getScheme_responses_default_def_seed_def__links_def_self_def">
+        <property name="href" type="string" />
+      </object>
+      <object name="getScheme_responses_default_def_seed_def__links_def">
+        <property name="self" typeRef="getScheme_responses_default_def_seed_def__links_def_self_def" />
+      </object>
+      <object name="getScheme_responses_default_def_seed_def__embedded_def" />
+      <object name="getScheme_responses_default_def_seed_def">
+        <property name="hex" typeRef="getScheme_responses_default_def_seed_def_hex_def" />
+        <property name="rgb" typeRef="getScheme_responses_default_def_seed_def_rgb_def" />
+        <property name="hsl" typeRef="getScheme_responses_default_def_seed_def_hsl_def" />
+        <property name="hsv" typeRef="getScheme_responses_default_def_seed_def_hsv_def" />
+        <property name="name" typeRef="getScheme_responses_default_def_seed_def_name_def" />
+        <property name="cmyk" typeRef="getScheme_responses_default_def_seed_def_cmyk_def" />
+        <property name="XYZ" typeRef="getScheme_responses_default_def_seed_def_XYZ_def" />
+        <property name="image" typeRef="getScheme_responses_default_def_seed_def_image_def" />
+        <property name="contrast" typeRef="getScheme_responses_default_def_seed_def_contrast_def" />
+        <property name="_links" typeRef="getScheme_responses_default_def_seed_def__links_def" />
+        <property name="_embedded" typeRef="getScheme_responses_default_def_seed_def__embedded_def" />
+      </object>
+      <string name="getScheme_responses_default_def_image_def_bare_def" />
+      <string name="getScheme_responses_default_def_image_def_named_def" />
+      <object name="getScheme_responses_default_def_image_def">
+        <property name="bare" type="string" />
+        <property name="named" type="string" />
+      </object>
+      <string name="getScheme_responses_default_def__links_def_self_def" />
+      <string name="getScheme_responses_default_def__links_def_schemes_def_monochrome_def" />
+      <string name="getScheme_responses_default_def__links_def_schemes_def_monochrome-dark_def" />
+      <string name="getScheme_responses_default_def__links_def_schemes_def_monochrome-light_def" />
+      <string name="getScheme_responses_default_def__links_def_schemes_def_analogic_def" />
+      <string name="getScheme_responses_default_def__links_def_schemes_def_complement_def" />
+      <string name="getScheme_responses_default_def__links_def_schemes_def_analogic-complement_def" />
+      <string name="getScheme_responses_default_def__links_def_schemes_def_triad_def" />
+      <string name="getScheme_responses_default_def__links_def_schemes_def_quad_def" />
+      <object name="getScheme_responses_default_def__links_def_schemes_def">
+        <property name="monochrome" type="string" />
+        <property name="monochrome-dark" type="string" />
+        <property name="monochrome-light" type="string" />
+        <property name="analogic" type="string" />
+        <property name="complement" type="string" />
+        <property name="analogic-complement" type="string" />
+        <property name="triad" type="string" />
+        <property name="quad" type="string" />
+      </object>
+      <object name="getScheme_responses_default_def__links_def">
+        <property name="self" type="string" />
+        <property name="schemes" typeRef="getScheme_responses_default_def__links_def_schemes_def" />
+      </object>
+      <object name="getScheme_responses_default_def__embedded_def" />
+      <object name="getScheme_responses_default_def">
+        <property name="mode" type="string" />
+        <property name="count" type="string" />
+        <property name="colors" typeRef="getScheme_responses_default_def_colors_def" />
+        <property name="seed" typeRef="getScheme_responses_default_def_seed_def" />
+        <property name="image" typeRef="getScheme_responses_default_def_image_def" />
+        <property name="_links" typeRef="getScheme_responses_default_def__links_def" />
+        <property name="_embedded" typeRef="getScheme_responses_default_def__embedded_def" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://uk-001.azure-apim.net/apim/tm-5fthe-20color-20api-5f8a45c0360df7547e">
+    <resource path="/{connectionId}/">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getScheme" actionName="getScheme" siena:isDeprecated="false">
+        <doc title="Get Color Scheme&#xA;Generate colour theme from HEX" />
+        <request>
+          <param style="query" name="hex" type="xs:string" />
+          <param style="query" name="format" type="xs:string" />
+          <param style="query" name="mode" type="xs:string" />
+          <param style="query" name="count" type="xs:long" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:getScheme_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_tm-5fthe-20color-20api-5f8a45c0360df7547e" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

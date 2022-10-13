@@ -1,0 +1,50 @@
+svgGuage As CanvasComponent:
+    AmberScore: =.43
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =60
+    RedScore: =.2
+    Score: =0.45
+    Width: =100
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    GaugeImproved As image:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =GaugeImproved.BorderColor
+        FocusedBorderThickness: =2
+        Height: =Parent.Height
+        HoverBorderColor: =ColorFade(GaugeImproved.BorderColor, 20%)
+        HoverFill: =ColorFade(GaugeImproved.Fill, 20%)
+        Image: |-
+            =With(
+                {
+                    SVGArch: "<path d='M 0 50 A 50 50 0 0 1 100 50 L80 50 A 30 30 0 0 0 20 50' /> ",
+                    SVGRotate: Round((180 * Parent.Score),0),
+                    RedRotate: -180 * (1 - Parent.RedScore),
+                    AmberRotate: -180 * (1 - Parent.AmberScore)
+                },
+                "data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'>
+                        <g fill='Green'>" & SVGArch & "</g>
+                        <g fill='Gold' transform='rotate(" & AmberRotate & " 50 50)' >" & SVGArch & "</g>
+                        <g fill='Red' transform='rotate(" & RedRotate & " 50 50)'>" & SVGArch & "</g>
+                        <line x1='0' y1='50' x2='20' y2='50' stroke-width='5' stroke='black' 
+                        transform='rotate(" & SVGRotate & " 50 50)' />
+                </svg>"
+                )
+            )
+        PaddingBottom: =0
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =0
+        PressedBorderColor: =ColorFade(GaugeImproved.BorderColor, -20%)
+        PressedFill: =ColorFade(GaugeImproved.Fill, -20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =1
+

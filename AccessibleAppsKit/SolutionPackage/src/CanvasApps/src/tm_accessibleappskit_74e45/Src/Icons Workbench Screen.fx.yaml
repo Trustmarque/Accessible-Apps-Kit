@@ -1,0 +1,3409 @@
+"'Icons Workbench Screen' As screen":
+    OnVisible: |
+        =Clear(colIcons);
+        ClearCollect( allMenu, 'Icon Sets');
+        UpdateContext({varPageNumber: 1});
+        ClearCollect(
+            fontMenu,
+            Ungroup(
+                ForAll(
+                    Sequence(CountRows(allMenu)),
+                    {
+                        myRecord: Table(
+                            Last(
+                                FirstN(
+                                    allMenu,
+                                    Value
+                                )
+                            )
+                        ),
+                        ID: Value + 1
+                    }
+                ),
+                "myRecord"
+            )
+        );
+        Patch(
+            fontMenu,
+            Defaults(allMenu),
+            {
+                ID: 1,
+                tm_name: "My Favourites",
+                tm_iconsvg: "<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='#e00837' d='M12.82 5.58L12 6.4l-.82-.82a5.37 5.37 0 10-7.6 7.6l7.89 7.9c.3.29.77.29 1.06 0l7.9-7.9a5.38 5.38 0 10-7.61-7.6z'/></svg>",
+                tm_shortcode: "my-favourites"
+            }
+        );
+        ClearCollect(
+            myico,
+            Filter(
+                'My Favourite Icons',
+                'My Favourite Icons (Views)'.'Active My Favourite Icons',
+                'Created By'.internalemailaddress = varUser.internalemailaddress
+            )
+        );
+        ForAll(
+            myico,
+            Collect(
+                colIcons,
+                {
+                    tm_icon:Icon.'Icon (tm_icon)',
+                    tm_name: Name,
+                    tm_set: Icon.Set
+                }
+            )
+        );
+        UpdateContext(
+            {
+                upload: false,
+                iconColor: First(Sort(gblChosenThemeColors,Name,Ascending)).HEX
+            }
+        );
+        ClearCollect(
+            gblChosenThemeColors,
+            Filter(
+                'Theme Colors',
+                Theme.'App Themes' = gblChosenTheme.'App Themes'
+            )
+        );
+        ClearCollect(
+            gblChosenThemeIcons,
+            Filter(
+                'Theme Icons',
+                Theme.'App Themes' = gblChosenTheme.'App Themes'
+            ));
+        Select(btnSetIcon)
+
+    conScreen_is As groupContainer.verticalAutoLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        X: =0.00
+        ZIndex: =1
+
+        conHeader_is As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            FillPortions: =0
+            Height: =65
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            cmbHeader_is As Header:
+                BackButtonVisible: =true
+                ContentWidth: =Parent.Width
+                Height: =65
+                LeftButtonImage: |-
+                    =
+                    "data:image/svg+xml;," & EncodeUrl("<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'><defs><style>.cls-1{fill:#fff;}.cls-2{fill:url(#linear-gradient-2);}.cls-2,.cls-3{mix-blend-mode:multiply;opacity:.1;}.cls-3{fill:url(#linear-gradient);}.cls-4{isolation:isolate;}</style><linearGradient id='linear-gradient' x1='-182.54' y1='-36.31' x2='-182.54' y2='-16.54' gradientTransform='translate(226.77 29.42)' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='#010101'/><stop offset='1' stop-color='#010101' stop-opacity='0'/></linearGradient><linearGradient id='linear-gradient-2' x1='-343.35' y1='-937.2' x2='-343.35' y2='-917.43' gradientTransform='translate(399.12 1005.31)' xlink:href='#linear-gradient'/></defs><g class='cls-4'><g id='Layer_1'><g><g><polygon class='cls-1' points='75 25 75 0 25 0 0 25 0 75 25 75 25 25 75 25'/><polygon class='cls-1' points='75 25 75 75 25 75 25 100 75 100 100 75 100 25 75 25'/></g><rect class='cls-3' x='31.73' y='-6.73' width='25' height='38.46' transform='translate(31.73 56.73) rotate(-90)'/><rect class='cls-2' x='43.27' y='68.27' width='25' height='38.46' transform='translate(143.27 31.73) rotate(90)'/></g></g></g></svg>")
+                OnBackSelect: =Back()
+                OnRightButtonSelect: |-
+                    =Navigate('Icon Set Admin Screen',ScreenTransition.Fade,{chosenIconSet:First(ShowColumns(Filter('Icon Sets',Name = galMenu.Selected.tm_name),"tm_name","tm_author","tm_shortcode","tm_githublink","tm_iconsvg"))})
+                Text: ="Iconography Workbench"
+                Theme: =AppTheme
+                Width: =Parent.Width
+
+        conMain_is As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =4
+
+            conIconSetMenu_is As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FillPortions: =0
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                Width: =300
+                ZIndex: =1
+
+                "Elevation4 As 'Fluent Elevation (1.0.8)'":
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =Parent.Height -87
+                    Width: =284
+                    X: =8
+                    Y: =48
+                    ZIndex: =1
+
+                galMenu As gallery.galleryVertical:
+                    AccessibleLabel: ="Main Menu"
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Fill: =ThisTheme.Color3Light
+                    Height: =911
+                    Items: =Sort(fontMenu,ID,Ascending)
+                    Layout: =Layout.Vertical
+                    OnSelect: |-
+                        =UpdateContext({isSearching:false});Select(btnGetIcons);Select(btnSetIcon);
+                    TemplatePadding: =0
+                    TemplateSize: =33
+                    Width: =284
+                    X: =8
+                    Y: =48
+                    ZIndex: =2
+
+                    Button1_7 As button:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        BorderThickness: =0
+                        Color: =ThisTheme.Color1
+                        Fill: =ThisTheme.Color1
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Open Sans'
+                        Height: =22
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: =Select(Parent)
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =10
+                        RadiusBottomRight: =10
+                        RadiusTopLeft: =10
+                        RadiusTopRight: =10
+                        Size: =15
+                        Text: =""
+                        Visible: =true//If(ThisItem.IsSelected Or ThisItem.Expanded,true,false)
+                        Width: =2
+                        X: =4
+                        Y: =10
+                        ZIndex: =1
+
+                    Rectangle4_7 As rectangle:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =If(ThisItem.IsSelected,ThisTheme.Color2Light,ThisTheme.Color3Light)
+                        FocusedBorderThickness: =2
+                        Height: =32
+                        HoverFill: =Transparent
+                        OnSelect: =Select(Parent)
+                        PressedFill: =Transparent
+                        Width: =Parent.Width
+                        ZIndex: =2
+
+                    Label10_5 As label:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ThisTheme.Color1
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =Transparent
+                        Font: =Font.'Segoe UI'
+                        Height: =33
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Size: =10.5
+                        Text: =ThisItem.tm_name
+                        Width: =205
+                        X: =39
+                        ZIndex: =3
+
+                    Image4_4 As image:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =2
+                        Height: =24
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverFill: =ColorFade(Self.Fill, 20%)
+                        Image: |-
+                            =    "data:image/svg+xml," & EncodeUrl(ThisItem.tm_iconsvg)
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedBorderColor: =ColorFade(Self.BorderColor, -20%)
+                        PressedFill: =ColorFade(Self.Fill, -20%)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =24
+                        X: =6
+                        Y: =4
+                        ZIndex: =4
+
+                    Button4_2 As button:
+                        BorderThickness: =0
+                        Color: =Transparent
+                        Fill: =Transparent
+                        FocusedBorderThickness: =0
+                        Height: =33
+                        HoverFill: =RGBA(0,0,0,0.3)
+                        OnSelect: |-
+                            =UpdateContext({isSearching:false});Clear(colIcons);Select(btnGetIcons);Reset(inpSearch)
+                            /*UpdateContext(
+                                {
+                                    varPageNumber: 1,
+                                    isSearching: false
+                                }
+                            );
+                            //Reset(inp_search);
+                            //Clear(colIcons);
+                            If(
+                                And(
+                                    ThisItem.Expanded = false,
+                                    ThisItem.ParentID = 0,
+                                    ThisItem.SubItems = true
+                                ),
+                                Patch(
+                                    fontmenu,
+                                    ThisItem,
+                                    {Expanded: true}
+                                );
+                                Collect(
+                                    fontmenu,
+                                    Filter(
+                                        col_fontmenu_home,
+                                        ParentID = ThisItem.ID
+                                    )
+                                ),
+                                Patch(
+                                    fontmenu,
+                                    ThisItem,
+                                    {Expanded: false}
+                                );
+                                Remove(
+                                    fontmenu,
+                                    Filter(
+                                        col_fontmenu_home,
+                                        ParentID = ThisItem.ID
+                                    )
+                                );
+                                If(
+                                    ThisItem.SubItems,
+                                    Set(
+                                        galDefault1,
+                                        ThisItem
+                                    )
+                                )
+                            );
+                            Select(btnGetIcons);
+                            /*
+                            Switch(
+                                ThisItem.MenuText,
+                                "Fluent Emoji - Color",
+                                
+                                ClearCollect(
+                                    colIcons,
+                                    FluentUI
+                                )
+                            );,
+                                "Material Design",
+                                ClearCollect(
+                                    colIcons,
+                                    MaterialDesign
+                                ),
+                                "Font Awesome",
+                                ClearCollect(
+                                    colIcons,
+                                    FontAwesome
+                                ),
+                                "Simple Icons",
+                                ClearCollect(
+                                    colIcons,
+                                    SimpleIcons
+                                ),
+                                "Game Icons",
+                                ClearCollect(
+                                    colIcons,
+                                    GameIcons
+                                ),
+                                "Remix",
+                                ClearCollect(
+                                    colIcons,
+                                    Remix
+                                ),
+                                "Bootstrap",
+                                ClearCollect(
+                                    colIcons,
+                                    Bootstrap
+                                ),
+                                "Tabler",
+                                ClearCollect(
+                                    colIcons,
+                                    Tabler
+                                ),
+                                "Teeny",
+                                ClearCollect(
+                                    colIcons,
+                                    Teeny
+                                ),
+                                "Feather",
+                                ClearCollect(
+                                    colIcons,
+                                    Feather
+                                ),
+                                "Crypto Icons",
+                                ClearCollect(
+                                    colIcons,
+                                    Crypto
+                                ),
+                                "Box",
+                                ClearCollect(
+                                    colIcons,
+                                    Box
+                                ),
+                                "Weather",
+                                ClearCollect(
+                                    colIcons,
+                                    Weather
+                                ),
+                                "Animated",
+                                ClearCollect(
+                                    colIcons,
+                                    WeatherAni
+                                ),
+                                "Public Domain",
+                                ClearCollect(
+                                    colIcons,
+                                    PublicDomains
+                                ),
+                                "Pixelart",
+                                ClearCollect(
+                                    colIcons,
+                                    PixelArt
+                                ),
+                                "Microsoft Graphics",
+                                ClearCollect(
+                                    colIcons,
+                                    MSIcons
+                                ),
+                                "VS Code",
+                                ClearCollect(
+                                    colIcons,
+                                    VSCode
+                                ),
+                                "Twemoji",
+                                ClearCollect(
+                                    colIcons,
+                                    Twemoji
+                                ),
+                                "La Capitaine",
+                                ClearCollect(
+                                    colIcons,
+                                    lacaptaine
+                                ),
+                                "Flags",
+                                ClearCollect(
+                                    colIcons,
+                                    flags
+                                ),
+                                "AzDevMDL2",
+                                ClearCollect(
+                                    colIcons,
+                                    AzDevMDL2
+                                ),
+                                "SegoeMDL2",
+                                ClearCollect(
+                                    colIcons,
+                                    SegoeMDL2
+                                ),
+                                "Icofont",
+                                ClearCollect(
+                                    colIcons,
+                                    Icofont
+                                ),
+                                "Bowtie",
+                                ClearCollect(
+                                    colIcons,
+                                    Bowtie
+                                ),
+                                "Octicons",
+                                ClearCollect(
+                                    colIcons,
+                                    Octicons
+                                ),
+                                "Hero",
+                                ClearCollect(
+                                    colIcons,
+                                    HeroIcons
+                                )
+                            );
+                            Switch(
+                                ThisItem.ID,
+                                1,
+                                UpdateContext(
+                                    {
+                                        selectedIconName: First(col_myFavouriteIcons).Name,
+                                        selectedIconSet: First(col_myFavouriteIcons).IconSet
+                                    }
+                                ),
+                                UpdateContext(
+                                    {
+                                        selectedIconName: First(colIcons).Name,
+                                        selectedIconSet: First(colIcons).Set
+                                    }
+                                )
+                            );
+                            If(
+                                gal_menu_1.Selected.ID = 1,
+                                If(
+                                    encodeImage,
+                                    UpdateContext({encodeImage: false});
+                                    //Select(btn_decoded_fav_icon),
+                                    UpdateContext({encodeImage: true});
+                                    //Select(btn_encoded_fav_icon)
+                                ),
+                                If(
+                                    encodeImage,
+                                    UpdateContext({encodeImage: false});
+                                    //Select(btn_decoded_gal_icon),
+                                    UpdateContext({encodeImage: true});
+                                    //Select(btn_encoded_gal_icon)
+                                ))*/
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedFill: =Transparent
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Text: =""
+                        Width: =284
+                        ZIndex: =7
+
+                Label4_2 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =ThisTheme.Color1
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    PaddingBottom: =5
+                    PaddingLeft: =10
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Role: =TextRole.Heading2
+                    Size: =FontSizes.SubTitle
+                    Text: =gblChosenTheme.'Theme Name'
+                    Width: =300
+                    ZIndex: =3
+
+                btnSetIcon As button:
+                    BorderThickness: =2
+                    FocusedBorderThickness: =4
+                    Height: =24
+                    OnSelect: |-
+                        =/*UpdateContext(
+                            {
+                                icon_image_text: 
+                                    """data:image/svg+xml,"" & EncodeUrl(""" & Substitute(
+                                        Substitute(
+                                            gal_icons.Selected.tm_icon,
+                                            "fill='#212121'",
+                                            "fill='" & icon_foreground.inputValue & "'"
+                                        ),
+                                        "path d",
+                                        "path " & transform & " d"
+                                    ) & "" & """)"
+                            }
+                        );
+                        */
+                        
+                        UpdateContext(
+                            {
+                                //selectedIconName:ThisItem.Name,
+                                selectedSet: gal_icons.Selected.tm_set,
+                                upload: false,
+                                selectedIcon: gal_icons.Selected.tm_icon
+                            }
+                        );
+                        ClearCollect(
+                            setTransforms,
+                            Filter(
+                                'Set Transforms',
+                                'Icon Set'.ShortCode = gal_icons.Selected.tm_set
+                            )
+                        );
+                        ClearCollect(thisIcon,gal_icons.Selected.tm_icon);
+                        Set(iconNow,First(thisIcon));
+                        
+                        If(CountRows(setTransforms)=0,
+                            Set(
+                                iconSelected,
+                                gal_icons.Selected.tm_icon
+                            ),
+                            Set(
+                                selIcon,
+                                ForAll(
+                                    setTransforms,
+                                    Patch(
+                                        thisIcon,
+                                        iconNow,
+                                        {
+                                            Value:
+                                        Substitute(
+                                        iconNow.Value,
+                                        'Transform From','Transform To'
+                                    )
+                                        }
+                                    )
+                                )
+                            );
+                            Set(iconSelected,First(thisIcon).Value)
+                        );
+                        If(
+                            IsEmpty(setTransforms),
+                            UpdateContext({iconImageText: """data:image/svg+xml,"" & EncodeUrl(""" & gal_icons.Selected.tm_icon & """)"})
+                        );
+                        Set(
+                            iconJSON,
+                            DecodeURL_1.DecodedURL
+                        )
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Text: ="btnSetIcon"
+                    Visible: =DevHidden
+                    Width: =155
+                    X: =144
+                    Y: =Parent.Height -Self.Height
+                    ZIndex: =4
+
+                btnGetIcons As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderThickness: =2
+                    Color: =ThisTheme.ColorWhite
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =ThisTheme.Color1
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =22
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =ColorFade(ThisTheme.Color1, -10%)
+                    OnSelect: |
+                        =UpdateContext({loadingIcons: true});
+                        Reset(drpSizes_1);Reset(cmbTypes_1);
+                        Clear(colIcons);
+                        Clear(iterations);
+                        UpdateContext(
+                            {
+                                varPageNumber: 1,
+                                isSearching: false,
+                                iconCount: CountRows(
+                                    Filter(
+                                        Icons,
+                                        Set = galMenu.Selected.tm_shortcode
+                                    )
+                                )
+                            }
+                        );
+                        Reset(inpSearch);
+                        ClearCollect(
+                            myico,
+                            Filter(
+                                'My Favourite Icons',
+                                'My Favourite Icons (Views)'.'Active My Favourite Icons',
+                                'Created By'.internalemailaddress = varUser.internalemailaddress
+                            )
+                        );
+                        If(
+                            galMenu.Selected.tm_name = "My Favourites",
+                            ForAll(
+                                myico,
+                                Collect(
+                                    colIcons,
+                                    {
+                                        'Icon (tm_icon)': Icon.'Icon (tm_icon)',
+                                        tm_name: Name,
+                                        tm_set: Icon.Set
+                                    }
+                                )
+                            );
+                            Set(
+                                firstRecord,
+                                First(
+                                    Sort(
+                                        Filter(
+                                            Icons,
+                                            Set = galMenu.Selected.tm_shortcode
+                                        ),
+                                        ID,
+                                        Ascending
+                                    )
+                                )
+                            )
+                        );
+                        Set(
+                            lastRecord,
+                            Last(
+                                Sort(
+                                    Filter(
+                                        Icons,
+                                        Set = galMenu.Selected.tm_shortcode
+                                    ),
+                                    ID,
+                                    Ascending
+                                )
+                            )
+                        );
+                        Set(
+                            iterationsNo,
+                            RoundUp(
+                                iconCount / 500,
+                                0
+                            )
+                        );
+                        Collect(
+                            iterations,
+                            Sequence(
+                                iterationsNo,
+                                0
+                            )
+                        );
+                        ForAll(
+                            iterations,
+                            With(
+                                {
+                                    prevThreshold: Value(Value) * 500,
+                                    nextThreshold: (Value(Value) + 1) * 500
+                                },
+                                If(
+                                    lastRecord.ID > Value,
+                                    Collect(
+                                        colIcons,
+                                        Sort(
+                                            Filter(
+                                                Icons,
+                                                Set = galMenu.Selected.tm_shortcode,
+                                                ID > prevThreshold && ID <= nextThreshold
+                                            ),
+                                            ID,
+                                            Ascending
+                                        )
+                                    )
+                                )
+                            )
+                        );
+                        
+                        If(
+                            !IsBlank(First(colIcons).Size),
+                            ClearCollect(
+                                colSizes,
+                                Distinct(colIcons,Size
+                                )
+                            )
+                        );
+                        If(
+                            !IsBlank(First(colIcons).Description),
+                            ClearCollect(
+                                colDesc,
+                                Distinct(colIcons,Description
+                                )
+                            )
+                        );
+                        ClearCollect(colIconsBackupa,colIcons);
+                        
+                        UpdateContext({loadingIcons: false});
+                    PressedBorderColor: =ColorFade(ThisTheme.Color1, -50%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =ColorFade(ThisTheme.Color1, -30%)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =15
+                    Text: ="btnGetIcons"
+                    Visible: =DevHidden
+                    Width: =132
+                    Y: =Parent.Height -Self.Height
+                    ZIndex: =5
+
+                Label16_1 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =53
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: ="You don't have any Icons loaded, click below to add a new set!"
+                    Visible: =CountRows(fontMenu) = 1
+                    Width: =284
+                    X: =8
+                    Y: =99
+                    ZIndex: =6
+
+                "Icon1 As 'Fluent Icon (1.0.8)'":
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =42
+                    IconName: ="Add"
+                    IconType: ='''PowerCAT.Icon.IconType'''.ActionButton
+                    OnChange: =Navigate('Icon Set Admin Screen',ScreenTransition.Fade)
+                    Text: ="Icon Set"
+                    Visible: =CountRows(fontMenu) = 1
+                    Width: =88
+                    X: =105
+                    Y: =165
+                    ZIndex: =7
+
+                btnFilterColIcons As button:
+                    Height: =17
+                    OnSelect: |
+                        =With(
+                            {
+                                size: drpSizes_1.Selected.Result,
+                                type: cmbTypes_1.Selected.Result
+                            },
+                            ClearCollect(
+                                colIcons,
+                                colIconsBackupa
+                            );
+                            If(
+                                !IsBlank(size) And IsBlank(type),
+                                ClearCollect(
+                                    colIcons,
+                                    Filter(
+                                        colIconsBackupa,
+                                        Size = size
+                                    )
+                                )
+                            );
+                            If(
+                                IsBlank(type) And !IsBlank(type),
+                                ClearCollect(
+                                    colIcons,
+                                    Filter(
+                                        colIconsBackupa,
+                                        Description = type
+                                    )
+                                )
+                            );
+                            If(
+                                !IsBlank(size) And !IsBlank(type),
+                                ClearCollect(
+                                    colIcons,
+                                    Filter(
+                                        colIconsBackupa,
+                                        Description = type And Size = size
+                                    )
+                                )
+                            )
+                        );
+                        //UpdateContext({isSearching:false})
+                        /*If(
+                            IsBlank(drpSizes_1.Selected.Result),
+                            ClearCollect(
+                                colIcons,
+                                colIconsBackupa
+                            ),
+                            ClearCollect(
+                                colIconsSizes,
+                                Filter(
+                                    colIconsBackupa,
+                                    Description = drpSizes_1.Selected.Result
+                                )
+                            );
+                            ClearCollect(
+                                colIcons,
+                                colIconsSizes
+                            )
+                        );*/
+                    Text: ="btnFilterColIcons"
+                    Visible: =DevHidden
+                    X: =140
+                    Y: =Parent.Height -35
+                    ZIndex: =8
+
+            conIconGallery_is As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =Parent.Height
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =2
+
+                "eleIconGallery_is As 'Fluent Elevation (1.0.8)'":
+                    DisplayMode: =DisplayMode.Edit
+                    FillColor: =Mid(Color2LightJSON,2,9)
+                    Height: =Parent.Height -88
+                    Width: =Parent.Width -32
+                    X: =16
+                    Y: =48
+                    ZIndex: =1
+
+                gal_icons As gallery.galleryVertical:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =Parent.Height -88
+                    Items: |-
+                        =If(
+                            varPageNumber = 1,
+                            FirstN(
+                               SortByColumns(colIcons,"tm_set",iconsort,"tm_name",iconsort),
+                                ddPageSize.SelectedText.Value * varPageNumber
+                            ),
+                            LastN(
+                                FirstN(
+                                     SortByColumns(colIcons,"tm_set",iconsort,"tm_name",iconsort),
+                                    ddPageSize.SelectedText.Value * varPageNumber
+                                ),
+                                ddPageSize.SelectedText.Value * 1
+                            )
+                        )
+                    Layout: =Layout.Vertical
+                    OnSelect: |
+                        =/*UpdateContext(
+                            {
+                                //selectedIconName:ThisItem.Name,
+                                selectedSet: ThisItem.tm_set,
+                                upload: false,
+                                selectedIcon: ThisItem.pp_icon
+                            }
+                        );
+                        ClearCollect(
+                            setTransforms,
+                            Filter(
+                                'Set Transforms',
+                                'Icon Set'.ShortCode = ThisItem.tm_set
+                            )
+                        );
+                        ClearCollect(thisIcon,ThisItem.pp_icon);
+                        Set(iconNow,First(thisIcon));
+                        
+                        If(CountRows(setTransforms)=0,
+                            Set(
+                                iconSelected,
+                                ThisItem.pp_icon
+                            ),
+                            Set(
+                                selIcon,
+                                ForAll(
+                                    setTransforms,
+                                    Patch(
+                                        thisIcon,
+                                        iconNow,
+                                        {
+                                            Value:
+                                        Substitute(
+                                        iconNow.Value,
+                                        'Transform From','Transform To'
+                                    )
+                                        }
+                                    )
+                                )
+                            );
+                            Set(iconSelected,First(thisIcon).Value)
+                        );
+                        */
+                        Select(btnSetIcon);
+                    TemplateSize: =87
+                    Width: =Parent.Width -32
+                    WrapCount: =10
+                    X: =16
+                    Y: =48
+                    ZIndex: =2
+
+                    "Elevation3 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        FillColor: |-
+                            =If(ThisItem.IsSelected,Mid(Color2LightJSON,2,7),"#ffffff")
+                        Height: =87
+                        HoverDepth: ='''PowerCAT.Elevation.HoverDepth'''.Depth8
+                        OnChange: =false
+                        Width: =Parent.TemplateWidth
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    Label5 As label:
+                        Align: =Align.Center
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =44
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =5
+                        PaddingLeft: =2
+                        PaddingRight: =2
+                        PaddingTop: =2
+                        Size: =8
+                        Text: =Substitute(ThisItem.tm_name,".svg","")
+                        VerticalAlign: =VerticalAlign.Bottom
+                        Width: =Parent.TemplateWidth
+                        Wrap: =false
+                        Y: =65
+                        ZIndex: =3
+
+                    set_image As image:
+                        FocusedBorderThickness: =2
+                        Height: =16
+                        Image: |-
+                            ="data:image/svg+xml," & EncodeUrl(LookUp('Icon Sets',ShortCode = ThisItem.tm_set).'Icon SVG')
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =isSearching Or galMenu.Selected.tm_name = "My Favourites"
+                        Width: =16
+                        X: =4
+                        Y: =4
+                        ZIndex: =4
+
+                    Icon6 As icon.Trash:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =15
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Trash
+                        OnSelect: =RemoveIf('My Favourite Icons',ThisItem.Name in Name);Select(btnGetIcons)
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Visible: =galMenu.Selected.ID = 1
+                        Width: =15
+                        X: =Parent.TemplateWidth -Self.Width-2
+                        Y: =4
+                        ZIndex: =5
+
+                    Image1 As image:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =61
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Image: |-
+                            =
+                            "data:image/svg+xml," & EncodeUrl(
+                                Substitute(
+                                    Substitute(
+                                        Substitute(
+                                            Substitute(
+                                                Substitute(
+                                                    Substitute(
+                                                        ThisItem.'Icon (tm_icon)',
+                                                        "{{IconColor}}",
+                                                        iconForeground.inputValue
+                                                    ),
+                                                    "{{BackgroundColor}}",
+                                                    iconBackground.inputValue
+                                                ),
+                                                "{{Color1}}",
+                                                LookUp(
+                                                    gblChosenThemeColors,
+                                                    Name = "Color1"
+                                                ).HEX
+                                            ),
+                                            "{{Color2}}",
+                                            LookUp(
+                                                gblChosenThemeColors,
+                                                Name = "Color2"
+                                            ).HEX
+                                        ),
+                                        "{{Color3}}",
+                                        LookUp(
+                                            gblChosenThemeColors,
+                                            Name = "Color3"
+                                        ).HEX
+                                    ),
+                                    "{{Color4}}",
+                                    LookUp(
+                                        gblChosenThemeColors,
+                                        Name = "Color4"
+                                    ).HEX
+                                )
+                            )
+                        OnSelect: =Select(btnSetIcon);
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =ThisItem.tm_name
+                        Width: =76
+                        X: =(Parent.TemplateWidth -Self.Width)/2
+                        Y: =4
+                        ZIndex: =6
+
+                ddPageSize As dropdown:
+                    BorderThickness: =1
+                    Default: ="100"
+                    FocusedBorderThickness: =2
+                    Height: =25
+                    Items: =["50","70","80","100","500","1000"]
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    Width: =90
+                    X: =Parent.Width -Self.Width -16
+                    Y: =Parent.Height -35
+                    ZIndex: =3
+
+                lbl_paging As label:
+                    Align: =Align.Center
+                    Color: =ThisTheme.Color1
+                    Height: =25
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Text: |-
+                        =varPageNumber & " of "&RoundUp(CountRows(colIcons)/ddPageSize.SelectedText.Value,0)
+                        
+                        
+                        /*varPageNumber & " of " & Switch(
+                            gal_menu.Selected.MenuText,
+                            "Fluent UI",
+                            RoundUp(
+                                CountRows(FluentUI) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Material Design",
+                            RoundUp(
+                                CountRows(MaterialDesign) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Simple Icons",
+                            RoundUp(
+                                CountRows(SimpleIcons) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Game Icons",
+                            RoundUp(
+                                CountRows(GameIcons) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Font Awesome",
+                            RoundUp(
+                                CountRows(FontAwesome) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Remix",
+                            RoundUp(
+                                CountRows(Remix) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Bootstrap",
+                            RoundUp(
+                                CountRows(Bootstrap) / ddPageSize.SelectedText.Value,
+                                0
+                            ), 
+                            "Tabler",
+                            RoundUp(
+                                CountRows(Tabler) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                             "Feather",
+                            RoundUp(
+                                CountRows(Feather) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                             "Octicons",
+                            RoundUp(
+                                CountRows(Octicons) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                             "Twemoji",
+                            RoundUp(
+                                CountRows(Twemoji) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                             "VS Code",
+                            RoundUp(
+                                CountRows(VSCode) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Teeny",
+                            RoundUp(
+                                CountRows(Teeny) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Box",
+                            RoundUp(
+                                CountRows(Box) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "La Capitaine",
+                            RoundUp(
+                                CountRows(lacaptaine) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Hero",
+                            RoundUp(
+                                CountRows(HeroIcons) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Public Domain",
+                            RoundUp(
+                                CountRows(PublicDomains) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Weather",
+                            RoundUp(
+                                CountRows(Weather) / ddPageSize.SelectedText.Value,
+                                0
+                            ),"Weather Animated",
+                            RoundUp(
+                                CountRows(WeatherAni) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Pixelart",
+                            RoundUp(
+                                CountRows(PixelArt) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Microsoft Graphics",
+                            RoundUp(
+                                CountRows(MSIcons) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Flags",
+                            RoundUp(
+                                CountRows(flags) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "Icofont",
+                            RoundUp(
+                                CountRows(Icofont) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                            "AzDevMDL2",
+                            RoundUp(
+                                CountRows(AzDevMDL2) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                             "SegoeMDL2",
+                            RoundUp(
+                                CountRows(SegoeMDL2) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                             "Bowtie",
+                            RoundUp(
+                                CountRows(Bowtie) / ddPageSize.SelectedText.Value,
+                                0
+                            ),
+                             "Crypto Icons",
+                            RoundUp(
+                                CountRows(Crypto) / ddPageSize.SelectedText.Value,
+                                0
+                            )
+                        )*/
+                    Width: =108
+                    X: =Parent.Width/2 -54
+                    Y: =Parent.Height -35
+                    ZIndex: =4
+
+                img_next As image:
+                    DisabledFill: =Transparent
+                    DisplayMode: |-
+                        =If(
+                            ddPageSize.SelectedText.Value * varPageNumber < CountRows(colIcons),
+                            DisplayMode.Edit,
+                            DisplayMode.Disabled
+                        )
+                    Fill: =ThisTheme.Color3Light
+                    FocusedBorderThickness: =2
+                    Height: =25
+                    Image: |-
+                        =If(img_next_last.DisplayMode = DisplayMode.Disabled,"data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M3 4.753C3 3.34519 4.57781 2.51363 5.73916 3.30937L16.2376 10.5028C17.2478 11.1949 17.253 12.6839 16.2477 13.3831L5.7492 20.6847C4.58887 21.4917 3 20.6613 3 19.248V4.753ZM4.89131 4.54677C4.7254 4.43309 4.5 4.55189 4.5 4.753V19.248C4.5 19.4499 4.72698 19.5685 4.89274 19.4532L15.3912 12.1517C15.5348 12.0518 15.5341 11.8391 15.3898 11.7402L4.89131 4.54677ZM20.9999 3.75C20.9999 3.33579 20.6641 3 20.2499 3C19.8357 3 19.4999 3.33579 19.4999 3.75V20.25C19.4999 20.6642 19.8357 21 20.2499 21C20.6641 21 20.9999 20.6642 20.9999 20.25V3.75Z' fill='#cccccc'/> </svg>"),
+                        "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M3 4.753C3 3.34519 4.57781 2.51363 5.73916 3.30937L16.2376 10.5028C17.2478 11.1949 17.253 12.6839 16.2477 13.3831L5.7492 20.6847C4.58887 21.4917 3 20.6613 3 19.248V4.753ZM4.89131 4.54677C4.7254 4.43309 4.5 4.55189 4.5 4.753V19.248C4.5 19.4499 4.72698 19.5685 4.89274 19.4532L15.3912 12.1517C15.5348 12.0518 15.5341 11.8391 15.3898 11.7402L4.89131 4.54677ZM20.9999 3.75C20.9999 3.33579 20.6641 3 20.2499 3C19.8357 3 19.4999 3.33579 19.4999 3.75V20.25C19.4999 20.6642 19.8357 21 20.2499 21C20.6641 21 20.9999 20.6642 20.9999 20.25V3.75Z' fill='"& Mid(Color1JSON,2,7)&"'/> </svg>"))
+                    OnSelect: |-
+                        =UpdateContext({varPageNumber: varPageNumber + 1});Select(btnSetIcon)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =20
+                    X: =lbl_paging.X + lbl_paging.Width
+                    Y: =Parent.Height -35
+                    ZIndex: =5
+
+                img_prev As image:
+                    DisabledFill: =Transparent
+                    DisplayMode: =If(varPageNumber = 1, DisplayMode.Disabled, DisplayMode.Edit)
+                    Fill: =ThisTheme.Color3Light
+                    FocusedBorderThickness: =1
+                    Height: =25
+                    Image: |-
+                        =If(img_prev.DisplayMode = DisplayMode.Disabled,
+                        "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M20.9999 4.753C20.9999 3.34519 19.4221 2.51363 18.2607 3.30937L7.76228 10.5028C6.7521 11.1949 6.74691 12.6839 7.75223 13.3831L18.2507 20.6847C19.411 21.4917 20.9999 20.6613 20.9999 19.248V4.753ZM19.1086 4.54677C19.2745 4.43309 19.4999 4.55189 19.4999 4.753V19.248C19.4999 19.4499 19.2729 19.5685 19.1072 19.4532L8.60869 12.1517C8.46507 12.0518 8.46581 11.8391 8.61013 11.7402L19.1086 4.54677ZM3 3.75C3 3.33579 3.33579 3 3.75 3C4.16421 3 4.5 3.33579 4.5 3.75V20.25C4.5 20.6642 4.16421 21 3.75 21C3.33579 21 3 20.6642 3 20.25V3.75Z' fill='#cccccc'/> </svg>"),
+                        "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M20.9999 4.753C20.9999 3.34519 19.4221 2.51363 18.2607 3.30937L7.76228 10.5028C6.7521 11.1949 6.74691 12.6839 7.75223 13.3831L18.2507 20.6847C19.411 21.4917 20.9999 20.6613 20.9999 19.248V4.753ZM19.1086 4.54677C19.2745 4.43309 19.4999 4.55189 19.4999 4.753V19.248C19.4999 19.4499 19.2729 19.5685 19.1072 19.4532L8.60869 12.1517C8.46507 12.0518 8.46581 11.8391 8.61013 11.7402L19.1086 4.54677ZM3 3.75C3 3.33579 3.33579 3 3.75 3C4.16421 3 4.5 3.33579 4.5 3.75V20.25C4.5 20.6642 4.16421 21 3.75 21C3.33579 21 3 20.6642 3 20.25V3.75Z' fill='"& Mid(Color1JSON,2,7)&"'/> </svg>")) 
+                    OnSelect: |-
+                        =UpdateContext({varPageNumber: varPageNumber - 1});Select(btnSetIcon)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =20
+                    X: =lbl_paging.X -20
+                    Y: =Parent.Height -35
+                    ZIndex: =6
+
+                img_prev_first As image:
+                    DisabledFill: =Transparent
+                    DisplayMode: =If(varPageNumber = 1, DisplayMode.Disabled, DisplayMode.Edit)
+                    Fill: =ThisTheme.Color3Light
+                    FocusedBorderThickness: =0
+                    Height: =25
+                    Image: |-
+                        =If(img_prev_first.DisplayMode = DisplayMode.Disabled,
+                        "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24'  xmlns='http://www.w3.org/2000/svg'> <path d='M12.5007 5.50338C12.5007 4.22433 11.0026 3.53209 10.0285 4.36107L2.61872 10.6673C1.79765 11.3661 1.79767 12.6339 2.61875 13.3327L10.0285 19.6386C11.0026 20.4676 12.5007 19.7753 12.5007 18.4963V14.5086L18.5295 19.6392C19.5035 20.4682 21.0016 19.7759 21.0016 18.4969V5.504C21.0016 4.22495 19.5035 3.53272 18.5295 4.3617L12.5007 9.49258V5.50338ZM12.5007 12.5389V11.4623L19.5016 5.504V18.4969L12.5007 12.5389ZM3.5909 11.8096L11.0007 5.50338V18.4963L3.5909 12.1904C3.47361 12.0905 3.4736 11.9094 3.5909 11.8096Z' fill='#cccccc'/> </svg>"),
+                        "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24'  xmlns='http://www.w3.org/2000/svg'> <path d='M12.5007 5.50338C12.5007 4.22433 11.0026 3.53209 10.0285 4.36107L2.61872 10.6673C1.79765 11.3661 1.79767 12.6339 2.61875 13.3327L10.0285 19.6386C11.0026 20.4676 12.5007 19.7753 12.5007 18.4963V14.5086L18.5295 19.6392C19.5035 20.4682 21.0016 19.7759 21.0016 18.4969V5.504C21.0016 4.22495 19.5035 3.53272 18.5295 4.3617L12.5007 9.49258V5.50338ZM12.5007 12.5389V11.4623L19.5016 5.504V18.4969L12.5007 12.5389ZM3.5909 11.8096L11.0007 5.50338V18.4963L3.5909 12.1904C3.47361 12.0905 3.4736 11.9094 3.5909 11.8096Z' fill='"& Mid(Color1JSON,2,7)&"'/> </svg>"))
+                    OnSelect: |-
+                        =UpdateContext({varPageNumber: 1});Select(btnSetIcon)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =20
+                    X: =lbl_paging.X-50
+                    Y: =Parent.Height -35
+                    ZIndex: =7
+
+                img_next_last As image:
+                    DisabledFill: =Transparent
+                    DisplayMode: |-
+                        =If(
+                            ddPageSize.SelectedText.Value * varPageNumber < CountRows(colIcons),
+                            DisplayMode.Edit,
+                            DisplayMode.Disabled
+                        )
+                    Fill: =ThisTheme.Color3Light
+                    FocusedBorderThickness: =2
+                    Height: =25
+                    Image: |-
+                        =If(img_next_last.DisplayMode = DisplayMode.Disabled,"data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24'  xmlns='http://www.w3.org/2000/svg'> <path d='M11.5 5.50289C11.5 4.22384 12.9981 3.5316 13.9722 4.36058L21.3819 10.6668C22.203 11.3656 22.203 12.6334 21.3819 13.3322L13.9721 19.6381C12.9981 20.4671 11.5 19.7748 11.5 18.4958V14.5091L5.47215 19.639C4.4981 20.4679 3 19.7757 3 18.4966V5.50373C3 4.22468 4.49813 3.53244 5.47218 4.36142L11.5 9.49148V5.50289ZM11.5 11.4612L4.5 5.50373V18.4966L11.5 12.5395V11.4612ZM20.4098 11.8091L13 5.50289V18.4958L20.4098 12.1899C20.5271 12.0901 20.5271 11.9089 20.4098 11.8091Z' fill='#cccccc'/> </svg>"),
+                        "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24'  xmlns='http://www.w3.org/2000/svg'> <path d='M11.5 5.50289C11.5 4.22384 12.9981 3.5316 13.9722 4.36058L21.3819 10.6668C22.203 11.3656 22.203 12.6334 21.3819 13.3322L13.9721 19.6381C12.9981 20.4671 11.5 19.7748 11.5 18.4958V14.5091L5.47215 19.639C4.4981 20.4679 3 19.7757 3 18.4966V5.50373C3 4.22468 4.49813 3.53244 5.47218 4.36142L11.5 9.49148V5.50289ZM11.5 11.4612L4.5 5.50373V18.4966L11.5 12.5395V11.4612ZM20.4098 11.8091L13 5.50289V18.4958L20.4098 12.1899C20.5271 12.0901 20.5271 11.9089 20.4098 11.8091Z' fill='"& Mid(Color1JSON,2,7)&"'/> </svg>"))
+                    OnSelect: |-
+                        =UpdateContext(
+                            {
+                                varPageNumber: RoundUp(
+                                        CountRows(colIcons) / ddPageSize.SelectedText.Value,
+                                        0
+                                    )
+                            }
+                        );
+                        Select(btnSetIcon)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =20
+                    X: =lbl_paging.X + lbl_paging.Width+30
+                    Y: =Parent.Height -35
+                    ZIndex: =8
+
+                Label8 As label:
+                    Align: =Align.Right
+                    Height: =25
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Text: ="Page Size"
+                    X: =Parent.Width -Self.Width -120
+                    Y: =Parent.Height -35
+                    ZIndex: =9
+
+                lblNofavs_is As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: ="You don't have any favourites saved yet, they will appear here once saved!"
+                    Visible: =CountRows(colIcons)=0 And galMenu.Selected.ID = 1
+                    Width: =400
+                    X: =(Parent.Width-Self.Width)/2
+                    Y: =200
+                    ZIndex: =14
+
+                "ProgressIndicator1 As 'Fluent Progress Indicator (1.0.9) Preview'":
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =10
+                    PercentComplete: =If(!IsBlank(iconCount),(CountRows(colIcons)/iconCount)*100)
+                    Visible: =loadingIcons
+                    Width: =344
+                    X: =lbliconsHeader_is.X
+                    Y: =32
+                    ZIndex: =21
+
+                Container3 As groupContainer.horizontalAutoLayoutContainer:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =46
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =5
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width
+                    Y: =3
+                    ZIndex: =22
+
+                    imgLoading As image:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =40
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Image: |-
+                            ="data:image/svg+xml," & EncodeUrl("<svg class='lds-spinner' width='75px'  height='75px'  xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'><g transform='rotate(0 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.9375s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(22.5 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.875s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(45 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.8125s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(67.5 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.75s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(90 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.6875s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(112.5 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.625s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(135 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.5625s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(157.5 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.5s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(180 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.4375s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(202.5 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.375s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(225 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.3125s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(247.5 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.25s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(270 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.1875s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(292.5 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.125s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(315 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='-0.0625s' repeatCount='indefinite'></animate>   </rect> </g><g transform='rotate(337.5 50 50)'>   <rect x='47' y='18' rx='2' ry='2' width='6' height='14' fill='#ff7c81'>     <animate attributeName='opacity' values='1;0' times='0;1' dur='1s' begin='0s' repeatCount='indefinite'></animate>   </rect> </g></svg>")
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =loadingIcons
+                        Width: =40
+                        X: =16
+                        Y: =3
+                        ZIndex: =1
+
+                    Icon1_1 As icon.ArrowsUpDown:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =40
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Sort
+                        OnSelect: |-
+                            =If(iconsort = Ascending,UpdateContext({iconsort:Descending}),UpdateContext({iconsort:Ascending}))
+                        PaddingBottom: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Visible: =!loadingIcons
+                        Width: =65
+                        X: =16
+                        Y: =28
+                        ZIndex: =2
+
+                    lbliconsHeader_is As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =ThisTheme.Color1
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FillPortions: =1
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Role: =TextRole.Heading3
+                        Size: =13
+                        Text: |
+                            =If(
+                                isSearching,
+                                "Search Results ( " & CountRows(colIcons) & " )",
+                               
+                                    If(
+                                        galMenu.Selected.tm_name = "My Favourites",
+                                        galMenu.Selected.tm_name,
+                                        galMenu.Selected.tm_name & " (" & CountRows(colIcons) & " ) " &galMenu.Selected.tm_version
+                                    )
+                                )
+                        Width: =300
+                        X: =99
+                        Y: =15
+                        ZIndex: =3
+
+                    lblSizeSet_is_1 As label:
+                        Align: =Align.Right
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =ThisTheme.Color1
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =34
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Role: =TextRole.Heading3
+                        Size: =FontSizes.TextMain
+                        Text: |-
+                            ="Size:"
+                        Visible: =!loadingIcons And !isSearching And CountRows(colSizes)>1
+                        Width: =63
+                        X: =181
+                        Y: =6
+                        ZIndex: =4
+
+                    drpSizes_1 As combobox:
+                        DisplayFields: =["Result"]
+                        Height: =34
+                        IsSearchable: =false
+                        Items: =Sort(colSizes,Result,Ascending)
+                        MoreItemsButtonColor: =Self.ChevronBackground
+                        OnChange: =Select(btnFilterColIcons)
+                        SearchFields: =["Result"]
+                        SearchItems: =[]
+                        SelectMultiple: =false
+                        Visible: =!loadingIcons And !isSearching And CountRows(colSizes)>1
+                        Width: =130
+                        X: =244
+                        Y: =6
+                        ZIndex: =5
+
+                    Label7_4 As label:
+                        Align: =Align.Right
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =ThisTheme.Color1
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =34
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Role: =TextRole.Heading3
+                        Size: =FontSizes.TextMain
+                        Text: |-
+                            ="Type:"
+                        Visible: =!loadingIcons And !isSearching And CountRows(colSizes)>1
+                        Width: =63
+                        X: =416
+                        Y: =6
+                        ZIndex: =6
+
+                    cmbTypes_1 As combobox:
+                        DisplayFields: =["Result"]
+                        Height: =34
+                        IsSearchable: =false
+                        Items: =colDesc
+                        MoreItemsButtonColor: =Self.ChevronBackground
+                        OnChange: =Select(btnFilterColIcons)
+                        SearchFields: =["Result"]
+                        SearchItems: =[]
+                        SelectMultiple: =false
+                        Visible: =!loadingIcons And !isSearching And CountRows(colSizes)>1
+                        Width: =130
+                        X: =63
+                        Y: =6
+                        ZIndex: =7
+
+                    inpSearch As text:
+                        AccessibleLabel: ="enter search text"
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        Default: =""
+                        DelayOutput: =false
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =34
+                        HintText: ="Search"
+                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        OnChange: |
+                            =If(
+                                Not(IsBlank(inpSearch.Text)),
+                                UpdateContext(
+                                    {
+                                        isSearching: true,
+                                        varPageNumber: 1
+                                    }
+                                );
+                                Clear(colIcons);
+                                Collect(
+                                    colIcons,
+                                    
+                                        Search(
+                                            Icons,
+                                            inpSearch.Text,
+                                            "tm_name"
+                                        )
+                                    )
+                                
+                            );
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(51, 51, 51, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =13
+                        Tooltip: ="Search Icons"
+                        X: =Parent.Width -Self.Width - icoSearch_is.Width
+                        Y: =6
+                        ZIndex: =8
+
+                    icoSearch_is As icon.Search:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =34
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Search
+                        OnSelect: |
+                            =If(
+                                Not(IsBlank(inpSearch.Text)),
+                                UpdateContext(
+                                    {
+                                        isSearching: true,
+                                        varPageNumber: 1
+                                    }
+                                );
+                                Clear(colIcons);
+                                Collect(
+                                    colIcons,
+                                    
+                                        Search(
+                                            Icons,
+                                            inpSearch.Text,
+                                            "tm_name"
+                                        )
+                                    )
+                                
+                            );
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =60
+                        X: =Parent.Width -Self.Width 
+                        Y: =6
+                        ZIndex: =9
+
+            conWorkbench_is As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Fill: =Transparent
+                FillPortions: =0
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =3
+
+                "'color-functions_3' As 'color-functions'":
+                    AchromatomalyColor: |-
+                        =RGBA(
+                              (R * 61.8 / 100.0 + G * 32 / 100.0 + B * 6.2 / 100.0),
+                              (R * 16.3 / 100.0 + G * 77.5 / 100.0 + B * 6.2 / 100.0),
+                              (R * 16.3 / 100.0 + G * 32.0 / 100.0 + B * 51.6 / 100.0),1
+                          )
+                        /*
+                        Achromatomaly:
+                        R:[61.8, 32,    6.2]
+                        G:[16.3, 77.5,  6.2]
+                        B:[16.3, 32.0, 51.6]
+                        */
+                    AchromatopsiaColor: |-
+                        =RGBA(
+                              (R * 29.9 / 100.0 + G * 58.7 / 100.0 + B * 11.4 / 100.0),
+                              (R * 29.9 / 100.0 + G * 58.7 / 100.0 + B * 11.4 / 100.0),
+                              (R * 29.9 / 100.0 + G * 58.7 / 100.0 + B * 11.4 / 100.0),1
+                          )
+                        /*
+                        Achromatopsia:
+                        R:[29.9, 58.7, 11.4]
+                        G:[29.9, 58.7, 11.4]
+                        B:[29.9, 58.7, 11.4]
+                        */
+                    chkContrast: |-
+                        =If(
+                            // Check which Value is higher, calculation then is (darkColor+0.05) / (lightColor+0.05)
+                            LightColor >DarkColor,
+                            Text(
+                                Sum((LightColor + 0.05) / (DarkColor + 0.05)),
+                                "[$-en-GB]#.000"
+                            ),
+                            Text(
+                                Sum((DarkColor + 0.05) / (LightColor + 0.05)),
+                                "[$-en-GB]#.000"
+                            )
+                        )
+                    DeuteranomalyColor: |-
+                        =RGBA(
+                              (R * 80 / 100.0 + G * 20 / 100.0 + B * 0 / 100.0),
+                              (R * 25.833 / 100.0 + G * 74.167 / 100.0 + B * 0 / 100.0),
+                              (R * 0 / 100.0 + G * 14.167 / 100.0 + B * 85.833 / 100.0),1
+                          )
+                        
+                        /*
+                        Deuteranomaly:
+                        R:[80,     20,      0]
+                        G:[25.833, 74.167,  0]
+                        B: [0,     14.167, 85.833]
+                        */
+                    DeuteranopiaColor: |-
+                        =RGBA(
+                              (R * 62.5 / 100.0 + G * 37.5 / 100.0 + B * 0 / 100.0),
+                              (R * 70 / 100.0 + G * 30 / 100.0 + B * 0 / 100.0),
+                              (R * 0 / 100.0 + G * 30 / 100.0 + B * 70 / 100.0),1
+                          )
+                        
+                        /*
+                        
+                         Deuteranopia: 
+                            R:[62.5, 37.5,  0]
+                            G:[70,   30,    0]
+                            B: [0,   30,   70]
+                            */
+                    getLuminance: |-
+                        =Sum(
+                            ('color-functions'.sRGBtoLIN(R) * 0.2126) + 
+                            ('color-functions'.sRGBtoLIN(G) * 0.7152) + 
+                            ('color-functions'.sRGBtoLIN(B) * 0.0722)
+                        )
+                    Height: =0
+                    ProtanomalyColor: |-
+                        =// Return Protanomaly RGB Color 
+                        RGBA(
+                              (R * 81.667 / 100.0 + G * 18.333 / 100.0 + B * 0 / 100.0),
+                              (R * 33.333 / 100.0 + G * 66.667 / 100.0 + B * 0 / 100.0),
+                              (R * 0 / 100.0 + G * 12.5 / 100.0 + B * 87.5 / 100.0),1
+                          )
+                        
+                        /*
+                        Protanomaly:  
+                        R:[81.667, 18.333,    0]
+                        G:[33.333, 66.667,    0]
+                        B:[     0    12.5, 87.5]
+                        
+                        */
+                    ProtanopiaColor: |-
+                        =// Return Protanopia RGB Color 
+                        RGBA(
+                              (R * 56.667 / 100.0 + G * 43.333 / 100.0 + B * 0 / 100.0),
+                              (R * 55.833 / 100.0 + G * 44.167 / 100.0 + B * 0 / 100.0),
+                              (R * 0 / 100.0 + G * 24.167 / 100.0 + B * 75.833 / 100.0),1
+                          )
+                        /*
+                        Protanopia: 
+                        R:[56.667, 43.333,      0]
+                        G:[55.833, 44.167,      0]
+                        B:[     0, 24.167, 75.833]
+                        
+                        */
+                    sRGBtoLIN: |-
+                        =If(
+                            Sum(colorChannel / 255) <= 0.03928,
+                            Sum(colorChannel / 255) / 12.92,
+                            Power(
+                                ((Sum(colorChannel / 255) + 0.055) / 1.055),
+                                2.4
+                            )
+                        )
+                    TritanomalyColor: |-
+                        =RGBA(
+                              (R * 96.667 / 100.0 + G * 3.333 / 100.0 + B * 0 / 100.0),
+                              (R * 0 / 100.0 + G * 73.333 / 100.0 + B * 26.667 / 100.0),
+                              (R * 0 / 100.0 + G * 18.333 / 100.0 + B * 81.667 / 100.0),1
+                          )
+                        /*
+                        Tritanomaly:  {
+                        R:[96.667, 3.333,   0],
+                        G: [0,     73.333, 26.667],
+                        B: [0,     18.333, 81.667]
+                        */
+                    TritanopiaColor: |-
+                        =RGBA(
+                              (R * 95 / 100.0 + G * 5 / 100.0 + B * 0 / 100.0),
+                              (R * 0 / 100.0 + G * 43.333 / 100.0 + B * 56.667 / 100.0),
+                              (R * 0 / 100.0 + G * 47.5 / 100.0 + B * 52.5 / 100.0),1
+                          )
+                        
+                        /*
+                        
+                        Tritanopia:   {
+                        R:[95,  5,      0],
+                        G: [0, 43.333, 56.667],
+                        B: [0, 47.5,   52.5]
+                            */
+                    Width: =0
+                    X: =500
+                    Y: =1015
+                    ZIndex: =1
+
+                lbl_IconName As label:
+                    Align: =Align.Center
+                    Color: =ThisTheme.Color1
+                    Fill: =ThisTheme.Color3Light
+                    FontWeight: =FontWeight.Bold
+                    Height: =32
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Role: =TextRole.Heading1
+                    Size: =FontSizes.SubTitle-2
+                    Text: =gal_icons.Selected.tm_name//If(upload, FileName,If(IsBlank(selectedIconName),gal_icons.Selected.Name,selectedIconName))
+                    Width: =478
+                    Wrap: =false
+                    X: =10
+                    Y: =35
+                    ZIndex: =13
+
+                galThemeIcons_is As gallery.galleryHorizontal:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =137
+                    Items: =Filter('Theme Icons',Theme.'Theme Name' = gblChosenTheme.'Theme Name')
+                    TemplateSize: =65
+                    Width: =484
+                    WrapCount: =2
+                    X: =7
+                    Y: =868
+                    ZIndex: =16
+
+                    "eleThemeIson_is As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =62
+                        Width: =65
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    imgThemeIcon_is As image:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =40
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Image: |-
+                            =Coalesce("data:image/svg+xml," & EncodeUrl(ThisItem.Icon),SampleImage)
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =5
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =65
+                        ZIndex: =2
+
+                    lblThemeName_is As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =22
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Size: =8
+                        Text: =ThisItem.Name
+                        Width: =65
+                        Wrap: =false
+                        Y: =40
+                        ZIndex: =3
+
+                    icoThemeIconDelete_is As icon.Trash:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =15
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Trash
+                        OnSelect: =Remove('Theme Icons',ThisItem)
+                        PaddingTop: =2
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =18
+                        X: =47
+                        ZIndex: =4
+
+                lblThemeIconsHeader_is As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =ThisTheme.Color1
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Role: =TextRole.Heading2
+                    Size: =FontSizes.SubTitle
+                    Text: =gblChosenTheme.'Theme Name' & " Iconography"
+                    Width: =479
+                    X: =7
+                    Y: =829
+                    ZIndex: =17
+
+                lblIconImageDataOFI_4 As label:
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =ThisTheme.Color1
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: =lblIconImageDataOFI_4.BorderColor
+                    Font: =Font.'Open Sans'
+                    FontWeight: =FontWeight.Semibold
+                    Height: |
+                        =30
+                    HoverBorderColor: =lblIconImageDataOFI_4.BorderColor
+                    HoverColor: =lblIconImageDataOFI_4.Color
+                    HoverFill: =lblIconImageDataOFI_4.Fill
+                    PaddingBottom: =5
+                    PaddingLeft: =10
+                    PaddingRight: =6.03
+                    PaddingTop: =6.03
+                    PressedBorderColor: =lblIconImageDataOFI_4.BorderColor
+                    PressedColor: =lblIconImageDataOFI_4.Color
+                    PressedFill: =lblIconImageDataOFI_4.Fill
+                    Role: =TextRole.Heading2
+                    Size: =FontSizes.SubTitle
+                    Text: ="Icon image data "
+                    Width: =249
+                    X: =7
+                    Y: =495
+                    ZIndex: =18
+
+                TextInput2 As text:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: |-
+                        ="""data:image/svg+xml,"" & EncodeUrl(""" & iconJSON &""")"
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =275
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    Mode: =TextMode.MultiLine
+                    OnChange: |-
+                        =UpdateContext({iconImageText:TextInput2.Text})
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =10.5
+                    Width: =474
+                    X: =12
+                    Y: =531
+                    ZIndex: =19
+
+                DecodeURL_1 As DecodeURL:
+                    Height: =10
+                    UrlToDecode: =selected_Icon.Image
+                    Width: =8
+                    X: =492
+                    Y: =1005
+                    ZIndex: =20
+
+                selected_Icon As image:
+                    DisabledFill: =
+                    Fill: =ColorValue(iconBackground.inputValue)
+                    FocusedBorderThickness: =2
+                    Height: =248
+                    HoverBorderColor: =
+                    HoverFill: =Self.Fill
+                    Image: |-
+                        ="data:image/svg+xml," & EncodeUrl(
+                            Substitute(Substitute(
+                                Substitute(
+                                    Substitute(
+                                        Substitute(
+                                            Substitute(
+                                                Substitute(
+                                                    iconSelected,
+                                                    "{{IconColor}}",
+                                                    iconForeground.inputValue
+                                                ),
+                                                "{{BackgroundColor}}",
+                                                iconBackground.inputValue
+                                            ),
+                                            "{{Color1}}",
+                                            LookUp(
+                                                gblChosenThemeColors,
+                                                Name = "Color1"
+                                            ).HEX
+                                        ),
+                                        "{{Color2}}",
+                                        LookUp(
+                                            gblChosenThemeColors,
+                                            Name = "Color2"
+                                        ).HEX
+                                    ),
+                                    "{{Color3}}",
+                                    LookUp(
+                                        gblChosenThemeColors,
+                                        Name = "Color3"
+                                    ).HEX
+                                ),
+                                "{{Color4}}",
+                                LookUp(
+                                    gblChosenThemeColors,
+                                    Name = "Color4"
+                                ).HEX
+                            ),"path ",
+                            "path " & transform & " "
+                            )
+                        )
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    PressedBorderColor: =
+                    PressedFill: =Self.Fill
+                    RadiusBottomLeft: =10
+                    RadiusBottomRight: =10
+                    RadiusTopLeft: =10
+                    RadiusTopRight: =10
+                    Width: =253
+                    X: =128
+                    Y: =68
+                    ZIndex: =21
+
+                TextInput1 As text:
+                    Align: =Align.Center
+                    BorderColor: =ThisTheme.Color2Light
+                    BorderThickness: =1
+                    Color: =ThisTheme.Color1
+                    Default: =rotate
+                    DelayOutput: =false
+                    Fill: =ThisTheme.Color2Light
+                    FocusedBorderThickness: =4
+                    Height: =24
+                    OnChange: |-
+                        =UpdateContext({rotate:Value(TextInput1.Text)});
+                        UpdateContext({transform: " transform='rotate (" & rotate & ")' transform-origin='center' "})
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    RadiusBottomLeft: =1
+                    RadiusBottomRight: =1
+                    RadiusTopLeft: =1
+                    RadiusTopRight: =1
+                    Width: =89
+                    X: =391
+                    Y: =145
+                    ZIndex: =22
+
+                selected_Icon_1 As image:
+                    DisplayMode: |-
+                        =If(
+                            Or(
+                                gal_icons.Selected.tm_set = "fluent-emoji-color",
+                                gal_icons.Selected.tm_set = "fluent-emoji-flat",
+                                gal_icons.Selected.tm_set = "fluent-emoji-high_contrast"
+                            ),
+                            DisplayMode.Disabled,
+                            DisplayMode.Edit
+                        )
+                    Fill: |-
+                        =ColorValue(Mid(Color2LightJSON,2,9))
+                        //If(upload,ColorValue(icon_background.inputValue),If(gal_menu.Selected.ID=1,ColorValue(gal_myfavs.Selected.LightColor), ColorValue(icon_background.inputValue)))
+                    FocusedBorderThickness: =2
+                    Height: =40
+                    HoverFill: =Self.Fill
+                    Image: |-
+                        ="data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M12 3C7.02944 3 3 7.02944 3 12C3 15.0777 4.55928 17.865 7.0231 19.5009L5.25 19.5C4.83579 19.5 4.5 19.8358 4.5 20.25C4.5 20.6297 4.78215 20.9435 5.14823 20.9932L5.25 21H9.25C9.6297 21 9.94349 20.7178 9.99315 20.3518L10 20.25V16.25C10 15.8358 9.66421 15.5 9.25 15.5C8.8703 15.5 8.55651 15.7822 8.50685 16.1482L8.5 16.25L8.49903 18.635C6.07593 17.3557 4.5 14.8247 4.5 12C4.5 7.85786 7.85786 4.5 12 4.5C16.1421 4.5 19.5 7.85786 19.5 12C19.5 12.4142 19.8358 12.75 20.25 12.75C20.6642 12.75 21 12.4142 21 12C21 7.02944 16.9706 3 12 3ZM12 9.25C10.4812 9.25 9.25 10.4812 9.25 12C9.25 13.5188 10.4812 14.75 12 14.75C13.5188 14.75 14.75 13.5188 14.75 12C14.75 10.4812 13.5188 9.25 12 9.25ZM12 10.75C12.6904 10.75 13.25 11.3096 13.25 12C13.25 12.6904 12.6904 13.25 12 13.25C11.3096 13.25 10.75 12.6904 10.75 12C10.75 11.3096 11.3096 10.75 12 10.75Z' fill='"&Mid(Color1JSON,2,7)&"'/> </svg>")
+                    OnSelect: |-
+                        =UpdateContext({rotate: rotate - 45});
+                        If(
+                            rotate = -360,
+                            UpdateContext({rotate: 0})
+                        );
+                        UpdateContext({transform: " transform='rotate (" & rotate & ")' transform-origin='center' "});
+                        Set(
+                            icon_image_text,
+                            Substitute(
+                                icon_image_text,
+                                "path d",
+                                "path " & transform & " d"
+                            )
+                        );
+                        Select(btnSetIcon)
+                    PaddingBottom: =1
+                    PaddingLeft: =1
+                    PaddingRight: =1
+                    PaddingTop: =1
+                    PressedBorderColor: =Self.BorderColor
+                    PressedFill: =Self.Fill
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =40
+                    X: =391
+                    Y: =99
+                    ZIndex: =23
+
+                selected_Icon_3 As image:
+                    DisplayMode: =If(Or(gal_icons.Selected.tm_set = "fluent-emoji-color",gal_icons.Selected.tm_set = "fluent-emoji-flat",gal_icons.Selected.tm_set = "fluent-emoji-high_contrast"),DisplayMode.Disabled,DisplayMode.Edit)
+                    Fill: |-
+                        =ColorValue(Mid(Color2LightJSON,2,9))
+                        //If(upload,ColorValue(icon_background.inputValue),If(gal_menu.Selected.ID=1,ColorValue(gal_myfavs.Selected.LightColor), ColorValue(icon_background.inputValue)))
+                    FocusedBorderThickness: =2
+                    Height: =40
+                    HoverFill: =Self.Fill
+                    Image: |-
+                        ="data:image/svg+xml," & EncodeUrl("<svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M25.8821 23.6536C25.7443 23.8693 25.506 23.9998 25.25 23.9998H15.75C15.3358 23.9998 15 23.664 15 23.2498L15 2.74983C15 2.39783 15.2448 2.09319 15.5885 2.01742C15.9323 1.94164 16.2825 2.11511 16.4305 2.43448L25.9305 22.9345C26.0381 23.1667 26.0199 23.4378 25.8821 23.6536ZM16.5 6.15201V22.4998H24.0758L16.5 6.15201ZM2.75 24.0001C2.49403 24.0001 2.25573 23.8695 2.11794 23.6538C1.98015 23.4381 1.96189 23.167 2.06952 22.9347L11.5695 2.43473C11.7175 2.11536 12.0677 1.94188 12.4115 2.01766C12.7552 2.09344 13 2.39808 13 2.75007L13 23.2501C13 23.6643 12.6642 24.0001 12.25 24.0001H2.75Z' fill='"&Mid(Color1JSON,2,7)&"'/> </svg>")
+                    OnSelect: |-
+                        =UpdateContext({transform: " transform='scale (-1, 1)' transform-origin='center' "});Select(btnSetIcon)
+                    PaddingBottom: =2
+                    PaddingLeft: =2
+                    PaddingRight: =2
+                    PaddingTop: =2
+                    PressedBorderColor: =Self.Fill
+                    PressedFill: =Self.Fill
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =40
+                    X: =390
+                    Y: =199
+                    ZIndex: =24
+
+                selected_Icon_4 As image:
+                    DisplayMode: =If(Or(gal_icons.Selected.tm_set = "fluent-emoji-color",gal_icons.Selected.tm_set = "fluent-emoji-flat",gal_icons.Selected.tm_set = "fluent-emoji-high_contrast"),DisplayMode.Disabled,DisplayMode.Edit)
+                    Fill: |-
+                        =ColorValue(Mid(Color2LightJSON,2,9))
+                        //If(upload,ColorValue(icon_background.inputValue),If(gal_menu.Selected.ID=1,ColorValue(gal_myfavs.Selected.LightColor), ColorValue(icon_background.inputValue)))
+                    FocusedBorderThickness: =2
+                    Height: =40
+                    HoverFill: =Self.Fill
+                    Image: |-
+                        ="data:image/svg+xml," & EncodeUrl("<svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M27.5402 2.15838C27.8268 2.3423 28.0001 2.65945 28.0001 3V14C28.0001 14.5523 27.5524 15 27.0001 15H3.0001C2.52998 15 2.12334 14.6725 2.0231 14.2132C1.92285 13.7539 2.15608 13.2868 2.58344 13.0909L26.5834 2.09094C26.893 1.94904 27.2535 1.97446 27.5402 2.15838ZM7.58199 13H26.0001V4.55837L7.58199 13ZM28.0001 29C28.0001 29.3406 27.8268 29.6577 27.5402 29.8416C27.2535 30.0255 26.893 30.051 26.5834 29.9091L2.58344 18.9091C2.15608 18.7132 1.92285 18.2461 2.0231 17.7868C2.12334 17.3275 2.52998 17 3.0001 17H27.0001C27.5524 17 28.0001 17.4477 28.0001 18V29Z' fill='"&Mid(Color1JSON,2,7)&"'/> </svg>")
+                    OnSelect: |-
+                        =UpdateContext({flip_vertical:!flip_vertical});UpdateContext({transform: " transform='scale (1, -1)' transform-origin='center' "});Select(btnSetIcon)
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =Self.Fill
+                    PressedFill: =Self.Fill
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =40
+                    X: =441
+                    Y: =199
+                    ZIndex: =25
+
+                selected_Icon_2 As image:
+                    DisplayMode: =If(Or(gal_icons.Selected.tm_set = "fluent-emoji-color",gal_icons.Selected.tm_set = "fluent-emoji-flat",gal_icons.Selected.tm_set = "fluent-emoji-high_contrast"),DisplayMode.Disabled,DisplayMode.Edit)
+                    Fill: |-
+                        =ColorValue(Mid(Color2LightJSON,2,9))
+                        //If(upload,ColorValue(icon_background.inputValue),If(gal_menu.Selected.ID=1,ColorValue(gal_myfavs.Selected.LightColor), ColorValue(icon_background.inputValue)))
+                    FocusedBorderThickness: =2
+                    Height: =40
+                    HoverFill: =Self.Fill
+                    Image: |-
+                        ="data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M12 3C16.9706 3 21 7.02944 21 12C21 15.0777 19.4407 17.865 16.9769 19.5009L18.75 19.5C19.1642 19.5 19.5 19.8358 19.5 20.25C19.5 20.6297 19.2178 20.9435 18.8518 20.9932L18.75 21H14.75C14.3703 21 14.0565 20.7178 14.0068 20.3518L14 20.25V16.25C14 15.8358 14.3358 15.5 14.75 15.5C15.1297 15.5 15.4435 15.7822 15.4932 16.1482L15.5 16.25L15.501 18.635C17.9241 17.3557 19.5 14.8247 19.5 12C19.5 7.85786 16.1421 4.5 12 4.5C7.85786 4.5 4.5 7.85786 4.5 12C4.5 12.4142 4.16421 12.75 3.75 12.75C3.33579 12.75 3 12.4142 3 12C3 7.02944 7.02944 3 12 3ZM12 9.25C13.5188 9.25 14.75 10.4812 14.75 12C14.75 13.5188 13.5188 14.75 12 14.75C10.4812 14.75 9.25 13.5188 9.25 12C9.25 10.4812 10.4812 9.25 12 9.25ZM12 10.75C11.3096 10.75 10.75 11.3096 10.75 12C10.75 12.6904 11.3096 13.25 12 13.25C12.6904 13.25 13.25 12.6904 13.25 12C13.25 11.3096 12.6904 10.75 12 10.75Z' fill='"&Mid(Color1JSON,2,7)&"'/> </svg>")
+                    OnSelect: |-
+                        =UpdateContext({ rotate: rotate +45}); If(rotate = 360,UpdateContext({ rotate:0}));UpdateContext({transform: " transform='rotate (" & rotate & ")' transform-origin='center' "});Select(btnSetIcon)
+                    PaddingBottom: =1
+                    PaddingLeft: =1
+                    PaddingRight: =1
+                    PaddingTop: =1
+                    PressedBorderColor: =Self.Fill
+                    PressedFill: =Self.Fill
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =40
+                    X: =440
+                    Y: =99
+                    ZIndex: =26
+
+                selected_Icon_5 As image:
+                    DisplayMode: |
+                        =If(
+                            Or(
+                                gal_icons.Selected.tm_set = "fluent-emoji-color",
+                                gal_icons.Selected.tm_set = "fluent-emoji-flat",
+                                gal_icons.Selected.tm_set = "fluent-emoji-high_contrast"
+                            ),
+                            DisplayMode.Disabled,
+                            DisplayMode.Edit
+                        )
+                    Fill: |-
+                        =ColorValue(Mid(Color2LightJSON,2,9))
+                        //If(upload,ColorValue(icon_background.inputValue),If(gal_menu.Selected.ID=1,ColorValue(gal_myfavs.Selected.LightColor), ColorValue(icon_background.inputValue)))
+                    FocusedBorderThickness: =2
+                    Height: =40
+                    HoverFill: =Self.Fill
+                    Image: |-
+                        ="data:image/svg+xml," & EncodeUrl("<svg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M13.8107 6.81066C14.3964 6.22487 14.3964 5.27513 13.8107 4.68934C13.2249 4.10355 12.2751 4.10355 11.6893 4.68934L4.18934 12.1893C3.60355 12.7751 3.60355 13.7249 4.18934 14.3107L11.6893 21.8107C12.2751 22.3964 13.2249 22.3964 13.8107 21.8107C14.3964 21.2249 14.3964 20.2751 13.8107 19.6893L8.87132 14.75H26.5C33.5416 14.75 39.25 20.4584 39.25 27.5C39.25 34.5416 33.5416 40.25 26.5 40.25C19.4584 40.25 13.75 34.5416 13.75 27.5C13.75 26.6716 13.0784 26 12.25 26C11.4216 26 10.75 26.6716 10.75 27.5C10.75 36.1985 17.8015 43.25 26.5 43.25C35.1985 43.25 42.25 36.1985 42.25 27.5C42.25 18.8015 35.1985 11.75 26.5 11.75H8.87132L13.8107 6.81066Z' fill='"&Mid(Color1JSON,2,7)&"'/> </svg>")
+                    OnSelect: |-
+                        =UpdateContext({transform: "",rotate:0});Select(btnSetIcon)
+                    PaddingBottom: =2
+                    PaddingLeft: =2
+                    PaddingRight: =2
+                    PaddingTop: =2
+                    PressedBorderColor: =Self.Fill
+                    PressedFill: =Self.Fill
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =40
+                    X: =412
+                    Y: =273
+                    ZIndex: =27
+
+                "Elevation5_6 As 'Fluent Elevation (1.0.8)'":
+                    DisplayMode: =DisplayMode.Edit
+                    FillColor: =Mid(Color2LightJSON,2,9)
+                    Height: =70
+                    Width: =105
+                    X: =17
+                    Y: =72
+                    ZIndex: =28
+
+                addToMenu As group:
+                    Height: =5
+                    Width: =5
+                    X: =32
+                    Y: =-170
+                    ZIndex: =28
+
+                    ico_addtomenu As icon.Add:
+                        AccessibleLabel: ="add to menu icon"
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ColorValue(Mid(Color1JSON,2,9))
+                        DisabledColor: =ThisTheme.Color1
+                        DisabledFill: =Self.Fill
+                        DisplayMode: =If(IsBlank(selected_Icon.Image) Or galMenu.Selected.ID=1 And Not(upload),DisplayMode.Disabled,DisplayMode.Edit)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =2
+                        Height: =41
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =ColorFade(Self.Color, 20%)
+                        HoverFill: =Self.Fill
+                        Icon: =Icon.Add
+                        OnSelect: =
+                        PressedBorderColor: =ColorFade(Self.BorderColor, -20%)
+                        PressedColor: =ColorFade(Self.Color, -20%)
+                        PressedFill: =Self.Fill
+                        Width: =39
+                        X: =50
+                        Y: =73
+                        ZIndex: =46
+
+                    Label7_15 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ThisTheme.Color1
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =If(IsBlank(selected_Icon.Image) And Not(upload),DisplayMode.Disabled,DisplayMode.Edit)
+                        Fill: =RGBA(0,0,0,0)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =23
+                        OnSelect: |
+                            =
+                        PaddingBottom: =0
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =0
+                        Size: =9
+                        Text: ="Add to Theme"
+                        Width: =105
+                        X: =17
+                        Y: =119
+                        ZIndex: =47
+
+                    Button3_3 As button:
+                        BorderThickness: =0
+                        Color: =Transparent
+                        DisabledColor: =Transparent
+                        DisabledFill: =Transparent
+                        DisplayMode: =If(IsBlank(selected_Icon.Image) And Not(upload),DisplayMode.Disabled,DisplayMode.Edit)
+                        Fill: =Transparent
+                        FocusedBorderThickness: |
+                            =0
+                        Height: =69
+                        HoverFill: =Transparent
+                        OnSelect: |
+                            =Set(
+                                onReset,
+                                true
+                            );
+                            Patch(
+                                'Theme Icons',
+                                Defaults('Theme Icons'),
+                                {
+                                    Theme: gblChosenTheme,
+                                    Name: gal_icons.Selected.Name,
+                                    Icon: gal_icons.Selected.'Icon (tm_icon)',
+                                    Set: gal_icons.Selected.Set
+                                }
+                            );
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedColor: =Transparent
+                        PressedFill: =Transparent
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Text: =""
+                        Width: =105
+                        X: =17
+                        Y: =73
+                        ZIndex: =49
+
+                Icon5_3 As icon.Add:
+                    AccessibleLabel: ="add to menu icon"
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =ColorValue(Mid(Color1JSON,2,9))
+                    DisabledColor: =ThisTheme.Color1
+                    DisabledFill: =Self.Fill
+                    DisplayMode: =If(IsBlank(selected_Icon.Image),DisplayMode.Disabled,DisplayMode.Edit)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =2
+                    Height: =37
+                    HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                    HoverColor: =ColorFade(Self.Color, 20%)
+                    HoverFill: =Self.Fill
+                    Icon: =Icon.Download
+                    OnSelect: =Set(DownloadImage,true);
+                    PressedBorderColor: =ColorFade(Self.BorderColor, -20%)
+                    PressedColor: =ColorFade(Self.Color, -20%)
+                    PressedFill: =Self.Fill
+                    Width: =39
+                    X: =50
+                    Y: =247
+                    ZIndex: =29
+
+                Label7_6 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =ThisTheme.Color1
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =If(IsBlank(selected_Icon.Image) Or galMenu.Selected.ID=1 And Not(upload),DisplayMode.Disabled,DisplayMode.Edit)
+                    Fill: =RGBA(0,0,0,0)
+                    Font: =Font.'Open Sans'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    OnSelect: |-
+                        =/*If(
+                           CountRows(
+                                Filter(
+                                    col_myFavouriteIcons,
+                                    Title = lbl_IconName.Text And IconSet = gal_menu.Selected.MenuText
+                                )
+                            )>0,
+                            RemoveIf(
+                                MyFavouriteIcons,
+                                IconSet = gal_menu.Selected.MenuText,
+                                Title = lbl_IconName.Text
+                            ),
+                            Patch(
+                                MyFavouriteIcons,
+                                Defaults(MyFavouriteIcons),
+                                {
+                                    Title: lbl_IconName.Text,
+                                    IconSet: gal_menu.Selected.MenuText,
+                                    LightColor: inp_BackgroundColor_home.inputValue,
+                                    DarkColor: inp_Color_home.inputValue,
+                                    CreatorEmail: varUser.Email
+                                }
+                            )
+                        );
+                        ClearCollect(
+                            col_myFavouriteIcons,
+                            MyFavouriteIcons
+                        );
+                        */
+                    PaddingBottom: =0
+                    PaddingLeft: =2
+                    PaddingRight: =2
+                    PaddingTop: =0
+                    Size: =8
+                    Text: |-
+                        =If(
+                            CountRows(
+                                Filter(
+                                    'My Favourite Icons',
+                                    Name = lbl_IconName.Text And Icon.Set = lbl_IconSet.Text
+                                )
+                            ) > 0,
+                            "Remove from favourites",
+                            "Add to favourites"
+                        )
+                    Width: =105
+                    X: =17
+                    Y: =193
+                    ZIndex: =30
+
+                add_fav As image:
+                    AccessibleLabel: ="add to favs"
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    DisabledFill: =Transparent
+                    DisplayMode: =If(IsBlank(selected_Icon.Image) Or galMenu.Selected.ID=1 And Not(upload),DisplayMode.Disabled,DisplayMode.Edit)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =2
+                    Height: =38
+                    HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                    HoverFill: =ColorFade(Self.Fill, 20%)
+                    Image: |-
+                        =If(
+                            CountRows(
+                                Filter(
+                                    'My Favourite Icons',
+                                    Name = lbl_IconName.Text And Icon.Set = lbl_IconSet.Text
+                                )
+                            ) > 0,
+                            "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='"& If(add_fav.DisplayMode = DisplayMode.Disabled,"#cccccc","#e00837") &"' d='M12.82 5.58L12 6.4l-.82-.82a5.37 5.37 0 10-7.6 7.6l7.89 7.9c.3.29.77.29 1.06 0l7.9-7.9a5.38 5.38 0 10-7.61-7.6z'/></svg>"),
+                            "data:image/svg+xml," & EncodeUrl(
+                                "<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill='" & If(Not(IsBlank(selected_Icon.Image)),
+                                    If(add_fav.DisplayMode = DisplayMode.Disabled,"#cccccc","#e00837"),
+                                    Mid(
+                                        Color1JSON,
+                                        2,
+                                        7
+                                    )
+                                ) & "' d='M12.82 5.58L12 6.4l-.82-.82a5.37 5.37 0 10-7.6 7.6l7.89 7.9c.3.29.77.29 1.06 0l7.9-7.9a5.38 5.38 0 10-7.61-7.6zm6.55 6.54L12 19.48l-7.36-7.36a3.87 3.87 0 115.48-5.48L11.47 8c.3.3.79.29 1.08-.02l1.33-1.34a3.88 3.88 0 015.49 5.48z'/></svg>"
+                            )
+                        )
+                    OnSelect: |
+                        =If(
+                            CountRows(
+                                Filter(
+                                    'My Favourite Icons',
+                                    Name = lbl_IconName.Text And Icon.Set = lbl_IconSet.Text
+                                )
+                            ) > 0,
+                            Set(
+                                removeFav,
+                                RemoveIf(
+                                    'My Favourite Icons',
+                                    Icon.Set = lbl_IconSet.Text,
+                                    Name = lbl_IconName.Text
+                                )
+                            );
+                            If(
+                                !IsBlank(removeFav),
+                                Notify(
+                                    "Removed from favourites!",
+                                    NotificationType.Success,
+                                    2000
+                                ),
+                                Notify(
+                                    "There was an error removing favorite!",
+                                    NotificationType.Error,
+                                    2000
+                                )
+                            );
+                            ,
+                            Set(
+                                addedtofav,
+                                Patch(
+                                    'My Favourite Icons',
+                                    Defaults('My Favourite Icons'),
+                                    {
+                                        Name: lbl_IconName.Text,
+                                        Icon: gal_icons.Selected
+                                    }
+                                )
+                            );
+                            If(
+                                !IsBlank(addedtofav),
+                                Notify(
+                                    "Added to favourites!",
+                                    NotificationType.Success,
+                                    2000
+                                ),
+                                Notify(
+                                    "There was an error saving favorite!",
+                                    NotificationType.Error,
+                                    2000
+                                )
+                            );
+                            
+                        );
+                        ClearCollect(
+                            col_myFavouriteIcons,
+                            Filter('My Favourite Icons','Created By'.'Primary Email' = User().Email)
+                        );
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    PressedBorderColor: =ColorFade(Self.BorderColor, -20%)
+                    PressedFill: =ColorFade(Self.Fill, -20%)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =39
+                    X: =50
+                    Y: =157
+                    ZIndex: =31
+
+                lblIconImageDataOFI_5 As label:
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =ThisTheme.Color1
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: =lblIconImageDataOFI_5.BorderColor
+                    Font: =Font.'Open Sans'
+                    FontWeight: =FontWeight.Semibold
+                    Height: |
+                        =30
+                    HoverBorderColor: =lblIconImageDataOFI_5.BorderColor
+                    HoverColor: =lblIconImageDataOFI_5.Color
+                    HoverFill: =lblIconImageDataOFI_5.Fill
+                    PaddingBottom: =5
+                    PaddingLeft: =10
+                    PaddingRight: =6.03
+                    PaddingTop: =6.03
+                    PressedBorderColor: =lblIconImageDataOFI_5.BorderColor
+                    PressedColor: =lblIconImageDataOFI_5.Color
+                    PressedFill: =lblIconImageDataOFI_5.Fill
+                    Role: =TextRole.Heading2
+                    Size: =FontSizes.SubTitle
+                    Text: ="Selected Icon"
+                    Width: =249
+                    X: =7
+                    Y: =5
+                    ZIndex: =32
+
+                lbl_IconSet As label:
+                    Align: =Align.Center
+                    Color: =ThisTheme.Color2Light
+                    Fill: =ThisTheme.Color2
+                    Height: =33
+                    PaddingBottom: =5
+                    PaddingLeft: =10
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =FontSizes.TextMain
+                    Text: =gal_icons.Selected.Set
+                    Visible: =false
+                    Width: =84
+                    X: =10
+                    Y: =35
+                    ZIndex: =33
+
+                lbl_BackGroundLuminance_17 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =ThisTheme.Color1
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =Transparent
+                    FocusedBorderColor: =lbl_BackGroundLuminance_17.BorderColor
+                    Font: =Font.'Open Sans'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =22
+                    HoverBorderColor: =lbl_BackGroundLuminance_17.BorderColor
+                    HoverColor: =lbl_BackGroundLuminance_17.Color
+                    HoverFill: =lbl_BackGroundLuminance_17.Fill
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =6.03
+                    PaddingTop: =6.03
+                    PressedBorderColor: =lbl_BackGroundLuminance_17.BorderColor
+                    PressedColor: =lbl_BackGroundLuminance_17.Color
+                    PressedFill: =lbl_BackGroundLuminance_17.Fill
+                    Size: =9.66
+                    Text: ="Flip"
+                    Width: =97
+                    X: =385
+                    Y: =173
+                    ZIndex: =34
+
+                lbl_BackGroundLuminance_18 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =ThisTheme.Color1
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =Transparent
+                    FocusedBorderColor: =lbl_BackGroundLuminance_18.BorderColor
+                    Font: =Font.'Open Sans'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =29
+                    HoverBorderColor: =lbl_BackGroundLuminance_18.BorderColor
+                    HoverColor: =lbl_BackGroundLuminance_18.Color
+                    HoverFill: =lbl_BackGroundLuminance_18.Fill
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =6.03
+                    PaddingTop: =6.03
+                    PressedBorderColor: =lbl_BackGroundLuminance_18.BorderColor
+                    PressedColor: =lbl_BackGroundLuminance_18.Color
+                    PressedFill: =lbl_BackGroundLuminance_18.Fill
+                    Size: =9.66
+                    Text: ="Rotate"
+                    Width: =95
+                    X: =387
+                    Y: =70
+                    ZIndex: =35
+
+                lbl_BackGroundLuminance_19 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =ThisTheme.Color1
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =Transparent
+                    FocusedBorderColor: =lbl_BackGroundLuminance_19.BorderColor
+                    Font: =Font.'Open Sans'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =22
+                    HoverBorderColor: =lbl_BackGroundLuminance_19.BorderColor
+                    HoverColor: =lbl_BackGroundLuminance_19.Color
+                    HoverFill: =lbl_BackGroundLuminance_19.Fill
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =6.03
+                    PaddingTop: =6.03
+                    PressedBorderColor: =lbl_BackGroundLuminance_19.BorderColor
+                    PressedColor: =lbl_BackGroundLuminance_19.Color
+                    PressedFill: =lbl_BackGroundLuminance_19.Fill
+                    Size: =9.66
+                    Text: ="Reset"
+                    Width: =98
+                    X: =384
+                    Y: =247
+                    ZIndex: =36
+
+                Label7_7 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =ThisTheme.Color1
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0,0,0,0)
+                    Font: =Font.'Open Sans'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =26
+                    OnSelect: |-
+                        =/*If(
+                           CountRows(
+                                Filter(
+                                    col_myFavouriteIcons,
+                                    Title = lbl_IconName.Text And IconSet = gal_menu.Selected.MenuText
+                                )
+                            )>0,
+                            RemoveIf(
+                                MyFavouriteIcons,
+                                IconSet = gal_menu.Selected.MenuText,
+                                Title = lbl_IconName.Text
+                            ),
+                            Patch(
+                                MyFavouriteIcons,
+                                Defaults(MyFavouriteIcons),
+                                {
+                                    Title: lbl_IconName.Text,
+                                    IconSet: gal_menu.Selected.MenuText,
+                                    LightColor: inp_BackgroundColor_home.inputValue,
+                                    DarkColor: inp_Color_home.inputValue,
+                                    CreatorEmail: varUser.Email
+                                }
+                            )
+                        );
+                        ClearCollect(
+                            col_myFavouriteIcons,
+                            MyFavouriteIcons
+                        );
+                        */
+                    PaddingBottom: =0
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =0
+                    Size: =9
+                    Text: ="Download"
+                    Width: =105
+                    X: =17
+                    Y: =287
+                    ZIndex: =48
+
+                grpElevation_is As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =51
+
+                    "Elevation4_4 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =481
+                        Width: =Parent.Width -16
+                        X: =7
+                        Y: =1
+                        ZIndex: =2
+
+                    "Elevation5 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =40
+                        Width: =40
+                        X: =391
+                        Y: =99
+                        ZIndex: =3
+
+                    "Elevation5_7 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        FillColor: =Mid(Color2LightJSON,2,9)
+                        Height: =70
+                        Width: =105
+                        X: =17
+                        Y: =243
+                        ZIndex: =4
+
+                    "Elevation5_9 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        FillColor: =Mid(Color2LightJSON,2,9)
+                        Height: =70
+                        Width: =105
+                        X: =17
+                        Y: =155
+                        ZIndex: =5
+
+                    "Elevation5_1 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =40
+                        Width: =40
+                        X: =440
+                        Y: =99
+                        ZIndex: =6
+
+                    "Elevation5_2 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =40
+                        Width: =40
+                        X: =412
+                        Y: =273
+                        ZIndex: =7
+
+                    "Elevation5_3 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =40
+                        Width: =40
+                        X: =390
+                        Y: =199
+                        ZIndex: =8
+
+                    "Elevation5_4 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =40
+                        Width: =40
+                        X: =441
+                        Y: =199
+                        ZIndex: =9
+
+                    "Elevation4_3 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =176
+                        Width: =Parent.Width -16
+                        X: =7
+                        Y: =829
+                        ZIndex: =10
+
+                    "Elevation4_2 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =323
+                        Width: =Parent.Width -16
+                        X: =7
+                        Y: =494
+                        ZIndex: =11
+
+                selected_Icon_7 As image:
+                    DisplayMode: |-
+                        =If(
+                            Or(
+                                gal_icons.Selected.tm_set = "fluent-emoji-color",
+                                gal_icons.Selected.tm_set = "fluent-emoji-flat",
+                                gal_icons.Selected.tm_set = "fluent-emoji-high_contrast"
+                            ),
+                            DisplayMode.Disabled,
+                            DisplayMode.Edit
+                        )
+                    Fill: |-
+                        =Transparent
+                        //If(upload,ColorValue(icon_background.inputValue),If(gal_menu.Selected.ID=1,ColorValue(gal_myfavs.Selected.LightColor), ColorValue(icon_background.inputValue)))
+                    FocusedBorderThickness: =2
+                    Height: =40
+                    HoverFill: =Self.Fill
+                    Image: |-
+                        =With(
+                            {
+                                contrast: If(
+                                    Value(lbl_background_luminance.Text) > Value(lbl_foreground_luminance.Text),
+                                    Sum((Value(lbl_background_luminance.Text) + 0.05) / (Value(lbl_foreground_luminance.Text) + 0.05)),
+                                    Sum((Value(lbl_foreground_luminance.Text) + 0.05) / (Value(lbl_background_luminance.Text) + 0.05))
+                                )
+                            },
+                            If(
+                                contrast < 3,
+                                "data:image/svg+xml," & EncodeUrl("<svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'> <path  d='M14 7.5C15.5188 7.5 16.75 6.26878 16.75 4.75C16.75 3.23122 15.5188 2 14 2C12.4812 2 11.25 3.23122 11.25 4.75C11.25 6.26878 12.4812 7.5 14 7.5ZM6.24322 5.12191C4.94207 4.69914 3.54456 5.41121 3.12179 6.71236C2.69902 8.01351 3.41109 9.41102 4.71224 9.83379L9.30892 11.3273C9.72094 11.4612 9.9999 11.8452 9.9999 12.2784V15.375C9.9999 15.5026 9.97547 15.6291 9.92793 15.7475L7.17594 22.6038C6.66881 23.8672 7.27949 25.3059 8.54061 25.8188C9.8042 26.3327 11.2418 25.7225 11.7499 24.4565L13.519 20.049C13.6867 19.6312 14.278 19.6305 14.4466 20.048L16.2252 24.4501C16.7377 25.7186 18.1815 26.3315 19.45 25.819C20.7185 25.3065 21.3313 23.8627 20.8188 22.5942L18.0727 15.7974C18.0246 15.6783 17.9999 15.5512 17.9999 15.4228V12.2784C17.9999 11.8452 18.2789 11.4612 18.6909 11.3273L23.2876 9.83379C24.5887 9.41102 25.3008 8.01351 24.878 6.71236C24.4552 5.41121 23.0577 4.69914 21.7566 5.12191L18.646 6.13258C18.1899 6.2808 17.8498 6.60008 17.6351 6.95354C16.8885 8.18219 15.5394 9.0002 14 9.0002C12.4605 9.0002 11.1115 8.18221 10.3649 6.95357C10.1501 6.60012 9.81006 6.28085 9.3539 6.13263L6.24322 5.12191Z' fill='#AA2222ff'/> </svg>"),
+                                If(
+                                    contrast > 3 ,
+                                    "data:image/svg+xml," & EncodeUrl("<?xml version='1.0' encoding='UTF-8'?><svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 63.61 38.03'><defs><style>.cls-1{fill:#063;}</style></defs><path class='cls-1' d='M21.53,38.03l-1.32-7H11.23l-1.43,7H0L10.37,0h11.25l9.76,38.03h-9.84ZM15.82,8.27h-.21c-.03,.42-.13,1.12-.29,2.1-.17,.97-1.01,5.15-2.54,12.52h5.75l-2.1-10.34c-.29-1.52-.5-2.94-.61-4.27Z'/><path class='cls-1' d='M53.77,38.03l-1.32-7h-8.98l-1.43,7h-9.8L42.6,0h11.25l9.76,38.03h-9.84Zm-5.71-29.76h-.21c-.03,.42-.13,1.12-.29,2.1-.17,.97-1.01,5.15-2.54,12.52h5.75l-2.1-10.34c-.29-1.52-.5-2.94-.61-4.27Z'/></svg>")
+                                
+                                )
+                            )
+                        )
+                    OnSelect: |-
+                        =UpdateContext({rotate: rotate - 45});
+                        If(
+                            rotate = -360,
+                            UpdateContext({rotate: 0})
+                        );
+                        UpdateContext({transform: " transform='rotate (" & rotate & ")' transform-origin='center' "});
+                        Set(
+                            icon_image_text,
+                            Substitute(
+                                icon_image_text,
+                                "path d",
+                                "path " & transform & " d"
+                            )
+                        );
+                        Select(btnSetIcon)
+                    PaddingBottom: =1
+                    PaddingLeft: =1
+                    PaddingRight: =1
+                    PaddingTop: =1
+                    PressedBorderColor: =Self.BorderColor
+                    PressedFill: =Self.Fill
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    X: =200
+                    Y: =415
+                    ZIndex: =56
+
+                Group1 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =56
+
+                    "Elevation2 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =150
+                        Width: =178
+                        X: =18
+                        Y: =325
+                        ZIndex: =14
+
+                    Dropdown1 As dropdown:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderThickness: =2
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(33, 33, 33, 1)
+                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =31
+                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(212, 212, 212, 1)
+                        Items: =Sort(gblChosenThemeColors,Name,Ascending)
+                        OnChange: |-
+                            =UpdateContext({upload:false,iconColor:Dropdown1.Selected.HEX});Select(btnSetIcon)
+                        PaddingBottom: =5
+                        PaddingLeft: =12
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 120, 212, 1)
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        Size: =FontSizes.TextMain
+                        Underline: =false
+                        Width: =162
+                        X: =28
+                        Y: =352
+                        ZIndex: =15
+
+                    lbl_BackGroundLuminance_15 As label:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ThisTheme.Color1
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =Transparent
+                        FocusedBorderColor: =lbl_BackGroundLuminance_15.BorderColor
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =27
+                        HoverBorderColor: =lbl_BackGroundLuminance_15.BorderColor
+                        HoverColor: =lbl_BackGroundLuminance_15.Color
+                        HoverFill: =lbl_BackGroundLuminance_15.Fill
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =6.03
+                        PaddingTop: =6.03
+                        PressedBorderColor: =lbl_BackGroundLuminance_15.BorderColor
+                        PressedColor: =lbl_BackGroundLuminance_15.Color
+                        PressedFill: =lbl_BackGroundLuminance_15.Fill
+                        Size: =9.66
+                        Text: |
+                            ="Luminance:"
+                        Visible: =DevHidden
+                        Width: =84
+                        X: =18
+                        Y: =418
+                        ZIndex: =37
+
+                    lbl_foreground_luminance As label:
+                        Align: =Align.Right
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ThisTheme.Color1
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =Transparent
+                        FocusedBorderColor: =lbl_foreground_luminance.BorderColor
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =20
+                        HoverBorderColor: =lbl_foreground_luminance.BorderColor
+                        HoverColor: =lbl_foreground_luminance.Color
+                        HoverFill: =lbl_foreground_luminance.Fill
+                        PaddingBottom: =5
+                        PaddingLeft: =0
+                        PaddingRight: =6.03
+                        PaddingTop: =6.03
+                        PressedBorderColor: =lbl_foreground_luminance.BorderColor
+                        PressedColor: =lbl_foreground_luminance.Color
+                        PressedFill: =lbl_foreground_luminance.Fill
+                        Size: =FontSizes.TextMain-1
+                        Text: |
+                            ='color-functions_3'.getLuminance(LookUp(DECtoHEX,HEX = Upper(Mid(iconForeground.inputValue,2,2))).DEC,LookUp(DECtoHEX,HEX = Upper(Mid(iconForeground.inputValue,4,2))).DEC,LookUp(DECtoHEX,HEX = Upper(Mid(iconForeground.inputValue,6,2))).DEC)
+                        Visible: =false
+                        Width: =96
+                        X: =18
+                        Y: =454
+                        ZIndex: =38
+
+                    lbl_BackGroundLuminance_28 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ThisTheme.Color1
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =Transparent
+                        FocusedBorderColor: =lbl_BackGroundLuminance_28.BorderColor
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =23
+                        HoverBorderColor: =lbl_BackGroundLuminance_28.BorderColor
+                        HoverColor: =lbl_BackGroundLuminance_28.Color
+                        HoverFill: =lbl_BackGroundLuminance_28.Fill
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =6.03
+                        PaddingTop: =6.03
+                        PressedBorderColor: =lbl_BackGroundLuminance_28.BorderColor
+                        PressedColor: =lbl_BackGroundLuminance_28.Color
+                        PressedFill: =lbl_BackGroundLuminance_28.Fill
+                        Size: =FontSizes.TextMain
+                        Text: |-
+                            =ColourNames.GetColorName({hex:Mid(iconForeground.inputValue,2,6)}).name
+                        Tooltip: |-
+                            =ColourNames.GetColorName({hex:Mid(iconForeground.inputValue,2,6)}).name
+                        Width: =178
+                        X: =18
+                        Y: =426
+                        ZIndex: =39
+
+                    Label6_1 As label:
+                        Align: =Align.Center
+                        Color: =ThisTheme.Color1
+                        FontWeight: =FontWeight.Bold
+                        Height: =28
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Role: =TextRole.Heading2
+                        Size: =FontSizes.TextMain
+                        Text: ="Icon Color"
+                        Width: =178
+                        X: =18
+                        Y: =326
+                        ZIndex: =40
+
+                    "iconForeground As 'TM Color Picker'":
+                        defaultColor: =iconColor
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =43
+                        inputValue: =iconColor
+                        OnChange: =Select(btnSetIcon)
+                        Tooltip: ="Icon Color ColorPicker"
+                        Width: =174
+                        X: =22
+                        Y: =385
+                        ZIndex: =50
+
+                Group2 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =56
+
+                    "Elevation2_1 As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =150
+                        Width: =178
+                        X: =302
+                        Y: =325
+                        ZIndex: =12
+
+                    Dropdown1_1 As dropdown:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderThickness: =2
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(33, 33, 33, 1)
+                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =28
+                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(212, 212, 212, 1)
+                        Items: =Sort(gblChosenThemeColors,Name,Ascending)
+                        OnChange: |-
+                            =UpdateContext({upload:false,backgroundColor:Dropdown1_1.Selected.HEX});Select(btnSetIcon)
+                        PaddingBottom: =5
+                        PaddingLeft: =12
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 120, 212, 1)
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        Size: =FontSizes.TextMain
+                        Underline: =false
+                        Width: =162
+                        X: =310
+                        Y: =355
+                        ZIndex: =41
+
+                    lbl_BackGroundLuminance_16 As label:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ThisTheme.Color1
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =Transparent
+                        FocusedBorderColor: =lbl_BackGroundLuminance_16.BorderColor
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =27
+                        HoverBorderColor: =lbl_BackGroundLuminance_16.BorderColor
+                        HoverColor: =lbl_BackGroundLuminance_16.Color
+                        HoverFill: =lbl_BackGroundLuminance_16.Fill
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =6.03
+                        PaddingTop: =6.03
+                        PressedBorderColor: =lbl_BackGroundLuminance_16.BorderColor
+                        PressedColor: =lbl_BackGroundLuminance_16.Color
+                        PressedFill: =lbl_BackGroundLuminance_16.Fill
+                        Size: =9.66
+                        Text: |
+                            ="Luminance:"
+                        Visible: =DevHidden
+                        Width: =84
+                        X: =303
+                        Y: =422
+                        ZIndex: =42
+
+                    lbl_background_luminance As label:
+                        Align: =Align.Right
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ThisTheme.Color1
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =Transparent
+                        FocusedBorderColor: =lbl_background_luminance.BorderColor
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =20
+                        HoverBorderColor: =lbl_background_luminance.BorderColor
+                        HoverColor: =lbl_background_luminance.Color
+                        HoverFill: =lbl_background_luminance.Fill
+                        PaddingBottom: =5
+                        PaddingLeft: =0
+                        PaddingRight: =6.03
+                        PaddingTop: =6.03
+                        PressedBorderColor: =lbl_background_luminance.BorderColor
+                        PressedColor: =lbl_background_luminance.Color
+                        PressedFill: =lbl_background_luminance.Fill
+                        Size: =FontSizes.TextMain-1
+                        Text: |
+                            ='color-functions_3'.getLuminance(LookUp(DECtoHEX,HEX = Upper(Mid(iconBackground.inputValue,2,2))).DEC,LookUp(DECtoHEX,HEX = Upper(Mid(iconBackground.inputValue,4,2))).DEC,LookUp(DECtoHEX,HEX = Upper(Mid(iconBackground.inputValue,6,2))).DEC)
+                        Visible: =DevHidden
+                        Width: =96
+                        X: =376
+                        Y: =423
+                        ZIndex: =43
+
+                    lbl_BackGroundLuminance_29 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =ThisTheme.Color1
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =Transparent
+                        FocusedBorderColor: =lbl_BackGroundLuminance_29.BorderColor
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =29
+                        HoverBorderColor: =lbl_BackGroundLuminance_29.BorderColor
+                        HoverColor: =lbl_BackGroundLuminance_29.Color
+                        HoverFill: =lbl_BackGroundLuminance_29.Fill
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =6.03
+                        PaddingTop: =6.03
+                        PressedBorderColor: =lbl_BackGroundLuminance_29.BorderColor
+                        PressedColor: =lbl_BackGroundLuminance_29.Color
+                        PressedFill: =lbl_BackGroundLuminance_29.Fill
+                        Size: =FontSizes.TextMain
+                        Text: |-
+                            =ColourNames.GetColorName({hex:Mid(iconBackground.inputValue,2,6)}).name
+                        Tooltip: |-
+                            =ColourNames.GetColorName({hex:Mid(iconBackground.inputValue,2,6)}).name
+                        Width: =177
+                        X: =304
+                        Y: =426
+                        ZIndex: =44
+
+                    Label6_2 As label:
+                        Align: =Align.Center
+                        Color: =ThisTheme.Color1
+                        FontWeight: =FontWeight.Bold
+                        Height: =29
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Role: =TextRole.Heading2
+                        Size: =FontSizes.TextMain
+                        Text: ="Background Color"
+                        Width: =180
+                        X: =299
+                        Y: =328
+                        ZIndex: =45
+
+                    "iconBackground As 'TM Color Picker'":
+                        defaultColor: =backgroundColor
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =43
+                        inputValue: =backgroundColor
+                        Tooltip: ="Background Color ColorPicker"
+                        Width: =174
+                        X: =304
+                        Y: =385
+                        ZIndex: =51
+
+                Group3 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =56
+
+                    svgGuage_1 As svgGuage:
+                        AmberScore: =0
+                        Height: =40
+                        RedScore: =0.15
+                        Score: |-
+                            =((If(
+                                Value(lbl_background_luminance.Text) > Value(lbl_foreground_luminance.Text),
+                                
+                                    Text(
+                                        Sum((Value(lbl_background_luminance.Text) + 0.05) / (Value(lbl_foreground_luminance.Text) + 0.05)),
+                                        "[$-en-GB]#.000"
+                                    
+                                ),
+                              
+                                    Text(
+                                    Sum((Value(lbl_foreground_luminance.Text) + 0.05) / (Value(lbl_background_luminance.Text) + 0.05)),
+                                    "[$-en-GB]#.000"
+                                )
+                            )*100) /21 )/100
+                        X: =400
+                        ZIndex: =52
+
+                    Label4 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
+                        Size: =FontSizes.Title
+                        Text: |-
+                            =If(
+                                Value(lbl_background_luminance.Text) > Value(lbl_foreground_luminance.Text),
+                                Concatenate(
+                                    Text(
+                                        Sum((Value(lbl_background_luminance.Text) + 0.05) / (Value(lbl_foreground_luminance.Text) + 0.05)),
+                                        "[$-en-GB]#.000"
+                                    ),
+                                    ":1"
+                                ),
+                                Concatenate(
+                                    Text(
+                                    Sum((Value(lbl_foreground_luminance.Text) + 0.05) / (Value(lbl_background_luminance.Text) + 0.05)),
+                                    "[$-en-GB]#.000"
+                                ),":1")
+                            )
+                        Width: =116
+                        X: =192
+                        Y: =370
+                        ZIndex: =53
+
+                    Label6_3 As label:
+                        Align: =Align.Center
+                        Color: =ThisTheme.Color1
+                        FontWeight: =FontWeight.Bold
+                        Height: =36
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Role: =TextRole.Heading2
+                        Size: =FontSizes.TextMain
+                        Text: |-
+                            ="Non-Text
+                            Contrast"
+                        Width: =118
+                        X: =190
+                        Y: =332
+                        ZIndex: =54
+
+                    selected_Icon_6 As image:
+                        DisplayMode: |-
+                            =If(
+                                Or(
+                                    gal_icons.Selected.tm_set = "fluent-emoji-color",
+                                    gal_icons.Selected.tm_set = "fluent-emoji-flat",
+                                    gal_icons.Selected.tm_set = "fluent-emoji-high_contrast"
+                                ),
+                                DisplayMode.Disabled,
+                                DisplayMode.Edit
+                            )
+                        Fill: |-
+                            =Transparent
+                            //If(upload,ColorValue(icon_background.inputValue),If(gal_menu.Selected.ID=1,ColorValue(gal_myfavs.Selected.LightColor), ColorValue(icon_background.inputValue)))
+                        FocusedBorderThickness: =2
+                        Height: =26
+                        HoverFill: =Self.Fill
+                        Image: |-
+                            =With(
+                                {
+                                    contrast: If(
+                                        Value(lbl_background_luminance.Text) > Value(lbl_foreground_luminance.Text),
+                                        Sum((Value(lbl_background_luminance.Text) + 0.05) / (Value(lbl_foreground_luminance.Text) + 0.05)),
+                                        Sum((Value(lbl_foreground_luminance.Text) + 0.05) / (Value(lbl_background_luminance.Text) + 0.05))
+                                    )
+                                },
+                                If(
+                                    contrast < 4.51,
+                                    "data:image/svg+xml," & EncodeUrl("<svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'> <path  d='M14 7.5C15.5188 7.5 16.75 6.26878 16.75 4.75C16.75 3.23122 15.5188 2 14 2C12.4812 2 11.25 3.23122 11.25 4.75C11.25 6.26878 12.4812 7.5 14 7.5ZM6.24322 5.12191C4.94207 4.69914 3.54456 5.41121 3.12179 6.71236C2.69902 8.01351 3.41109 9.41102 4.71224 9.83379L9.30892 11.3273C9.72094 11.4612 9.9999 11.8452 9.9999 12.2784V15.375C9.9999 15.5026 9.97547 15.6291 9.92793 15.7475L7.17594 22.6038C6.66881 23.8672 7.27949 25.3059 8.54061 25.8188C9.8042 26.3327 11.2418 25.7225 11.7499 24.4565L13.519 20.049C13.6867 19.6312 14.278 19.6305 14.4466 20.048L16.2252 24.4501C16.7377 25.7186 18.1815 26.3315 19.45 25.819C20.7185 25.3065 21.3313 23.8627 20.8188 22.5942L18.0727 15.7974C18.0246 15.6783 17.9999 15.5512 17.9999 15.4228V12.2784C17.9999 11.8452 18.2789 11.4612 18.6909 11.3273L23.2876 9.83379C24.5887 9.41102 25.3008 8.01351 24.878 6.71236C24.4552 5.41121 23.0577 4.69914 21.7566 5.12191L18.646 6.13258C18.1899 6.2808 17.8498 6.60008 17.6351 6.95354C16.8885 8.18219 15.5394 9.0002 14 9.0002C12.4605 9.0002 11.1115 8.18221 10.3649 6.95357C10.1501 6.60012 9.81006 6.28085 9.3539 6.13263L6.24322 5.12191Z' fill='#AA2222ff'/> </svg>"),
+                                    If(
+                                        contrast > 4.5 And contrast < 7.11,
+                                        "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path  d='M9.02647 5.39876C9.00914 5.2683 9.0002 5.1352 9.0002 5C9.0002 3.34315 10.3433 2 12.0002 2C13.6571 2 15.0002 3.34315 15.0002 5C15.0002 5.13522 14.9913 5.26835 14.9739 5.39883L17.8504 4.17784C18.9935 3.6926 20.3183 4.2222 20.8118 5.36177C21.3071 6.50526 20.7779 7.82908 19.6308 8.31599L16.0027 9.85602V11.1733C15.475 11.2977 14.9721 11.4865 14.5027 11.7308V9.69055C14.5027 9.18894 14.8026 8.73591 15.2643 8.53992L19.0447 6.93523C19.4253 6.77369 19.5997 6.33732 19.4354 5.95794C19.2694 5.57464 18.821 5.39538 18.4365 5.55859L13.4655 7.66865C13.306 7.73636 13.143 7.79254 12.9776 7.83718C12.6712 7.9427 12.3424 8 12.0002 8C11.6578 8 11.3288 7.94264 11.0223 7.83699C10.8571 7.79238 10.6943 7.73627 10.535 7.66865L5.56405 5.55859C5.17954 5.39538 4.73116 5.57464 4.56514 5.95794C4.40082 6.33732 4.57528 6.77369 4.95584 6.93523L8.74113 8.54199C9.20286 8.73798 9.50271 9.19101 9.50271 9.69262V13.6014C9.50271 13.7399 9.4797 13.8774 9.43461 14.0083L7.54201 19.5048C7.40716 19.8965 7.61533 20.3233 8.00697 20.4581C8.39862 20.593 8.82543 20.3848 8.96029 19.9932L11.0686 13.8702C11.2901 13.2264 12.0099 13.0511 12.505 13.3404C11.5653 14.4676 11 15.9178 11 17.5C11 17.8292 11.0245 18.1526 11.0717 18.4686L10.3786 20.4815C9.974 21.6565 8.69356 22.281 7.51862 21.8764C6.34368 21.4719 5.71917 20.1914 6.12373 19.0165L8.00271 13.5595V9.85809L4.36975 8.31599C3.22266 7.82908 2.69342 6.50526 3.1887 5.36177C3.68228 4.2222 5.00701 3.6926 6.15015 4.17784L9.02647 5.39876ZM10.5002 5C10.5002 5.64117 10.9025 6.18838 11.4684 6.403C11.8177 6.48797 12.1824 6.48801 12.5317 6.4031C13.0978 6.18855 13.5002 5.64127 13.5002 5C13.5002 4.17157 12.8286 3.5 12.0002 3.5C11.1718 3.5 10.5002 4.17157 10.5002 5ZM23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12C20.5376 12 23 14.4624 23 17.5ZM20.8536 15.1464C20.6583 14.9512 20.3417 14.9512 20.1464 15.1464L16.5 18.7929L14.8536 17.1464C14.6583 16.9512 14.3417 16.9512 14.1464 17.1464C13.9512 17.3417 13.9512 17.6583 14.1464 17.8536L16.1464 19.8536C16.3417 20.0488 16.6583 20.0488 16.8536 19.8536L20.8536 15.8536C21.0488 15.6583 21.0488 15.3417 20.8536 15.1464Z' fill='#00aa00ff'/> </svg>"),
+                                        If(
+                                            contrast >= 7.1,
+                                             "data:image/svg+xml," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'> <path  d='M12 6.5C13.2426 6.5 14.25 5.49264 14.25 4.25C14.25 3.00736 13.2426 2 12 2C10.7574 2 9.75 3.00736 9.75 4.25C9.75 5.49264 10.7574 6.5 12 6.5ZM6.14978 4.17803C5.00664 3.69279 3.68192 4.22239 3.18834 5.36195C2.69306 6.50545 3.2223 7.82927 4.36938 8.31618L7.39308 9.59966C7.76247 9.75645 8.00235 10.1189 8.00235 10.5202V13.5597L6.12337 19.0167C5.7188 20.1916 6.34332 21.4721 7.51826 21.8766C8.69319 22.2812 9.97364 21.6567 10.3782 20.4817L11.0716 18.468C11.0244 18.1522 11 17.8289 11 17.5C11 14.4256 13.1345 11.8497 16.0023 11.1734V10.5181C16.0023 10.1168 16.2422 9.75438 16.6116 9.59759L19.6304 8.31618C20.7775 7.82927 21.3068 6.50545 20.8115 5.36195C20.3179 4.22239 18.9932 3.69279 17.85 4.17803L16.244 4.85973C15.9033 5.00435 15.6657 5.28256 15.5492 5.59067C15.0072 7.02499 13.6215 8.04295 12 8.04295C10.3784 8.04295 8.99272 7.025 8.45067 5.5907C8.33423 5.2826 8.09658 5.00439 7.75589 4.85978L6.14978 4.17803ZM23 17.5C23 20.5376 20.5376 23 17.5 23C14.4624 23 12 20.5376 12 17.5C12 14.4624 14.4624 12 17.5 12C20.5376 12 23 14.4624 23 17.5ZM20.8536 15.1464C20.6583 14.9512 20.3417 14.9512 20.1464 15.1464L16.5 18.7929L14.8536 17.1464C14.6583 16.9512 14.3417 16.9512 14.1464 17.1464C13.9512 17.3417 13.9512 17.6583 14.1464 17.8536L16.1464 19.8536C16.3417 20.0488 16.6583 20.0488 16.8536 19.8536L20.8536 15.8536C21.0488 15.6583 21.0488 15.3417 20.8536 15.1464Z' fill='#00aa00ff'/> </svg>")
+                                        )
+                                    )
+                                )
+                            )
+                        OnSelect: |-
+                            =UpdateContext({rotate: rotate - 45});
+                            If(
+                                rotate = -360,
+                                UpdateContext({rotate: 0})
+                            );
+                            UpdateContext({transform: " transform='rotate (" & rotate & ")' transform-origin='center' "});
+                            Set(
+                                icon_image_text,
+                                Substitute(
+                                    icon_image_text,
+                                    "path d",
+                                    "path " & transform & " d"
+                                )
+                            );
+                            Select(btnSetIcon)
+                        PaddingBottom: =1
+                        PaddingLeft: =1
+                        PaddingRight: =1
+                        PaddingTop: =1
+                        PressedBorderColor: =Self.BorderColor
+                        PressedFill: =Self.Fill
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =26
+                        X: =437
+                        Y: =19
+                        ZIndex: =55
+
+                DownloadControl1 As DownloadControl:
+                    DisplayMode: =DisplayMode.Edit
+                    download: =DownloadImage
+                    fileContents: =selected_Icon.Image
+                    fileMIMEType: ="image/svg+xml"
+                    fileName: =gal_icons.Selected.tm_name
+                    Height: =51
+                    OnChange: =Set(DownloadImage,false)
+                    Width: =44
+                    X: =437
+                    Y: =954
+                    ZIndex: =57
+

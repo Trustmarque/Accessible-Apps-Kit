@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>787beb0f-f55d-415e-b09c-8eb909c1f92d</connectorid>
+  <description>Get Colour Name from colornames.org</description>
+  <displayname>Color Names</displayname>
+  <iconbrandcolor>#ffffff</iconbrandcolor>
+  <name>tm_5Fcolor-20names</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/tm_5Fcolor-20names_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/tm_5Fcolor-20names_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/tm_5Fcolor-20names_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/tm_5Fcolor-20names_iconblob.Png</iconblob>
+</Connector>

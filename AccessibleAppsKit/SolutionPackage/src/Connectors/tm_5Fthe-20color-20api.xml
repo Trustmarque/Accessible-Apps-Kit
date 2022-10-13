@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>b470af48-4955-451b-8b12-19032dd906b9</connectorid>
+  <description>Generate Colour Schemes from The Color API</description>
+  <displayname>The Color API</displayname>
+  <iconbrandcolor>#ffffff</iconbrandcolor>
+  <name>tm_5Fthe-20color-20api</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/tm_5Fthe-20color-20api_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/tm_5Fthe-20color-20api_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/tm_5Fthe-20color-20api_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/tm_5Fthe-20color-20api_iconblob.Png</iconblob>
+</Connector>

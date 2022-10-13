@@ -1,0 +1,86 @@
+{
+  "37b69a9b-5a45-4583-9ebb-dd90a41899ab": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Color Names",
+      "iconUri": "https://prodapiicons.cdn.powerappscdn.net/20221007t000000z56914610d6be4495beedbe85d2bb7cf0/customconnectoricon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_tm-5fcolor-20names-5f7d912cb68e0e20bd",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "ColourNames"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "37b69a9b-5a45-4583-9ebb-dd90a41899ab"
+  },
+  "cc2f7ff6-fa96-4854-b631-a82b02a497e1": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Colour Lovers",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_tm-5fcolour-20lovers-5f7d912cb68e0e20bd",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "ColourLovers"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "cc2f7ff6-fa96-4854-b631-a82b02a497e1"
+  },
+  "dfe75fcf-434f-42ae-bf5c-097099811bbb": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Colorfyit",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_tm-5fcolorfyit-5f7d912cb68e0e20bd",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Colorfyit"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "dfe75fcf-434f-42ae-bf5c-097099811bbb"
+  },
+  "e671e121-09c3-496e-8afd-ca8d326b002e": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "The Color API",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_tm-5fthe-20color-20api-5f7d912cb68e0e20bd",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "TheColorAPI"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e671e121-09c3-496e-8afd-ca8d326b002e"
+  }
+}

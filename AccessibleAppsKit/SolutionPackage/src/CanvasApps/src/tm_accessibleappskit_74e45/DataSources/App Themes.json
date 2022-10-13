@@ -1,0 +1,137 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tm_appthemeses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tm_appthemes",
+    "MaxGetRowsCount": 2000,
+    "Name": "App Themes",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tm_addpicturesize": "AddPicture Size",
+      "tm_appthemes_AsyncOperations": "System Jobs",
+      "tm_appthemes_BulkDeleteFailures": "Bulk Delete Failures",
+      "tm_appthemes_DuplicateBaseRecord": "Duplicate Records (tm_appthemes_DuplicateBaseRecord)",
+      "tm_appthemes_DuplicateMatchingRecord": "Duplicate Records (tm_appthemes_DuplicateMatchingRecord)",
+      "tm_appthemes_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tm_appthemes_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tm_appthemes_ProcessSession": "Process Sessions",
+      "tm_appthemes_SyncErrors": "Sync Errors",
+      "tm_appthemesid": "App Themes",
+      "tm_clientname": "Client Name",
+      "tm_contentsize": "Content Size",
+      "tm_darkmode": "Dark Mode",
+      "tm_defaultborderthickness": "defaultBorderThickness",
+      "tm_defaultfocusedborderthickness": "defaultFocusedBorderThickness",
+      "tm_defaultfontsize": "Default Font Size",
+      "tm_defaultpadding": "defaultPadding",
+      "tm_defaultradius": "defaultRadius",
+      "tm_fontname": "Font Name",
+      "tm_headerfontname": "Header Font Name",
+      "tm_subtitlesize": "Subtitle Size",
+      "tm_templatetype": "Template Type",
+      "tm_textemphasissize": "TextEmphasis Size",
+      "tm_textmainsize": "TextMain Size",
+      "tm_themename": "Theme Name",
+      "tm_titlesize": "Title Size",
+      "tm_tm_themecolor_tm_appthemes_tm_ThemeId": "Theme Colors",
+      "tm_tm_themeicon_tm_appthemes_tm_ThemeId": "Theme Icons",
+      "tm_xtrasmallsize": "XtraSmall Size",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "App Themes",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "App Themes (Views)",
+    "Name": "_tm_appthemes_views",
+    "RelatedEntityName": "App Themes",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "349c4e7e-3495-4994-b511-da2057ba6ab0": "Active App Themes",
+      "b4cab199-82a4-4b13-a567-f5924c70eadd": "App Themes Lookup View",
+      "b78f317e-dd3f-405e-949d-a798d5bef673": "App Themes Associated View",
+      "c95341de-19ec-49be-92c0-248cd28b9d34": "Inactive App Themes",
+      "faeb6ecf-9591-4846-8b5d-8fba6ceccd82": "App Themes Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (App Themes)",
+    "Name": "tm_appthemes_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "App Themes"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "App Themes",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (App Themes)",
+    "Name": "tm_appthemes_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "App Themes"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "App Themes",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Template Types",
+    "Name": "tm_templatetypes",
+    "OptionSetInfoNameMapping": {
+      "509860000": "Accessible Apps Kit",
+      "509860001": "Creator Kit",
+      "509860002": "Branding Template V3"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "tm_templatetype",
+        "OptionSetReferenceEntityName": "App Themes"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "tm_templatetype",
+    "RelatedEntityName": "App Themes",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,840 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =///////////////////////////////////////////////////////////////////////////////////////
+        //                                                                                   //
+        //  Trustmarque Branded Desktop Template - September 2022                            //
+        //  Based on Branding Template v3 by Sancho Harker                                   //
+        //                                                                                   //
+        ///////////////////////////////////////////////////////////////////////////////////////
+        //          -- Set Colours & Values --                                               //
+        ///////////////////////////////////////////////////////////////////////////////////////
+        Set(
+            ThisTheme,
+            {
+                Name: "Trustmarque Default",
+                Color1: RGBA(
+                    0,
+                    31,
+                    45,
+                    1
+                ),
+                Color2: RGBA(
+                    56,
+                    57,
+                    53,
+                    1
+                ),
+                Color3: RGBA(
+                    77,
+                    45,
+                    93,
+                    1
+                ),
+                Color1Light: RGBA(
+                    232,
+                    230,
+                    228,
+                    1
+                ),
+                Color2Light: RGBA(
+                    207,
+                    230,
+                    245,
+                    1
+                ),
+                Color3Light: RGBA(
+                    255,
+                    214,
+                    64,
+                    1
+                ),
+                Color4: RGBA(
+                    188,
+                    15,
+                    95,
+                    1
+                ),
+                Color5Alpha: RGBA(
+                    8,
+                    8,
+                    8,
+                    0.7
+                ),
+                defaultTextColor: RGBA(
+                    232,
+                    230,
+                    228,
+                    1
+                ),
+                ColorWhite: RGBA(
+                    255,
+                    255,
+                    255,
+                    1
+                ),
+                ColorBlack: RGBA(
+                    8,
+                    8,
+                    8,
+                    1
+                ),
+                defaultPadding: 5,
+                defaultRadius: 10,
+                defaultBorderThickness: 1,
+                defaultFocusedBorderThickness: 2,
+                Font: 'Segoe UI',
+                HeaderFont: 'Segoe UI',
+                FontSize: 12,
+                DarkMode: false
+            }
+        );
+        ////////////////////////////////////
+        // -- Set Secondary Font Sizes -- //
+        ////////////////////////////////////
+        Set(
+            FontSizes,
+            {
+                TextMain: ThisTheme.FontSize - 1,
+                TextEmphasis: ThisTheme.FontSize + 1,
+                Content: ThisTheme.FontSize + 2,
+                Title: ThisTheme.FontSize + 8,
+                SubTitle: ThisTheme.FontSize + 4,
+                AddPicture: ThisTheme.FontSize - 3,
+                XtraSmall: ThisTheme.FontSize - 5
+            }
+        );
+        Set(
+            ThisThemeBackup,
+            ThisTheme
+        );
+        ////////////////////////////////////////////////
+        // -- Set Control-level default Properties -- //
+        ////////////////////////////////////////////////
+        Set(
+            ControlsTheme,
+            {
+                LabelTextColor: ThisTheme.defaultTextColor,
+                LabelFill: Transparent,
+                LabelBorderColor: ThisTheme.Color2,
+                LabelFont: ThisTheme.Font,
+                ButtonColor: ThisTheme.Color2,
+                ButtonFill: ThisTheme.Color2Light,
+                ButtonBorderColor: ThisTheme.Color1,
+                ButtonHoverColor: ColorFade(
+                    ThisTheme.Color2Light,
+                    20%
+                ),
+                ButtonHoverFill: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                ButtonHoverBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                ButtonPressedColor: ThisTheme.Color2,
+                ButtonPressedFill: ThisTheme.Color2Light,
+                ButtonPressedBorderColor: ThisTheme.Color2,
+                ButtonFont: ThisTheme.Font,
+                ButtonBorderThickness: ThisTheme.defaultBorderThickness,
+                ButtonFocusedBorderThickness: ThisTheme.defaultFocusedBorderThickness,
+                ButtonBorderStyle: Solid,
+                ButtonFontSize: FontSizes.TextEmphasis,
+                InputTextColor: ThisTheme.Color1Light,
+                InputFill: ThisTheme.Color1,
+                InputBorderColor: ThisTheme.Color2,
+                InputHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                InputHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                InputHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                InputPressedColor: ThisTheme.Color1Light,
+                InputPressedFill: ThisTheme.Color1,
+                InputPressedBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                InputFont: ThisTheme.Font,
+                InputDelayOutput: true,
+                InputBorderRadiusTopLeft: ThisTheme.defaultRadius,
+                InputBorderRadiusTopRight: ThisTheme.defaultRadius,
+                InputBorderRadiusBottomLeft: ThisTheme.defaultRadius,
+                InputBorderRadiusBottomRight: ThisTheme.defaultRadius,
+                InputPaddingTopLeft: ThisTheme.defaultPadding,
+                InputPaddingTopRight: ThisTheme.defaultPadding,
+                InputPaddingBottomLeft: ThisTheme.defaultPadding,
+                InputPaddingBottomRight: ThisTheme.defaultPadding,
+                InputBorderStyle: Solid,
+                PenInputInkColor: ThisTheme.defaultTextColor,
+                PenInputBorderColor: ThisTheme.defaultTextColor,
+                PenInputInkSize: 2,
+                PenInputBackground: Transparent,
+                DropdownTextColor: ThisTheme.Color1Light,
+                DropdownFill: ThisTheme.Color1,
+                DropdownBorderColor: ThisTheme.Color2,
+                DropdownHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                DropdownHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                DropdownHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                DropdownPressedColor: ThisTheme.Color1,
+                DropdownPressedFill: ThisTheme.Color1Light,
+                DropdownPressedBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    -20%
+                ),
+                DropdownChevronBackground: ThisTheme.Color2,
+                DropdownChevronFill: ThisTheme.Color2Light,
+                DropdownChevronHoverBackground: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                DropdownChevronHoverFill: ColorFade(
+                    ThisTheme.Color2Light,
+                    20%
+                ),
+                DropdownSelectionColor: ThisTheme.Color3Light,
+                DropdownSelectionFill: ThisTheme.Color3,
+                DropdownFont: ThisTheme.Font,
+                DropdownBorderThickness: ThisTheme.defaultBorderThickness,
+                DropdownFocusedBorderThickness: ThisTheme.defaultFocusedBorderThickness,
+                ComboBoxTextColor: ThisTheme.Color1Light,
+                ComboBoxFill: ThisTheme.Color1,
+                ComboBoxBorderColor: ThisTheme.Color2,
+                ComboBoxHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                ComboBoxHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                ComboBoxHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                ComboBoxPressedColor: ThisTheme.Color2Light,
+                ComboBoxPressedFill: ThisTheme.Color2,
+                ComboBoxPressedBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    -20%
+                ),
+                ComboBoxSelectionColor: ThisTheme.Color3Light,
+                ComboBoxSelectionFill: ThisTheme.Color3,
+                ComboBoxChevronBackground: ThisTheme.Color2,
+                ComboBoxChevronFill: ThisTheme.Color2Light,
+                ComboBoxChevronHoverBackground: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                ComboBoxChevronHoverFill: ColorFade(
+                    ThisTheme.Color2Light,
+                    20%
+                ),
+                ComboBoxFont: ThisTheme.Font,
+                ComboBoxMoreItemsButtonColor: ThisTheme.Color2,
+                ComboBoxBorderThickness: ThisTheme.defaultBorderThickness,
+                ComboBoxFocusedBorderThickness: ThisTheme.defaultFocusedBorderThickness,
+                DatePickerColor: ThisTheme.Color1Light,
+                DatePickerFill: ThisTheme.Color1,
+                DatePickerBorderColor: ThisTheme.Color2,
+                DatePickerIconFill: ThisTheme.Color2Light,
+                DatePickerIconBackground: ThisTheme.Color2,
+                DatePickerSelectedDateFill: ThisTheme.Color2,
+                DatePickerHoverDateFill: ThisTheme.Color3Light,
+                DatePickerHeaderFill: ThisTheme.Color3,
+                DatePickerFont: ThisTheme.Font,
+                ListBoxTextColor: ThisTheme.Color1Light,
+                ListBoxFill: ThisTheme.Color1,
+                ListBoxBorderColor: ThisTheme.Color2,
+                ListBoxHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                ListBoxHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                ListBoxHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                ListBoxPressedColor: ThisTheme.Color2Light,
+                ListBoxPressedFill: ThisTheme.Color2,
+                ListBoxPressedBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    -20%
+                ),
+                ListBoxSelectionColor: ThisTheme.Color3Light,
+                ListBoxSelectionFill: ThisTheme.Color3,
+                ListBoxFont: ThisTheme.Font,
+                ListBoxItemPaddingLeft: 10,
+                CheckBoxTextColor: ThisTheme.defaultTextColor,
+                CheckBoxInnerBackground: If(
+                    ThisTheme.DarkMode,
+                    ColorFade(
+                        ThisTheme.Color1,
+                        -50%
+                    ),
+                    ColorFade(
+                        ThisTheme.Color1,
+                        50%
+                    )
+                ),
+                CheckBoxBorderColor: ThisTheme.Color2,
+                CheckBoxHoverColor: ColorFade(
+                    ThisTheme.defaultTextColor,
+                    20%
+                ),
+                CheckBoxHoverFill: ColorFade(
+                    Transparent,
+                    20%
+                ),
+                CheckBoxHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                CheckBoxPressedColor: ColorFade(
+                    ThisTheme.defaultTextColor,
+                    -20%
+                ),
+                CheckBoxPressedFill: ColorFade(
+                    Transparent,
+                    -20%
+                ),
+                CheckBoxPressedBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    -20%
+                ),
+                CheckBoxOutsideBorderColor: ThisTheme.Color2,
+                CheckBoxFill: Transparent,
+                CheckBoxCheckmarkFill: ThisTheme.defaultTextColor,
+                CheckBoxFont: ThisTheme.Font,
+                CheckBoxSize: 40,
+                RadioTextColor: ThisTheme.defaultTextColor,
+                RadioOutsideFill: Transparent,
+                RadioOutsideBorderColor: ThisTheme.Color2,
+                RadioHoverColor: ThisTheme.Color2,
+                RadioHoverFill: Transparent,
+                RadioPressedColor: ThisTheme.defaultTextColor,
+                RadioPressedFill: Transparent,
+                RadioBorderColor: ThisTheme.Color2,
+                RadioBackgroundFill: If(
+                    ThisTheme.DarkMode,
+                    ColorFade(
+                        ThisTheme.Color1,
+                        -50%
+                    ),
+                    ColorFade(
+                        ThisTheme.Color1,
+                        50%
+                    )
+                ),
+                RadioSelectionFill: ThisTheme.defaultTextColor,
+                RadioFont: ThisTheme.Font,
+                RadioSize: 40,
+                RadioLayout: Layout.Horizontal,
+                ToggleTextColor: ThisTheme.defaultTextColor,
+                ToggleBorderColor: ThisTheme.Color2,
+                ToggleHandleFill: ThisTheme.Color2,
+                ToggleFalseFill: ThisTheme.Color1,
+                ToggleTrueFill: ThisTheme.Color3,
+                ToggleFalseHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                ToggleTrueHoverFill: ColorFade(
+                    ThisTheme.Color3,
+                    20%
+                ),
+                ToggleHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                TogglePressedBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    -20%
+                ),
+                ToggleFont: ThisTheme.Font,
+                ToggleTextPosition: TextPosition.Left,
+                SliderBorderColor: ThisTheme.Color2,
+                SliderHandleFill: White,
+                SliderBackground: ThisTheme.Color3,
+                SliderValueFill: ThisTheme.Color2,
+                SliderHandleHoverFill: ColorFade(
+                    White,
+                    20%
+                ),
+                SliderHandleActiveFill: ColorFade(
+                    White,
+                    40%
+                ),
+                SliderRailHoverFill: ColorFade(
+                    ThisTheme.Color3,
+                    20%
+                ),
+                SliderValueHoverFill: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                SliderHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                SliderPressedBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    -20%
+                ),
+                SliderRailThickness: 24,
+                SliderHandleSize: 24,
+                RatingItemFill: ThisTheme.Color2,
+                RatingFill: Transparent,
+                RatingBorderColor: ThisTheme.Color2,
+                TimerTextColor: ThisTheme.Color1Light,
+                TimerFill: ThisTheme.Color1,
+                TimerBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                TimerHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                TimerHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                TimerHoverBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                TimerPressedColor: ThisTheme.Color1,
+                TimerPressedFill: ThisTheme.Color1Light,
+                TimerPressedBorderColor: ThisTheme.Color1,
+                TimerFont: ThisTheme.Font,
+                ImageFill: Transparent,
+                ImageBorderColor: Transparent,
+                ImageHoverFill: Transparent,
+                ImageHoverBorderColor: Transparent,
+                ImagePressedFill: Transparent,
+                ImagePressedBorderColor: Transparent,
+                CameraBorderColor: ThisTheme.Color2,
+                BarcodeColor: ThisTheme.Color1Light,
+                BarcodeFill: ThisTheme.Color1,
+                BarcodeBorderColor: ThisTheme.Color2,
+                BarcodeHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                BarcodeHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                BarcodeHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                BarcodePressedColor: ThisTheme.Color1,
+                BarcodePressedFill: ThisTheme.Color1Light,
+                BarcodePressedBorderColor: ThisTheme.Color1,
+                BarcodeFont: ThisTheme.Font,
+                VideoFill: ThisTheme.Color1,
+                VideoBorderColor: ThisTheme.Color2,
+                StreamColor: ThisTheme.defaultTextColor,
+                StreamFill: Transparent,
+                StreamBorderColor: ThisTheme.Color2,
+                AudioFill: ThisTheme.Color1,
+                AudioBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                MicrophoneColor: ThisTheme.Color1Light,
+                MicrophoneFill: ThisTheme.Color1,
+                MicrophoneBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                MicrophoneHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                MicrophoneHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                MicrophoneHoverBorderColor: ThisTheme.Color1,
+                MicrophonePressedColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    -20%
+                ),
+                MicrophonePressedFill: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                MicrophonePressedBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    -40%
+                ),
+                AddPictureColor: ThisTheme.Color1Light,
+                AddPictureFill: ThisTheme.Color1,
+                AddPictureBorderColor: ThisTheme.Color2,
+                AddPictureHoverColor: ThisTheme.Color1Light,
+                AddPictureHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                AddPictureHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                AddPicturePressedColor: ThisTheme.Color1Light,
+                AddPicturePressedFill: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                AddPicturePressedBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    -20%
+                ),
+                AddPictureFont: ThisTheme.Font,
+                ImportColor: ThisTheme.Color1Light,
+                ImportFill: ThisTheme.Color1,
+                ImportBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                ImportFont: ThisTheme.Font,
+                ImportHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                ImportHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                ImportHoverBorderColor: ThisTheme.Color1,
+                ImportPressedColor: ThisTheme.Color1Light,
+                ImportPressedFill: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                ImportPressedBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    -40%
+                ),
+                ExportColor: ThisTheme.Color1Light,
+                ExportFill: ThisTheme.Color1,
+                ExportBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                ExportFont: ThisTheme.Font,
+                ExportHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                ExportHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                ExportHoverBorderColor: ThisTheme.Color1,
+                ExportPressedColor: ThisTheme.Color1Light,
+                ExportPressedFill: ColorFade(
+                    ThisTheme.Color1,
+                    -20%
+                ),
+                ExportPressedBorderColor: ColorFade(
+                    ThisTheme.Color1,
+                    -40%
+                ),
+                ChartLegendColor: ThisTheme.defaultTextColor,
+                ChartLegendFont: ThisTheme.Font,
+                // Gallery Items
+                GalleryFill: RGBA(
+                    0,
+                    0,
+                    0,
+                    0
+                ),
+                GalleryBorderColor: ThisTheme.Color2,
+                // Gallery Title and Subtitle
+                GallerytitleLabelColor: ThisTheme.Color3,
+                GallerysubtitleLabelColor: ThisTheme.defaultTextColor,
+                GallerytitleLabelFont: ThisTheme.Font,
+                GallerysubtitleLabelFont: ThisTheme.Font,
+                // Body content label in Flexible Height Gallery
+                GallerycontentLabelColor: ThisTheme.defaultTextColor,
+                GallerycontentLabelFont: ThisTheme.Font,
+                // Icons
+                IconFill: ThisTheme.Color3,
+                IconHoverFill: ThisTheme.Color3Light,
+                IconPressedFill: ThisTheme.Color1,
+                // Background set to transparent by default to preserve New Screen-based icons
+                IconBackground: Transparent,
+                IconHoverBackground: Transparent,
+                IconPressedBackground: Transparent,
+                IconBorderColor: ColorFade(
+                    ThisTheme.Color3,
+                    -20%
+                ),
+                IconHoverBorderColor: ThisTheme.Color3,
+                IconPressedBorderColor: ColorFade(
+                    ThisTheme.Color3,
+                    -40%
+                ),
+                // Attachments
+                AttachmentTextColor: ThisTheme.Color1Light,
+                AttachmentFill: ThisTheme.Color1,
+                AttachmentBorderColor: ThisTheme.Color2,
+                AttachmentHoverColor: ColorFade(
+                    ThisTheme.Color1Light,
+                    20%
+                ),
+                AttachmentHoverFill: ColorFade(
+                    ThisTheme.Color1,
+                    20%
+                ),
+                AttachmentHoverBorderColor: ColorFade(
+                    ThisTheme.Color2,
+                    20%
+                ),
+                AttachmentFont: ThisTheme.Font,
+                AttachmentPressedColor: ThisTheme.Color2Light,
+                AttachmentPressedFill: ThisTheme.Color2,
+                AttachmentItemColor: ThisTheme.Color3Light,
+                AttachmentItemFill: ThisTheme.Color3,
+                AttachmentItemHoverColor: ColorFade(
+                    ThisTheme.Color3Light,
+                    20%
+                ),
+                AttachmentItemHoverFill: ColorFade(
+                    ThisTheme.Color3,
+                    20%
+                ),
+                // Forms
+                EditFormBorderColor: ThisTheme.Color2,
+                EditFormFill: If(
+                    ThisTheme.DarkMode,
+                    ColorFade(
+                        ThisTheme.Color1,
+                        -50%
+                    ),
+                    ColorFade(
+                        ThisTheme.Color1,
+                        90%
+                    )
+                ),
+                ViewFormBorderColor: ThisTheme.Color2,
+                ViewFormFill: If(
+                    ThisTheme.DarkMode,
+                    ColorFade(
+                        ThisTheme.Color1,
+                        -50%
+                    ),
+                    ColorFade(
+                        ThisTheme.Color1,
+                        90%
+                    )
+                ),
+                // Form Title and * fields
+                FormTitleLabelColor: ThisTheme.Color3,
+                FormTitleLabelFont: ThisTheme.Font,
+                // Screen
+                ScreenBackground: If(
+                    ThisTheme.DarkMode,
+                    ColorFade(
+                        ThisTheme.Color1,
+                        -20%
+                    ),
+                    ColorFade(
+                        ThisTheme.Color1,
+                        90%
+                    )
+                ),
+                // Data Table
+                DataTableColor1: ThisTheme.Color1,
+                DataTableColor2: ThisTheme.Color2,
+                // Border Lines between headers
+                DataTableColor3: ThisTheme.Color3,
+                DataTableColor: ThisTheme.Color1Light,
+                DataTableFill: ThisTheme.Color1,
+                DataTableColorInverted: ThisTheme.Color3Light,
+                DataTableSelectedColor: ThisTheme.Color3Light,
+                DataTableSelectedFill: ThisTheme.Color3,
+                DataTableHoverColor: ThisTheme.Color2Light,
+                DataTableHoverFill: ThisTheme.Color2,
+                DataTableBorderColor: ThisTheme.Color2,
+                DataTableInputFill: ThisTheme.Color1,
+                DataTableFont: ThisTheme.Font,
+                DataTableHeadingFont: ThisTheme.Font,
+                DataTableHeadingColor: ThisTheme.Color2Light,
+                DataTableHeadingFill: ThisTheme.Color2,
+                DataTableFontWeight: FontWeight.Normal,
+                DataTableHeadingFontWeight: FontWeight.Semibold,
+                // PDFViewer & PowerBI
+                PdfViewerFill: ColorFade(
+                    ThisTheme.Color1,
+                    -50%
+                ),
+                PdfViewerBorderColor: ThisTheme.Color2,
+                PowerBIBorderColor: ThisTheme.Color2,
+                //  These apply to the Insert>New Screen items  //
+                invertedBkgHeaderLabelColor: ThisTheme.Color2Light,
+                IconFillInverted: ThisTheme.Color2,
+                basicNoSizeLabelColor: ThisTheme.Color3,
+                invertedBkgHeaderIconColor: ThisTheme.Color3Light,
+                basicNoSizeInvertedBkgLabelColor: ThisTheme.Color3Light,
+                basicNoSizeWeightColorLabelColor: ThisTheme.defaultTextColor
+            }
+        );
+        Set(
+            ControlsThemeBackup,
+            ControlsTheme
+        );
+        /////////////////////////////////////////////
+        //                                         //
+        // -- Set Control-level Font properties -- //
+        //                                         //
+        //    This is separated from the above     //
+        //  to enable easy changing of font size   //
+        //                                         //
+        /////////////////////////////////////////////
+        Set(
+            ControlsFontSizes,
+            {
+                LabelFontSize: FontSizes.TextMain,
+                ButtonFontSize: FontSizes.TextEmphasis,
+                InputFontSize: FontSizes.TextMain,
+                DropdownFontSize: FontSizes.TextMain,
+                ComboBoxFontSize: FontSizes.TextMain,
+                DatePickerFontSize: FontSizes.TextMain,
+                ListBoxFontSize: FontSizes.TextMain,
+                CheckBoxFontSize: FontSizes.TextMain,
+                RadioFontSize: FontSizes.TextMain,
+                ToggleFontSize: FontSizes.TextMain,
+                TimerFontSize: FontSizes.Title,
+                BarcodeFontSize: FontSizes.TextEmphasis,
+                AddPictureFontSize: FontSizes.AddPicture,
+                ImportFontSize: FontSizes.TextEmphasis,
+                ExportFontSize: FontSizes.TextEmphasis,
+                ChartLegendFontSize: FontSizes.AddPicture,
+                GallerytitleLabelFontSize: FontSizes.Title,
+                GallerysubtitleLabelFontSize: FontSizes.SubTitle,
+                GallerycontentLabelFontSize: FontSizes.Content,
+                AttachmentFontSize: FontSizes.TextMain,
+                FormTitleLabelFontSize: FontSizes.TextMain,
+                DataTableFontSize: FontSizes.TextMain,
+                DataTableHeadingFontSize: FontSizes.TextEmphasis
+            }
+        );
+        Set(
+            TempControlsFontSizes,
+            ControlsFontSizes
+        );
+        /////////////////////////////////////
+        //                                 //
+        // -- Set default Chart Colours -- //
+        Set(
+            ReservedChartColorSet,
+            [
+                RGBA(
+                    49,
+                    130,
+                    93,
+                    1
+                ),
+                RGBA(
+                    48,
+                    166,
+                    103,
+                    1
+                ),
+                RGBA(
+                    94,
+                    193,
+                    108,
+                    1
+                ),
+                RGBA(
+                    246,
+                    199,
+                    144,
+                    1
+                ),
+                RGBA(
+                    247,
+                    199,
+                    114,
+                    1
+                ),
+                RGBA(
+                    247,
+                    180,
+                    91,
+                    1
+                ),
+                RGBA(
+                    246,
+                    143,
+                    100,
+                    1
+                ),
+                RGBA(
+                    212,
+                    96,
+                    104,
+                    1
+                ),
+                RGBA(
+                    148,
+                    110,
+                    176,
+                    1
+                ),
+                RGBA(
+                    118,
+                    154,
+                    204,
+                    1
+                )
+            ]
+        );
+        ///////////////////////////////////////////
+        // Default Themes                        //
+        ///////////////////////////////////////////
+        
+        ///////////////////////////////////
+        //  End of Default theme Values  //
+        ///////////////////////////////////
+        ///////////////////////////////////
+        //  Set Developer                //
+        ///////////////////////////////////
+        If(
+            "pen.warner" in User().Email,
+            Set(
+                Developer,
+                true
+            )
+        );
+        // Set Debug to false
+        Set(
+            Debug,
+            false
+        );
+    StartScreen: ='Loading Screen'
+

@@ -1,0 +1,11 @@
+DecodeURL As CanvasComponent:
+    DecodedURL: |-
+        =Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Last(Split(DecodeURL.UrlToDecode,",")).Result,"%20"," "),"%21","!"),"%22","'"),"%23","#"),"%24","$"),"%25","%"),"%26","&"),"%27","'"),"%28","("),"%29",")"),"%2A","*"),"%2B","+"),"%2C",","),"%3C","<"),"%3E",">"),"%2D","-"),"%2F","/"),"%2E","."),"%7B","{"),"%7D","}"),"%7C","|"),"%5C",""),"%5E","^"),"%7E","~"),"%5B","["),"%5D","]"),"%60","`"),"%80","`"),"%2F","/"),"%3A",":"),"%3B",";"),"%3D","="),"%3F","?"),"%40","@"),"%27","'")
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    UrlToDecode: ="Text"
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+

@@ -1,0 +1,1051 @@
+"'Font Workbench Screen' As screen":
+    OnVisible: |-
+        =UpdateContext({ ctxComponentEvent: "SetFocus" & Text(Rand()) });
+
+    conScreen_fws As groupContainer.verticalAutoLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        X: =0.00
+        ZIndex: =1
+
+        conHeader_fws As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            FillPortions: =0
+            Height: =65
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            cmpHeader_fs As Header:
+                BackButtonVisible: =true
+                ContentWidth: =Parent.Width
+                Height: =65
+                LeftButtonImage: |-
+                    =
+                    "data:image/svg+xml;," & EncodeUrl("<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'><defs><style>.cls-1{fill:#fff;}.cls-2{fill:url(#linear-gradient-2);}.cls-2,.cls-3{mix-blend-mode:multiply;opacity:.1;}.cls-3{fill:url(#linear-gradient);}.cls-4{isolation:isolate;}</style><linearGradient id='linear-gradient' x1='-182.54' y1='-36.31' x2='-182.54' y2='-16.54' gradientTransform='translate(226.77 29.42)' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='#010101'/><stop offset='1' stop-color='#010101' stop-opacity='0'/></linearGradient><linearGradient id='linear-gradient-2' x1='-343.35' y1='-937.2' x2='-343.35' y2='-917.43' gradientTransform='translate(399.12 1005.31)' xlink:href='#linear-gradient'/></defs><g class='cls-4'><g id='Layer_1'><g><g><polygon class='cls-1' points='75 25 75 0 25 0 0 25 0 75 25 75 25 25 75 25'/><polygon class='cls-1' points='75 25 75 75 25 75 25 100 75 100 100 75 100 25 75 25'/></g><rect class='cls-3' x='31.73' y='-6.73' width='25' height='38.46' transform='translate(31.73 56.73) rotate(-90)'/><rect class='cls-2' x='43.27' y='68.27' width='25' height='38.46' transform='translate(143.27 31.73) rotate(90)'/></g></g></g></svg>")
+                OnBackSelect: =Back()
+                OnRightButtonSelect: =Navigate('Icon Set Admin Screen',ScreenTransition.Fade)
+                Text: ="Fonts Workbench"
+                Theme: =AppTheme
+                Width: =Parent.Width
+
+        conMain_fws As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =4
+
+            conThemeFont_fs As groupContainer.manualLayoutContainer:
+                FillPortions: =0
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =1
+
+                "eleThemeFont_fs As 'Fluent Elevation (1.0.8)'":
+                    Depth: ='''PowerCAT.Elevation.Depth'''.Depth8
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =691
+                    HoverDepth: ='''PowerCAT.Elevation.HoverDepth'''.Depth8
+                    Width: =470
+                    X: =15
+                    Y: =0
+                    ZIndex: =1
+
+                lblThemeFont_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="Font:"
+                    Width: =120
+                    X: =15
+                    Y: =85
+                    ZIndex: =2
+
+                lblHeaderFont_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="Header Font:"
+                    Width: =120
+                    X: =15
+                    Y: =137
+                    ZIndex: =3
+
+                lblFontSize_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="Font Size: "
+                    Width: =120
+                    X: =15
+                    Y: =190
+                    ZIndex: =4
+
+                inpFont_fs As text:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =ChosenThemeFont
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    X: =135
+                    Y: =84
+                    ZIndex: =5
+
+                inpHeaderFont_fs As text:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =ChosenThemeHeaderFont
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    X: =135
+                    Y: =136
+                    ZIndex: =6
+
+                inpFontSize_fs As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =gblChosenTheme.'Default Font Size'
+                    DelayOutput: =true
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =41
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =61
+                    X: =135
+                    Y: =189
+                    ZIndex: =7
+
+                lblFontSizes_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =FontSizes.SubTitle
+                    Text: ="Font Sizes"
+                    Width: =120
+                    X: =15
+                    Y: =275
+                    ZIndex: =8
+
+                lblTextMain_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="TextMain:"
+                    Width: =120
+                    X: =65
+                    Y: =315
+                    ZIndex: =9
+
+                lblTextEmphasis_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="TextEmphasis:"
+                    Width: =120
+                    X: =65
+                    Y: =355
+                    ZIndex: =10
+
+                lblContent_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="Content:"
+                    Width: =120
+                    X: =65
+                    Y: =395
+                    ZIndex: =11
+
+                lblTitle_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="Title:"
+                    Width: =120
+                    X: =65
+                    Y: =435
+                    ZIndex: =12
+
+                lblSubTitle_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="SubTitle:"
+                    Width: =120
+                    X: =65
+                    Y: =475
+                    ZIndex: =13
+
+                lblAddPicture_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="AddPicture:"
+                    Width: =120
+                    X: =65
+                    Y: =515
+                    ZIndex: =14
+
+                lblXtraSmall_fs As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =13
+                    Text: |-
+                        ="XtraSmall:"
+                    Width: =120
+                    X: =65
+                    Y: =555
+                    ZIndex: =15
+
+                btnUpdateThemeFonts_fs As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 120, 212, 1)
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+                    OnSelect: |-
+                        =Patch(
+                            'App Themes',
+                            gblChosenTheme,
+                            {
+                                'Font Name':inpFont_fs.Text  ,
+                                'Header Font Name': inpHeaderFont_fs.Text,
+                                'Default Font Size': Value(inpFontSize_fs.Text),
+                                'TextMain Size': Value(inpTextMain.Text),
+                                'TextEmphasis Size': Value(inpTextEmphasis.Text),
+                                'Content Size': Value(inpContent.Text),
+                                'Title Size': Value(inpTitle.Text),
+                                'Subtitle Size': Value(inpSubtitle.Text),
+                                'AddPicture Size': Value(inpAddPicture.Text),
+                                'XtraSmall Size': Value(inpXtraSmall.Text)
+                            }
+                        )
+                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =15
+                    Text: ="Update"
+                    X: =180
+                    Y: =628
+                    ZIndex: =23
+
+                inpTextMain As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Value(inpFontSize_fs.Text)-1
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =26
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =46
+                    X: =188
+                    Y: =322
+                    ZIndex: =24
+
+                inpTextEmphasis As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Value(inpFontSize_fs.Text)+1
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =26
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =46
+                    X: =188
+                    Y: =363
+                    ZIndex: =25
+
+                inpContent As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Value(inpFontSize_fs.Text)+2
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =26
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =46
+                    X: =188
+                    Y: =402
+                    ZIndex: =26
+
+                inpTitle As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Value(inpFontSize_fs.Text)+6
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =26
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =46
+                    X: =188
+                    Y: =442
+                    ZIndex: =27
+
+                inpSubtitle As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Value(inpFontSize_fs.Text)+4
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =26
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =46
+                    X: =188
+                    Y: =482
+                    ZIndex: =28
+
+                inpAddPicture As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Value(inpFontSize_fs.Text)-3
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =26
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =46
+                    X: =188
+                    Y: =522
+                    ZIndex: =29
+
+                inpXtraSmall As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Value(inpFontSize_fs.Text)-5
+                    DelayOutput: =false
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =26
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =46
+                    X: =188
+                    Y: =562
+                    ZIndex: =30
+
+                lblThemeFonts_fs As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Font: =ThisTheme.Font
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    Size: =FontSizes.Title
+                    Text: =gblChosenTheme.'Theme Name'
+                    Width: =417
+                    X: =38
+                    Y: =16
+                    ZIndex: =31
+
+            conFontsBrowser_fs As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                ZIndex: =2
+
+                "eleFonts_fs As 'Fluent Elevation (1.0.8)'":
+                    Depth: ='''PowerCAT.Elevation.Depth'''.Depth16
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =Parent.Height -16
+                    HoverDepth: ='''PowerCAT.Elevation.HoverDepth'''.Depth16
+                    Width: =Parent.Width -16
+                    X: =8
+                    Y: =0
+                    ZIndex: =1
+
+                galFonts_fs As gallery.galleryVertical:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =Parent.Height -16-64
+                    Items: |-
+                        =Switch(
+                            tabFonts_fs.SelectedKey,
+                            "builtIn",
+                            powerAppsFonts,
+                            "webSafe",
+                            webSafeFonts,
+                            "windows11",
+                            windows11Fonts
+                           
+                        )
+                    Layout: =Layout.Vertical
+                    TemplateSize: =165
+                    Visible: =tabFonts_fs.SelectedKey<> "theme"
+                    Width: =Parent.Width-32
+                    WrapCount: =RoundDown((Parent.Width-32)/320,0)
+                    X: =13
+                    Y: =64
+                    ZIndex: =2
+
+                    "eleFontCard_fs As 'Fluent Elevation (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =Parent.TemplateHeight-8
+                        Width: =Parent.TemplateWidth-8
+                        X: =4
+                        Y: =0
+                        ZIndex: =1
+
+                    lblFont_fs As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =ThisItem.Font
+                        FontWeight: =FontWeight.Semibold
+                        Height: =32
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Size: =FontSizes.Content
+                        Text: =ThisItem.Font
+                        Width: =346.75
+                        X: =9
+                        Y: =53
+                        ZIndex: =2
+
+                    lblFontName_fs As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =ThisItem.Font
+                        Height: =36
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Size: =FontSizes.Title
+                        Text: =ThisItem.Name
+                        Width: =254
+                        Wrap: =false
+                        X: =9
+                        Y: =10
+                        ZIndex: =3
+
+                    lblDefaultText_fs As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =ThisItem.Font
+                        Height: =69
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Size: =ThisTheme.FontSize
+                        Text: ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan vulputate nibh, non tincidunt est faucibus eu. Integer viverra arcu et magna malesuada blandit. Phasellus euismod varius est eget sodales. Integer consequat nisi ut diam consectetur, at cursus est auctor. Ut at sagittis leo. Sed non rutrum nisi, at efficitur risus. Proin pulvinar fermentum velit, eu venenatis augue maximus lacinia. Mauris bibendum ultricies aliquet."
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth -16
+                        X: =9
+                        Y: =85
+                        ZIndex: =4
+
+                    btnAddtoHeader_fs As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 120, 212, 1)
+                        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =36
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+                        OnSelect: |-
+                            =UpdateContext({ChosenThemeHeaderFont:ThisItem.Name})
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =15
+                        Text: ="T"
+                        Width: =36
+                        X: =Parent.TemplateWidth -Self.Width -12
+                        Y: =10
+                        ZIndex: =5
+
+                    btnAddtoFont_fs As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 120, 212, 1)
+                        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =36
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+                        OnSelect: |-
+                            =UpdateContext({ChosenThemeFont:ThisItem.Name})
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =15
+                        Text: ="t"
+                        Width: =36
+                        X: =btnAddtoHeader_fs.X-Self.Width -8
+                        Y: =10
+                        ZIndex: =6
+
+                "tabFonts_fs As 'Fluent Pivot (1.0.8)'.pcfdataset":
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =41
+                    InputEvent: =ctxComponentEvent
+                    Items: |-
+                        =Table(
+                                    {ItemKey:"builtIn",ItemDisplayName:"Power Apps Fonts",ItemIconName:"PowerApps",ItemCount: CountRows(powerAppsFonts)},
+                                    {ItemKey:"webSafe",ItemDisplayName:"Web Safe Fonts",ItemIconName:"Globe",ItemCount: CountRows(webSafeFonts)},
+                                    {ItemKey:"windows11",ItemDisplayName:"Windows 11 Fonts",ItemIconName:"WindowsLogo",ItemCount: CountRows(windows11Fonts)},
+                                     {ItemKey:"theme",ItemDisplayName:"Theme Fonts",ItemIconName:"A"}
+                                )
+                    RenderSize: ='''PowerCAT.Pivot.RenderSize'''.Large
+                    RenderType: ='''PowerCAT.Pivot.RenderType'''.PivotLinks
+                    Width: =Parent.Width -16
+                    X: =8
+                    Y: =0
+                    ZIndex: =3
+
+                conThemeFontsOverview As groupContainer.manualLayoutContainer:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =935
+                    Visible: =tabFonts_fs.SelectedKey = "theme"
+                    Width: =1464
+                    X: =8
+                    Y: =64
+                    ZIndex: =4
+
+                    Label23 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpTitle.Text)
+                        Text: ="Title Size  " & inpTitle.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =52
+                        ZIndex: =1
+
+                    Label23_6 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpSubtitle.Text)
+                        Text: ="SubTitle Size  " & inpSubtitle.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =110
+                        ZIndex: =7
+
+                    Label23_7 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpContent.Text)
+                        Text: ="Content Size  " & inpContent.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =168
+                        ZIndex: =8
+
+                    Label23_8 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpTextEmphasis.Text)
+                        Text: ="TextEmphasis Size  " & inpTextEmphasis.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =226
+                        ZIndex: =9
+
+                    Label23_9 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpTextMain.Text)
+                        Text: ="TextMain Size  " & inpTextMain.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =284
+                        ZIndex: =10
+
+                    Label23_10 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpAddPicture.Text)
+                        Text: ="AddPicture Size  " & inpAddPicture.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =342
+                        ZIndex: =11
+
+                    Label23_11 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpXtraSmall.Text)
+                        Text: ="XtraSmall Size  " & inpXtraSmall.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =400
+                        ZIndex: =12
+
+                    Label23_1 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpHeaderFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpTitle.Text)
+                        Text: ="Title Size  " & inpTitle.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =516
+                        ZIndex: =13
+
+                    Label23_12 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpHeaderFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpSubtitle.Text)
+                        Text: ="SubTitle Size  " & inpSubtitle.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =574
+                        ZIndex: =14
+
+                    Label23_13 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpHeaderFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpContent.Text)
+                        Text: ="Content Size  " & inpContent.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =632
+                        ZIndex: =15
+
+                    Label23_14 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpHeaderFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpTextEmphasis.Text)
+                        Text: ="TextEmphasis Size  " & inpTextEmphasis.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =690
+                        ZIndex: =16
+
+                    Label23_15 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpHeaderFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpTextMain.Text)
+                        Text: ="TextMain Size  " & inpTextMain.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =748
+                        ZIndex: =17
+
+                    Label23_16 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpHeaderFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpAddPicture.Text)
+                        Text: ="AddPicture Size  " & inpAddPicture.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =806
+                        ZIndex: =18
+
+                    Label23_17 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpHeaderFont_fs.Text
+                        Height: =58
+                        Size: =Value(inpXtraSmall.Text)
+                        Text: ="XtraSmall Size  " & inpXtraSmall.Text & " The Quick brown fox jumps somewhere over the rainbow!"
+                        Width: =1393
+                        X: =40
+                        Y: =864
+                        ZIndex: =19
+
+                    Label23_2 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpFont_fs.Text
+                        FontWeight: =FontWeight.Bold
+                        Height: =58
+                        Size: =Value(inpTitle.Text)
+                        Text: ="Font"
+                        Width: =964
+                        X: =40
+                        ZIndex: =20
+
+                    Label23_3 As label:
+                        Color: =ColorValue(LookUp('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes' And Name = "White").HEX)
+                        Font: =inpHeaderFont_fs.Text
+                        FontWeight: =FontWeight.Bold
+                        Height: =58
+                        Size: =Value(inpTitle.Text)
+                        Text: ="Header Font"
+                        Width: =964
+                        X: =40
+                        Y: =458
+                        ZIndex: =21
+

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>8ce336ff-31c6-4451-a269-0bbe22cfa349</connectorid>
+  <description>COLOURLOVERS API</description>
+  <displayname>Colour Lovers</displayname>
+  <iconbrandcolor>#ffffff</iconbrandcolor>
+  <name>tm_5Fcolour-20lovers</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/tm_5Fcolour-20lovers_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/tm_5Fcolour-20lovers_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/tm_5Fcolour-20lovers_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/tm_5Fcolour-20lovers_iconblob.Png</iconblob>
+</Connector>

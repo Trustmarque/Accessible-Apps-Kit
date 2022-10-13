@@ -1,0 +1,759 @@
+{
+  "components": [
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "tm_pcf.ColorPicker",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Pivot",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.CommandBar",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "tm_pcf.ColorPicker",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Pivot",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "tm_pcf.ColorPicker",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Pivot",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.ProgressIndicator",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "tm_pcf.ColorPicker",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "tm_pcf.ColorPicker",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "tm_pcf.DownloadControl",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Icon",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.CommandBar",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Elevation",
+      "IdentifierType": 0
+    }
+  ],
+  "DatasetName": "default.cds",
+  "EntityName": "AAD Users",
+  "InstanceUrl": "https://tm-accessible-apps-kit.crm11.dynamics.com/",
+  "state": "Configured",
+  "TableDefinition": {
+    "BooleanOptionSetAttribute": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('aaduser')/Attributes/Microsoft.Dynamics.CRM.BooleanAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[{\"MetadataId\":\"9107f81f-0c42-4453-a111-7e6637a7181e\",\"LogicalName\":\"accountenabled\",\"SchemaName\":\"AccountEnabled\",\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"AAD User Account Enabled\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"6faee3d3-4427-434d-bb2d-110027b8f322\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"AAD User Account Enabled\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"6faee3d3-4427-434d-bb2d-110027b8f322\",\"HasChanged\":null}},\"OptionSet\":{\"MetadataId\":\"2d4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null,\"IsCustomOptionSet\":true,\"IsGlobal\":false,\"IsManaged\":true,\"Name\":\"adduser_account_enabled\",\"ExternalTypeName\":null,\"OptionSetType\":\"Boolean\",\"IntroducedVersion\":\"1.0.0.0\",\"Description\":{\"LocalizedLabels\":[{\"Label\":\"Indicates if the Account of an AAD User is enabled.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2f4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Indicates if the Account of an AAD User is enabled.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2f4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"AAD User Account Enabled\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2e4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"AAD User Account Enabled\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2e4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null}},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"TrueOption\":{\"Value\":1,\"Color\":null,\"IsManaged\":true,\"ExternalValue\":null,\"ParentValues\":[],\"MetadataId\":null,\"HasChanged\":null,\"Label\":{\"LocalizedLabels\":[{\"Label\":\"Yes\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"121b092f-7646-4fc3-99b3-fe5ef56d9fe5\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Yes\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"121b092f-7646-4fc3-99b3-fe5ef56d9fe5\",\"HasChanged\":null}},\"Description\":{\"LocalizedLabels\":[],\"UserLocalizedLabel\":null}},\"FalseOption\":{\"Value\":0,\"Color\":null,\"IsManaged\":true,\"ExternalValue\":null,\"ParentValues\":[],\"MetadataId\":null,\"HasChanged\":null,\"Label\":{\"LocalizedLabels\":[{\"Label\":\"No\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"c76dbe77-d2d8-44b6-8785-36a4761fe3db\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"No\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"c76dbe77-d2d8-44b6-8785-36a4761fe3db\",\"HasChanged\":null}},\"Description\":{\"LocalizedLabels\":[],\"UserLocalizedLabel\":null}}}}]}",
+    "DefaultPublicView": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#savedqueries(layoutxml)\",\"value\":[{\"@odata.etag\":\"W/\\\"932018\\\"\",\"layoutxml\":\"<grid name=\\\"resultset\\\" jump=\\\"displayname\\\" select=\\\"1\\\" icon=\\\"1\\\" preview=\\\"1\\\" object=\\\"10017\\\"><row name=\\\"result\\\" id=\\\"aaduserid\\\"><cell name=\\\"displayname\\\" width=\\\"300\\\" /></row></grid>\",\"savedqueryid\":\"1f1810e2-2903-402f-92bc-db11ec075c24\"}]}",
+    "EntityMetadata": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions(MetadataId,LogicalName,DisplayCollectionName,EntitySetName,HasNotes,IsActivity,IsIntersect,IsManaged,IsPrivate,IsLogicalEntity,PrimaryIdAttribute,PrimaryNameAttribute,ObjectTypeCode,OwnershipType,Privileges,Attributes(),ManyToOneRelationships(),OneToManyRelationships(),ManyToManyRelationships())/$entity\",\"MetadataId\":\"83bf22d8-005b-4c72-8505-e02e3346a10a\",\"LogicalName\":\"aaduser\",\"EntitySetName\":\"aadusers\",\"HasNotes\":false,\"IsActivity\":false,\"IsIntersect\":false,\"IsManaged\":true,\"IsPrivate\":false,\"IsLogicalEntity\":false,\"PrimaryIdAttribute\":\"aaduserid\",\"PrimaryNameAttribute\":\"displayname\",\"ObjectTypeCode\":10017,\"OwnershipType\":\"OrganizationOwned\",\"DisplayCollectionName\":{\"LocalizedLabels\":[{\"Label\":\"AAD Users\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"db4c09f8-be91-41b9-bee6-0cf2c1669683\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"AAD Users\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"db4c09f8-be91-41b9-bee6-0cf2c1669683\",\"HasChanged\":null}},\"Privileges\":[{\"CanBeBasic\":false,\"CanBeDeep\":false,\"CanBeGlobal\":true,\"CanBeLocal\":false,\"CanBeEntityReference\":false,\"CanBeParentEntityReference\":false,\"Name\":\"prvReadaaduser\",\"PrivilegeId\":\"79993972-2d12-4d60-b9ad-4740d457381b\",\"PrivilegeType\":\"Read\"},{\"CanBeBasic\":false,\"CanBeDeep\":false,\"CanBeGlobal\":true,\"CanBeLocal\":false,\"CanBeEntityReference\":false,\"CanBeParentEntityReference\":false,\"Name\":\"prvAppendaaduser\",\"PrivilegeId\":\"d406d270-585f-402b-b4f1-9178eef7d80e\",\"PrivilegeType\":\"Append\"},{\"CanBeBasic\":false,\"CanBeDeep\":false,\"CanBeGlobal\":true,\"CanBeLocal\":false,\"CanBeEntityReference\":false,\"CanBeParentEntityReference\":false,\"Name\":\"prvAppendToaaduser\",\"PrivilegeId\":\"95998c89-6c1c-48ff-b517-bcf1e7e89b91\",\"PrivilegeType\":\"AppendTo\"}],\"Attributes\":[{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"71f7d11d-64c0-404a-a51d-2bd5af202414\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":12,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"preferredlanguage\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"PreferredLanguage\",\"ExternalName\":\"preferredlanguage\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"248a2e2e-5e04-45d1-a9f2-a4e70fbc371c\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"248a2e2e-5e04-45d1-a9f2-a4e70fbc371c\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Preferred Language\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"fc711c4d-1b5d-4823-a816-42bfa9f6e6cd\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Preferred Language\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"fc711c4d-1b5d-4823-a816-42bfa9f6e6cd\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"d331ab20-0ba6-41a9-ac2f-24af14d4b723\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":2,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":true,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":true,\"IsFilterable\":false,\"IsSearchable\":true,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"displayname\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"DisplayName\",\"ExternalName\":\"displayname\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:44Z\",\"ModifiedOn\":\"2022-08-28T06:55:44Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The name displayed in the address book for the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"8d6a131d-74d6-48da-b80b-b0f2c04ee827\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The name displayed in the address book for the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"8d6a131d-74d6-48da-b80b-b0f2c04ee827\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Display Name\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"99e4281c-8677-41fa-bcda-b7f261cdb0e5\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Display Name\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"99e4281c-8677-41fa-bcda-b7f261cdb0e5\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"3822dfe1-2d48-43ee-b33c-0d95e1455229\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":18,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"usertype\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"UserType\",\"ExternalName\":\"usertype\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"User Type.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"a14cf7c4-d87d-4f33-842e-8bbff0c0aaaa\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"User Type.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"a14cf7c4-d87d-4f33-842e-8bbff0c0aaaa\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"User Type\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f43eccde-6028-478a-ab08-db871f2ad3f2\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"User Type\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f43eccde-6028-478a-ab08-db871f2ad3f2\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.BooleanAttributeMetadata\",\"MetadataId\":\"9107f81f-0c42-4453-a111-7e6637a7181e\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"Boolean\",\"ColumnNumber\":20,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"1.0.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"accountenabled\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"AccountEnabled\",\"ExternalName\":\"accountenabled\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"DefaultValue\":false,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"BooleanType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"Indicates if the Account of an AAD User is enabled.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f851d80a-ddb1-4794-9aed-457b94b455af\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Indicates if the Account of an AAD User is enabled.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f851d80a-ddb1-4794-9aed-457b94b455af\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"AAD User Account Enabled\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"6faee3d3-4427-434d-bb2d-110027b8f322\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"AAD User Account Enabled\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"6faee3d3-4427-434d-bb2d-110027b8f322\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[]},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"6f86e276-650a-4ad9-810b-7cc897c3c52a\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":6,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"imaddresses\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"ImAddresses\",\"ExternalName\":\"imaddresses\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"ImAddresses for the user\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"e4f42dab-2965-4e68-baae-ab5f75e47f10\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"ImAddresses for the user\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"e4f42dab-2965-4e68-baae-ab5f75e47f10\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"ImAddresses\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2c2c5884-506d-4df5-bfb1-062f8007ddac\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"ImAddresses\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2c2c5884-506d-4df5-bfb1-062f8007ddac\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"MetadataId\":\"1bf620f2-c4f8-402b-b0ca-ca7f70c3ddd7\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"Uniqueidentifier\",\"ColumnNumber\":1,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":true,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":false,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":true,\"IsFilterable\":true,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"aaduserid\",\"IsValidForForm\":false,\"IsRequiredForForm\":false,\"IsValidForGrid\":false,\"SchemaName\":\"aaduserId\",\"ExternalName\":\"id\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:44Z\",\"ModifiedOn\":\"2022-08-28T06:55:44Z\",\"SourceType\":null,\"AutoNumberFormat\":\"\",\"AttributeTypeName\":{\"Value\":\"UniqueidentifierType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"Unique identifier of an aad user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2b4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Unique identifier of an aad user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2b4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"AAD user id\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2c4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"AAD user id\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2c4e546f-9e26-ed11-9db2-000d3a0d23a7\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"SystemRequired\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[]},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.DateTimeAttributeMetadata\",\"MetadataId\":\"b2fc3ddf-7f8f-4552-a6ee-730932d6acbb\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"DateTime\",\"ColumnNumber\":4,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"1.0.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":false,\"IsValidForRead\":true,\"IsValidForUpdate\":false,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":true,\"IsFilterable\":true,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"createddatetime\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"CreatedDateTime\",\"ExternalName\":\"createddatetime\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:44Z\",\"ModifiedOn\":\"2022-08-28T06:55:44Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"MinSupportedValue\":\"1753-01-01T00:00:00Z\",\"MaxSupportedValue\":\"9999-12-30T23:59:59Z\",\"Format\":\"DateAndTime\",\"ImeMode\":\"Inactive\",\"SourceTypeMask\":0,\"FormulaDefinition\":\"\",\"AttributeTypeName\":{\"Value\":\"DateTimeType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"Date and time when the AAD user was created.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"d53e1a33-ccc0-4314-9d06-5c270c5a8726\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Date and time when the AAD user was created.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"d53e1a33-ccc0-4314-9d06-5c270c5a8726\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Created Date Time\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"59429476-167c-4264-8987-fb151e3cfafe\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Created Date Time\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"59429476-167c-4264-8987-fb151e3cfafe\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"DateTimeBehavior\":{\"Value\":\"UserLocal\"},\"CanChangeDateTimeBehavior\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifybehavior\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"c2c743c0-8486-42ef-ab1c-02ff522f57ad\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":16,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"streetaddress\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"StreetAddress\",\"ExternalName\":\"streetaddress\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"Street Address.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"4b613c59-bedf-49f1-b6b9-c512e9ebca0d\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Street Address.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"4b613c59-bedf-49f1-b6b9-c512e9ebca0d\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Street Address\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f6a1146e-7a9e-4438-9dbe-ddc5a678509b\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Street Address\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f6a1146e-7a9e-4438-9dbe-ddc5a678509b\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"MetadataId\":\"23368417-3bed-45d8-a9f2-c32f9e877ba9\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"Uniqueidentifier\",\"ColumnNumber\":3,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":false,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"id\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"id\",\"ExternalName\":\"id\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:44Z\",\"ModifiedOn\":\"2022-08-28T06:55:44Z\",\"SourceType\":null,\"AutoNumberFormat\":\"\",\"AttributeTypeName\":{\"Value\":\"UniqueidentifierType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"A unique identifer for AAD User\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"dffaa083-33dd-4ada-949f-f2d8992983c9\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"A unique identifer for AAD User\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"dffaa083-33dd-4ada-949f-f2d8992983c9\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"A unique identifer for AAD User\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"64250804-3b28-445c-b73b-69ab63203aee\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"A unique identifer for AAD User\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"64250804-3b28-445c-b73b-69ab63203aee\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"SystemRequired\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[]},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"046a0187-e6dc-4f4a-b8b4-8f6a0c8edf9a\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":9,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"mail\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"Mail\",\"ExternalName\":\"mail\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The SMTP address for the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"87637934-6e26-4f0d-8e83-2f8d13c0a15e\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The SMTP address for the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"87637934-6e26-4f0d-8e83-2f8d13c0a15e\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Mail\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2b541130-1407-4f56-a8a5-9022f56bd304\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Mail\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"2b541130-1407-4f56-a8a5-9022f56bd304\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":true,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"86044b46-16c2-4de6-8ed3-59cdf415769f\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":15,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"companyname\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"CompanyName\",\"ExternalName\":\"companyname\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"Company Name.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"ba28ac8c-b5c9-43be-8893-b9d1a7c5ebde\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Company Name.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"ba28ac8c-b5c9-43be-8893-b9d1a7c5ebde\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Company Name\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"bcdc1a7d-3a92-4430-8429-262d2e22a1ec\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Company Name\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"bcdc1a7d-3a92-4430-8429-262d2e22a1ec\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"36390698-d283-4960-8eba-81ada3eba05e\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":13,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"surname\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"surname\",\"ExternalName\":\"surname\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The user's surname (family name or last name).\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"56f147bb-9aeb-4e6a-811d-98b49232132b\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The user's surname (family name or last name).\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"56f147bb-9aeb-4e6a-811d-98b49232132b\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Surname\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"8d97502a-a1ed-4f2a-a5ba-59186f97b097\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Surname\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"8d97502a-a1ed-4f2a-a5ba-59186f97b097\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"MetadataId\":\"330a8a49-a4b1-426b-8081-885c86e1169e\",\"HasChanged\":null,\"AttributeOf\":\"accountenabled\",\"AttributeType\":\"Virtual\",\"ColumnNumber\":21,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"1.0.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":false,\"IsPrimaryName\":false,\"IsValidForCreate\":false,\"IsValidForRead\":true,\"IsValidForUpdate\":false,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":false,\"LinkedAttributeId\":null,\"LogicalName\":\"accountenabledname\",\"IsValidForForm\":false,\"IsRequiredForForm\":false,\"IsValidForGrid\":false,\"SchemaName\":\"accountenabledName\",\"ExternalName\":null,\"IsLogical\":true,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":null,\"AutoNumberFormat\":null,\"AttributeTypeName\":{\"Value\":\"VirtualType\"},\"Description\":{\"LocalizedLabels\":[],\"UserLocalizedLabel\":null},\"DisplayName\":{\"LocalizedLabels\":[],\"UserLocalizedLabel\":null},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":true,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":true,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":true,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[]},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"6c24e23c-b63c-4cab-b61f-00bdd0923f1c\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":10,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"mobilephone\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"MobilePhone\",\"ExternalName\":\"mobilephone\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The primary cellular telephone number for the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f46ce50e-1380-4aeb-a5fe-6b00eae13a5f\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The primary cellular telephone number for the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f46ce50e-1380-4aeb-a5fe-6b00eae13a5f\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Mobile Phone\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"bbedbb6b-4250-4057-8f82-2b6a37bafd86\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Mobile Phone\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"bbedbb6b-4250-4057-8f82-2b6a37bafd86\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"96bfcfc8-b337-420a-9c19-1ecfb36536c5\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":5,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"businessphones\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"BusinessPhones\",\"ExternalName\":\"businessphones\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"Business phone number for the user\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"88262922-df30-44b7-9c25-b4e3069159ef\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Business phone number for the user\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"88262922-df30-44b7-9c25-b4e3069159ef\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Business Phones\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"42010708-0fcd-431c-bcd3-1b0c7af4c08a\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Business Phones\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"42010708-0fcd-431c-bcd3-1b0c7af4c08a\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"9e2848d1-e9ca-4981-b2e3-654f35af6337\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":7,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"givenname\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"GivenName\",\"ExternalName\":\"givenname\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The given name (first name) of the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"989c7e03-f96b-4594-96d0-ec28dac2bf78\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The given name (first name) of the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"989c7e03-f96b-4594-96d0-ec28dac2bf78\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Given Name\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"d5b3e11e-8cef-4dd0-8d50-7bf59d6a658e\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Given Name\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"d5b3e11e-8cef-4dd0-8d50-7bf59d6a658e\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"dd514168-5914-42ef-99a1-129f22527f0d\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":17,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"city\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"City\",\"ExternalName\":\"city\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"City.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"67c7b854-d057-4135-913e-73845a567acf\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"City.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"67c7b854-d057-4135-913e-73845a567acf\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"City\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"7f613c10-8a27-4d32-a079-0f81cfdfabff\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"City\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"7f613c10-8a27-4d32-a079-0f81cfdfabff\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"c3812f5c-8942-466b-b765-c898635b30b3\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":19,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"postalcode\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"PostalCode\",\"ExternalName\":\"postalcode\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"Postal Code.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"df2cea6d-36c0-44bb-8d36-f207c88ee6cb\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Postal Code.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"df2cea6d-36c0-44bb-8d36-f207c88ee6cb\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Postal Code\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"1a068d0a-12e0-4fbd-857a-cce6bbc363a6\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Postal Code\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"1a068d0a-12e0-4fbd-857a-cce6bbc363a6\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"e1d18c8a-5ae4-4169-bd95-9c013fda9b08\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":8,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"jobtitle\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"JobTitle\",\"ExternalName\":\"jobtitle\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":0,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The user's job title.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"5389b246-467a-439e-a5bc-9da9876ae3c0\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The user's job title.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"5389b246-467a-439e-a5bc-9da9876ae3c0\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Job Title\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"cda7b3dd-0dbe-4baa-bca6-08ee1da53362\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Job Title\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"cda7b3dd-0dbe-4baa-bca6-08ee1da53362\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"0fbf4ad9-697d-4aee-aeb8-9c653f757e6a\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":14,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"userprincipalname\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"UserPrincipalName\",\"ExternalName\":\"userprincipalname\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":100,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":200,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The user principal name (UPN) of the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"d480b4a9-8ffb-4150-94f1-518e3f329fb4\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The user principal name (UPN) of the user.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"d480b4a9-8ffb-4150-94f1-518e3f329fb4\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"User Principal Name\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f687eb72-8a55-4eb1-abe5-b17b4c916c1b\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"User Principal Name\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"f687eb72-8a55-4eb1-abe5-b17b4c916c1b\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}},{\"@odata.type\":\"#Microsoft.Dynamics.CRM.StringAttributeMetadata\",\"MetadataId\":\"0f88722e-f140-4dc3-b701-f93b8249855d\",\"HasChanged\":null,\"AttributeOf\":null,\"AttributeType\":\"String\",\"ColumnNumber\":11,\"DeprecatedVersion\":null,\"IntroducedVersion\":\"9.1.0.0\",\"EntityLogicalName\":\"aaduser\",\"IsCustomAttribute\":false,\"IsPrimaryId\":false,\"IsValidODataAttribute\":true,\"IsPrimaryName\":false,\"IsValidForCreate\":true,\"IsValidForRead\":true,\"IsValidForUpdate\":true,\"CanBeSecuredForRead\":false,\"CanBeSecuredForCreate\":false,\"CanBeSecuredForUpdate\":false,\"IsSecured\":false,\"IsRetrievable\":false,\"IsFilterable\":false,\"IsSearchable\":false,\"IsManaged\":true,\"LinkedAttributeId\":null,\"LogicalName\":\"officelocation\",\"IsValidForForm\":true,\"IsRequiredForForm\":false,\"IsValidForGrid\":true,\"SchemaName\":\"OfficeLocation\",\"ExternalName\":\"officelocation\",\"IsLogical\":false,\"IsDataSourceSecret\":false,\"InheritsFrom\":null,\"CreatedOn\":\"2022-08-28T06:55:45Z\",\"ModifiedOn\":\"2022-08-28T06:55:45Z\",\"SourceType\":0,\"AutoNumberFormat\":\"\",\"Format\":\"Text\",\"ImeMode\":\"Auto\",\"MaxLength\":200,\"YomiOf\":null,\"IsLocalizable\":false,\"DatabaseLength\":400,\"FormulaDefinition\":\"\",\"SourceTypeMask\":0,\"AttributeTypeName\":{\"Value\":\"StringType\"},\"Description\":{\"LocalizedLabels\":[{\"Label\":\"The office location in the user's place of business.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"abeab6f8-8c21-474b-967a-b6058da0008c\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"The office location in the user's place of business.\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"abeab6f8-8c21-474b-967a-b6058da0008c\",\"HasChanged\":null}},\"DisplayName\":{\"LocalizedLabels\":[{\"Label\":\"Office Location\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"9c9df4b9-8890-46a8-b0f1-4ce9033526d1\",\"HasChanged\":null}],\"UserLocalizedLabel\":{\"Label\":\"Office Location\",\"LanguageCode\":1033,\"IsManaged\":true,\"MetadataId\":\"9c9df4b9-8890-46a8-b0f1-4ce9033526d1\",\"HasChanged\":null}},\"IsAuditEnabled\":{\"Value\":false,\"CanBeChanged\":true,\"ManagedPropertyLogicalName\":\"canmodifyauditsettings\"},\"IsGlobalFilterEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyglobalfiltersettings\"},\"IsSortableEnabled\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyissortablesettings\"},\"IsCustomizable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"iscustomizable\"},\"IsRenameable\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"isrenameable\"},\"IsValidForAdvancedFind\":{\"Value\":true,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifysearchsettings\"},\"RequiredLevel\":{\"Value\":\"None\",\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyrequirementlevelsettings\"},\"CanModifyAdditionalSettings\":{\"Value\":false,\"CanBeChanged\":false,\"ManagedPropertyLogicalName\":\"canmodifyadditionalsettings\"},\"Settings\":[],\"FormatName\":{\"Value\":\"Text\"}}],\"ManyToOneRelationships\":[],\"OneToManyRelationships\":[],\"ManyToManyRelationships\":[]}",
+    "EntityNameOptionSetAttribute": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('aaduser')/Attributes/Microsoft.Dynamics.CRM.EntityNameAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",
+    "Forms": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#systemforms(name,formid)\",\"value\":[{\"@odata.etag\":\"W/\\\"935120\\\"\",\"name\":\"Information\",\"formid\":\"96b09c19-eb7d-44f7-bae3-3cb83ba2c204\",\"objecttypecode\":\"aaduser\",\"type\":11},{\"@odata.etag\":\"W/\\\"935121\\\"\",\"name\":\"Information\",\"formid\":\"a033ebd0-f093-417f-abe4-3d5ef5f1a556\",\"objecttypecode\":\"aaduser\",\"type\":2},{\"@odata.etag\":\"W/\\\"935122\\\"\",\"name\":\"Information\",\"formid\":\"dd5ded01-9aad-4e25-8d0e-e9acdaecbe4e\",\"objecttypecode\":\"aaduser\",\"type\":6}]}",
+    "IconUrl": "",
+    "MultiSelectPicklistOptionSetAttribute": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('aaduser')/Attributes/Microsoft.Dynamics.CRM.MultiSelectPicklistAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",
+    "PicklistOptionSetAttribute": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('aaduser')/Attributes/Microsoft.Dynamics.CRM.PicklistAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",
+    "StateOptionSetAttribute": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('aaduser')/Attributes/Microsoft.Dynamics.CRM.StateAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",
+    "StatusOptionSetAttribute": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('aaduser')/Attributes/Microsoft.Dynamics.CRM.StatusAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",
+    "TableName": "aaduser",
+    "Views": "{\"@odata.context\":\"https://tmdev-tm-discover.crm11.dynamics.com/api/data/v9.0/$metadata#savedqueries(savedqueryid,name,querytype)\",\"value\":[{\"@odata.etag\":\"W/\\\"931117\\\"\",\"savedqueryid\":\"f802f753-1e75-4eba-9bc9-4da3935813c4\",\"name\":\"AAD User Associated View\",\"querytype\":2},{\"@odata.etag\":\"W/\\\"931125\\\"\",\"savedqueryid\":\"41d3f913-bf6f-4d27-84c8-4f2a3f43644e\",\"name\":\"AAD User Advanced Find View\",\"querytype\":1},{\"@odata.etag\":\"W/\\\"932018\\\"\",\"savedqueryid\":\"1f1810e2-2903-402f-92bc-db11ec075c24\",\"name\":\"All AAD users\",\"querytype\":0},{\"@odata.etag\":\"W/\\\"932153\\\"\",\"savedqueryid\":\"37ced142-2ece-4621-94f0-f5c3398ee4e8\",\"name\":\"AAD User Lookup View\",\"querytype\":64}]}"
+  },
+  "webApiVersion": "v9.0"
+}

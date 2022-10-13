@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tm_myfavouriteicons",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tm_myfavouriteicon",
+    "MaxGetRowsCount": 2000,
+    "Name": "My Favourite Icons",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tm_iconcolor": "Icon Color",
+      "tm_IconId": "Icon",
+      "tm_myfavouriteicon_AsyncOperations": "System Jobs",
+      "tm_myfavouriteicon_BulkDeleteFailures": "Bulk Delete Failures",
+      "tm_myfavouriteicon_DuplicateBaseRecord": "Duplicate Records (tm_myfavouriteicon_DuplicateBaseRecord)",
+      "tm_myfavouriteicon_DuplicateMatchingRecord": "Duplicate Records (tm_myfavouriteicon_DuplicateMatchingRecord)",
+      "tm_myfavouriteicon_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tm_myfavouriteicon_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tm_myfavouriteicon_ProcessSession": "Process Sessions",
+      "tm_myfavouriteicon_SyncErrors": "Sync Errors",
+      "tm_myfavouriteiconid": "My Favourite Icon",
+      "tm_name": "Name",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "My Favourite Icons",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "My Favourite Icons (Views)",
+    "Name": "_tm_myfavouriteicon_views",
+    "RelatedEntityName": "My Favourite Icons",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "309f9845-a493-4397-a918-ae24eaeacb48": "Inactive My Favourite Icons",
+      "7ffcb6eb-67bf-481f-af3c-dbdbd76c9bd1": "My Favourite Icon Associated View",
+      "84181a64-120e-4da7-8198-5ada8ce6ff41": "My Favourite Icon Advanced Find View",
+      "b9263cfe-c245-4bc9-91eb-ad891f1e6813": "My Favourite Icon Lookup View",
+      "d14c8c32-2a3d-425a-9436-e0c69d16eb9e": "Active My Favourite Icons"
+    }
+  },
+  {
+    "DisplayName": "Status (My Favourite Icons)",
+    "Name": "tm_myfavouriteicon_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "My Favourite Icons"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "My Favourite Icons",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (My Favourite Icons)",
+    "Name": "tm_myfavouriteicon_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "My Favourite Icons"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "My Favourite Icons",
+    "Type": "OptionSetInfo"
+  }
+]

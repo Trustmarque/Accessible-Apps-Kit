@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="pcf" constructor="DownloadControl" version="0.0.1" display-name-key="DownloadControl" description-key="DownloadControl description" control-type="standard" >
+    <property name="fileName" display-name-key="File Name" description-key="This will be the name of the file that the browser will use to save the file." of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="fileMIMEType" display-name-key="MIME Type" description-key="This will be the name of the file that the browser will use to save the file." of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="fileContents" display-name-key="Base64 Contents" description-key="This should be the base64 content of the file." of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="download" display-name-key="Dowload" description-key="Setting this value to true will start the download" of-type="TwoOptions" usage="bound" required="true" default-value="false" />
+    <resources>
+      <code path="index.ts" order="1" />
+    </resources>
+  </control>
+</manifest>

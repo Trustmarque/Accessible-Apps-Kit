@@ -1,0 +1,71 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_aaduser_forms",
+      "Namespace": "AAD Users (Forms)",
+      "Values": {
+        "Information": "dd5ded01-9aad-4e25-8d0e-e9acdaecbe4e"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_appthemes_forms",
+      "Namespace": "App Themes (Forms)",
+      "Values": {
+        "Information": "083ee5ca-2b97-41b6-81d2-f85306121288"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_settransforms_forms",
+      "Namespace": "Set Transforms (Forms)",
+      "Values": {
+        "Information": "045b84bc-9e1b-4021-8974-912ef1fbc94e"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_myfavouriteicon_forms",
+      "Namespace": "My Favourite Icons (Forms)",
+      "Values": {
+        "Information": "f3683c54-5cb9-4290-b4ad-da5c58405c2d"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_icon_forms",
+      "Namespace": "Icons (Forms)",
+      "Values": {
+        "Information": "12f01219-1c2f-4f73-9eb3-d079689ae7bc"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_iconset_forms",
+      "Namespace": "Icon Sets (Forms)",
+      "Values": {
+        "Information": "03e2f2d0-2260-4a7f-be80-9c49b2f82a45"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_themecolor_forms",
+      "Namespace": "Theme Colors (Forms)",
+      "Values": {
+        "Information": "c0a5ac36-deeb-457b-accd-a4d4e65ad051"
+      }
+    },
+    {
+      "Kind": "default.cds_tm_themeicon_forms",
+      "Namespace": "Theme Icons (Forms)",
+      "Values": {
+        "Information": "4977ac8e-b7fc-4646-90db-d045f130663e"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Users (Forms)",
+      "Values": {
+        "Application User": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Information": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "User": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "User form – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "User Hierarchy Tile Form": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452"
+      }
+    }
+  ]
+}

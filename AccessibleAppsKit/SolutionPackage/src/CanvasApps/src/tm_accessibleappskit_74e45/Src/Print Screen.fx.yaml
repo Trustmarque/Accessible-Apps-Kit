@@ -1,0 +1,715 @@
+"'Print Screen' As screen.'printableLayout_A4Portrait_ver1.0'":
+    Height: =1123
+    Width: =794
+
+    PrintButton1 As label:
+        Align: =Align.Center
+        FocusedBorderThickness: =1
+        Height: =32
+        OnSelect: =Print()
+        Size: =13
+        TabIndex: =0
+        Text: ="Print"
+        Visible: =Not(Parent.Printing)
+        Width: =96
+        X: =650
+        Y: =9
+        ZIndex: =2
+
+    Label11 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Size: =16
+        Text: ="Colour Palette"
+        X: =40
+        Y: =9
+        ZIndex: =3
+
+    Gallery1_2 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =289
+        Items: =Sort(Filter('Theme Colors',Theme.'App Themes' = gblChosenTheme.'App Themes'),Name,Ascending)
+        TemplateSize: =134
+        Width: =717
+        WrapCount: =4
+        X: =40
+        Y: =70
+        ZIndex: =4
+
+        "Elevation8 As 'Fluent Elevation (1.0.8)'":
+            DisplayMode: =DisplayMode.Edit
+            Height: =64
+            Width: =127
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "Elevation12_2 As 'Fluent Elevation (1.0.8)'":
+            Depth: ='''PowerCAT.Elevation.Depth'''.Depth8
+            DisplayMode: =DisplayMode.Edit
+            FillColor: =ThisItem.HEX
+            Height: =64
+            HoverDepth: ='''PowerCAT.Elevation.HoverDepth'''.Depth8
+            Width: =127
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        Label18_1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =If(ThisItem.A = 1,If(Value(ThisItem.'Relative Luminance') >0.35,Black,White), Black)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =5
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =5
+            Size: =9
+            Text: =ThisItem.Name
+            Width: =127
+            ZIndex: =3
+
+        Label12 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =If(ThisItem.A = 1,If(Value(ThisItem.'Relative Luminance') >0.35,Black,White), Black)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Size: =FontSizes.XtraSmall
+            Text: |-
+                =IfError(ColourNames.GetColorName({hex:Mid(ThisItem.HEX,2,6)}).name,"Unknown")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =127
+            Y: =25
+            ZIndex: =4
+
+        Label12_1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =If(ThisItem.A = 1,If(Value(ThisItem.'Relative Luminance') >0.35,Black,White), Black)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Size: =FontSizes.XtraSmall
+            Text: =ThisItem.HEX
+            VerticalAlign: =VerticalAlign.Top
+            Width: =127
+            Y: =45
+            ZIndex: =5
+
+    Label21_3 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =21
+        OnSelect: =
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Size: =8
+        Text: |-
+            ="Color names from https://colornames.org/"
+        Width: =234
+        Wrap: =false
+        X: =40
+        Y: =45
+        ZIndex: =5
+
+    Label11_1 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Size: =16
+        Text: ="Iconography"
+        X: =40
+        Y: =378
+        ZIndex: =6
+
+    galPrintIcons As gallery.galleryVertical:
+        Height: =CountRows(Filter('Theme Icons',Theme.'App Themes' = gblChosenTheme.'App Themes'))/2 *90
+        Items: =Filter('Theme Icons',Theme.'App Themes' = gblChosenTheme.'App Themes')
+        Layout: =Layout.Vertical
+        TemplateSize: =78
+        Width: =719
+        WrapCount: =2
+        X: =38
+        Y: =440
+        ZIndex: =7
+
+        "Elevation7 As 'Fluent Elevation (1.0.8)'":
+            DisplayMode: =DisplayMode.Edit
+            Height: =64
+            Width: =322
+            X: =6
+            Y: =6
+            ZIndex: =1
+
+        Image11 As image:
+            Height: =51
+            Image: |-
+                ="data:image/svg+xml," & EncodeUrl(ThisItem.tm_icon)
+            OnSelect: =Select(Parent)
+            Width: =66
+            X: =6
+            Y: =6
+            ZIndex: =2
+
+        Label16 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =33
+            OnSelect: =Select(Parent)
+            Size: =FontSizes.Content
+            Text: =ThisItem.Name
+            Width: =236
+            X: =72
+            Y: =6
+            ZIndex: =3
+
+        Label16_2 As label:
+            AutoHeight: =true
+            Height: =18
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Description
+            Width: =256
+            X: =72
+            Y: =39
+            ZIndex: =4
+
+    "Icon3 As 'Fluent Icon (1.0.8)'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        IconName: ="Cancel"
+        OnChange: =Back()
+        Width: =37
+        X: =746
+        Y: =9
+        ZIndex: =8
+
+    lblPrintFonts As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Size: =16
+        Text: ="Fonts"
+        X: =40
+        Y: =galPrintIcons.Y + galPrintIcons.Height + 10
+        ZIndex: =9
+
+    Label21_4 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =26
+        OnSelect: =
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Size: =8
+        Text: ="An iconography is a particular range or system of types of image used by an artist to convey particular meanings."
+        Width: =552
+        Wrap: =false
+        X: =40
+        Y: =414
+        ZIndex: =10
+
+    lblPrintFontsSubHeader As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =26
+        OnSelect: =
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Size: =8
+        Text: ="Fonts and Sizes used."
+        Width: =552
+        Wrap: =false
+        X: =40
+        Y: =lblPrintFonts.Y + lblPrintFonts.Height
+        ZIndex: =11
+
+    Container1 As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =278
+        Width: =693
+        X: =40
+        Y: =606
+        ZIndex: =12
+
+        FormViewer1 As formViewer:
+            DataSource: ='App Themes'
+            Height: =285
+            Item: =gblChosenTheme
+            NumberOfColumns: =2
+            Width: =Parent.Width
+            ZIndex: =1
+
+            "'Font Name_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_fontname"
+                Default: =ThisItem.'Font Name'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_fontname")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey49 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue49 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey49.Y + DataCardKey49.Height + 5
+                    ZIndex: =2
+
+            "'Header Font Name_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_headerfontname"
+                Default: =ThisItem.'Header Font Name'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_headerfontname")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =1
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey52 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue52 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey52.Y + DataCardKey52.Height + 5
+                    ZIndex: =2
+
+            "'Default Font Size_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_defaultfontsize"
+                Default: =ThisItem.'Default Font Size'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_defaultfontsize")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey53 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue53 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey53.Y + DataCardKey53.Height + 5
+                    ZIndex: =2
+
+            "'Title Size_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_titlesize"
+                Default: =ThisItem.'Title Size'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_titlesize")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey54 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue54 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey54.Y + DataCardKey54.Height + 5
+                    ZIndex: =2
+
+            "'Subtitle Size_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_subtitlesize"
+                Default: =ThisItem.'Subtitle Size'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_subtitlesize")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey55 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue55 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey55.Y + DataCardKey55.Height + 5
+                    ZIndex: =2
+
+            "'TextMain Size_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_textmainsize"
+                Default: =ThisItem.'TextMain Size'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_textmainsize")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =1
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey56 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue56 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey56.Y + DataCardKey56.Height + 5
+                    ZIndex: =2
+
+            "'TextEmphasis Size_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_textemphasissize"
+                Default: =ThisItem.'TextEmphasis Size'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_textemphasissize")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey57 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue57 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey57.Y + DataCardKey57.Height + 5
+                    ZIndex: =2
+
+            "'Content Size_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_contentsize"
+                Default: =ThisItem.'Content Size'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_contentsize")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =1
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey58 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue58 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey58.Y + DataCardKey58.Height + 5
+                    ZIndex: =2
+
+            "'AddPicture Size_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_addpicturesize"
+                Default: =ThisItem.'AddPicture Size'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_addpicturesize")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey59 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue59 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey59.Y + DataCardKey59.Height + 5
+                    ZIndex: =2
+
+            "'XtraSmall Size_DataCard2' As typedDataCard.textualViewCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_xtrasmallsize"
+                Default: =ThisItem.'XtraSmall Size'
+                DisplayMode: =DisplayMode.View
+                DisplayName: =DataSourceInfo([@'App Themes'],DataSourceInfo.DisplayName,"tm_xtrasmallsize")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =40
+                Required: =false
+                Width: =346
+                X: =1
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey60 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    PaddingBottom: =0
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue60 As label:
+                    AutoHeight: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =27
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Default
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey60.Y + DataCardKey60.Height + 5
+                    ZIndex: =2
+

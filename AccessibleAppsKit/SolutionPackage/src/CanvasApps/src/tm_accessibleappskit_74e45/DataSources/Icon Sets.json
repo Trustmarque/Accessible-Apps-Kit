@@ -1,0 +1,130 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tm_iconsets",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tm_iconset",
+    "MaxGetRowsCount": 2000,
+    "Name": "Icon Sets",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tm_author": "Author",
+      "tm_authorlink": "Author Link",
+      "tm_githublicence": "GitHub Licence",
+      "tm_githublink": "GitHub Link",
+      "tm_iconset_AsyncOperations": "System Jobs",
+      "tm_iconset_BulkDeleteFailures": "Bulk Delete Failures",
+      "tm_iconset_DuplicateBaseRecord": "Duplicate Records (tm_iconset_DuplicateBaseRecord)",
+      "tm_iconset_DuplicateMatchingRecord": "Duplicate Records (tm_iconset_DuplicateMatchingRecord)",
+      "tm_iconset_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tm_iconset_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tm_iconset_ProcessSession": "Process Sessions",
+      "tm_iconset_SyncErrors": "Sync Errors",
+      "tm_iconsetid": "Icon Set",
+      "tm_iconsvg": "Icon SVG",
+      "tm_loadingstatuscode": "LoadingStatus",
+      "tm_name": "Name",
+      "tm_shortcode": "ShortCode",
+      "tm_tm_icon_tm_iconset_tm_IconSetId": "Icons",
+      "tm_tm_settransforms_tm_iconset_tm_IconSetId": "Set Transforms",
+      "tm_total": "Total",
+      "tm_version": "Version",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Icon Sets",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Icon Sets (Views)",
+    "Name": "_tm_iconset_views",
+    "RelatedEntityName": "Icon Sets",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "122e2878-70f7-4200-b4d3-227a41fed151": "Icon Set Associated View",
+      "43307b9c-fd81-4a48-9955-99e8c5dc7679": "Inactive Icon Sets",
+      "4a8c1dac-c2fc-4ae0-a877-e50e19fc8c59": "Icon Set Advanced Find View",
+      "d65c03a4-d257-410a-a384-eb08397b8e26": "Icon Set Lookup View",
+      "e2e3cf3e-19bf-467b-a0f2-7897b5644f65": "Active Icon Sets"
+    }
+  },
+  {
+    "DisplayName": "Status (Icon Sets)",
+    "Name": "tm_iconset_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Icon Sets"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Icon Sets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Icon Sets)",
+    "Name": "tm_iconset_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Icon Sets"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Icon Sets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "LoadingStatus (Icon Sets)",
+    "Name": "tm_loadingstatuscode",
+    "OptionSetInfoNameMapping": {
+      "292460000": "Not Started\r",
+      "292460001": "Loading\r",
+      "292460002": "Complete\r",
+      "292460003": "Error\r"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "tm_loadingstatuscode",
+        "OptionSetReferenceEntityName": "Icon Sets"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "tm_loadingstatuscode",
+    "RelatedEntityName": "Icon Sets",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,170 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "tm_sharedcommondataserviceforapps_b3147"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_dataflows": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "tm_shareddataflows_eac7a"
+        },
+        "api": {
+          "name": "shared_dataflows"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_dataflow_refresh_completes": {
+          "recurrence": {
+            "interval": 1,
+            "frequency": "Minute"
+          },
+          "metadata": {
+            "operationMetadataId": "b840013e-03c2-4113-9c53-d043230237f1"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_dataflows",
+              "operationId": "OnRefreshComplete",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_dataflows"
+            },
+            "parameters": {
+              "workspaceType": "Environment",
+              "groupIdForOnRefreshComplete": "6229ecf8-3e9a-ecea-80f4-75d1ec2ecaa1-31c688f59-uk",
+              "dataflowIdForOnRefreshComplete": "44cc80ff-e604-4cc7-96a0-17f732a8b04d"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "List_last_created_IconSet": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "a5fa5180-4971-448e-8c2c-8536d76a6b42"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "tm_iconsets",
+              "$orderby": "createdon desc",
+              "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condition": {
+          "actions": {
+            "Apply_to_each": {
+              "foreach": "@outputs('List_last_created_IconSet')?['body/value']",
+              "actions": {
+                "Update_a_row": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "54afeedb-2458-42ec-aa22-60e19e02d627"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "tm_iconsets",
+                      "recordId": "@items('Apply_to_each')?['tm_iconsetid']",
+                      "item/tm_loadingstatuscode": 292460002
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "1b369dcd-5b5a-4187-8335-8b862ada9e23"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "List_last_created_IconSet": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Apply_to_each_2": {
+                "foreach": "@outputs('List_last_created_IconSet')?['body/value']",
+                "actions": {
+                  "Update_a_row_2": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "04b01004-fb39-4694-b0db-322ae487fc34"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps",
+                        "operationId": "UpdateRecord",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "tm_iconsets",
+                        "recordId": "@items('Apply_to_each_2')?['tm_iconsetid']",
+                        "item/tm_loadingstatuscode": 292460003
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                },
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "48dcc598-8ed9-4a87-9e4d-391526d5d705"
+                },
+                "type": "Foreach"
+              }
+            }
+          },
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/status']",
+              "Success"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "13305f34-6519-4701-b67a-99b7e7c5c929"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

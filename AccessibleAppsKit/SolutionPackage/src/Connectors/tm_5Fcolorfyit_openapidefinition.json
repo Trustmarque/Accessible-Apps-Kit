@@ -1,0 +1,122 @@
+{
+  "basePath": "/api",
+  "consumes": [],
+  "definitions": {},
+  "host": "www.colorfyit.com",
+  "info": {
+    "description": "Coloyfyit API",
+    "title": "Default title",
+    "version": "1.0"
+  },
+  "parameters": {},
+  "paths": {
+    "/swatches/list.json": {
+      "get": {
+        "operationId": "GetWebsiteColors",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "properties": {
+                "colors": {
+                  "description": "colors",
+                  "items": {
+                    "properties": {
+                      "Count": {
+                        "description": "Count",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "Hex": {
+                        "description": "Hex",
+                        "type": "string"
+                      },
+                      "Hsv": {
+                        "description": "Hsv",
+                        "properties": {
+                          "h": {
+                            "description": "h",
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "s": {
+                            "description": "s",
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "v": {
+                            "description": "v",
+                            "format": "int32",
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "Rgb": {
+                        "description": "Rgb",
+                        "properties": {
+                          "b": {
+                            "description": "b",
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "g": {
+                            "description": "g",
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "r": {
+                            "description": "r",
+                            "format": "int32",
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "Sources": {
+                        "description": "Sources",
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "sortby": {
+                  "description": "sortby",
+                  "type": "string"
+                },
+                "sortdir": {
+                  "description": "sortdir",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "GetWebsiteColors"
+      }
+    }
+  },
+  "produces": [],
+  "responses": {},
+  "schemes": [
+    "https"
+  ],
+  "security": [],
+  "securityDefinitions": {},
+  "swagger": "2.0",
+  "tags": []
+}

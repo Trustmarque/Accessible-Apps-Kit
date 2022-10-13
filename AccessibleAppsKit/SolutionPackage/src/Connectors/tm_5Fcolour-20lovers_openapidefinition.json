@@ -1,0 +1,1088 @@
+{
+  "basePath": "/api",
+  "consumes": [],
+  "definitions": {},
+  "host": "www.colourlovers.com",
+  "info": {
+    "description": "COLOURLOVERS API",
+    "title": "Default title",
+    "version": "1.0"
+  },
+  "parameters": {},
+  "paths": {
+    "/colors/new": {
+      "get": {
+        "operationId": "GetNewColors",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "hex": {
+                    "description": "hex",
+                    "type": "string"
+                  },
+                  "hsv": {
+                    "description": "hsv",
+                    "properties": {
+                      "hue": {
+                        "description": "hue",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "saturation": {
+                        "description": "saturation",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "value": {
+                        "description": "value",
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rgb": {
+                    "description": "rgb",
+                    "properties": {
+                      "blue": {
+                        "description": "blue",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "green": {
+                        "description": "green",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "red": {
+                        "description": "red",
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "GetNewColors"
+      }
+    },
+    "/colors/random": {
+      "get": {
+        "operationId": "GetRandomColor",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "hex": {
+                    "description": "hex",
+                    "type": "string"
+                  },
+                  "hsv": {
+                    "description": "hsv",
+                    "properties": {
+                      "hue": {
+                        "description": "hue",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "saturation": {
+                        "description": "saturation",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "value": {
+                        "description": "value",
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rgb": {
+                    "description": "rgb",
+                    "properties": {
+                      "blue": {
+                        "description": "blue",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "green": {
+                        "description": "green",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "red": {
+                        "description": "red",
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "GetRandomColor"
+      }
+    },
+    "/colors/top": {
+      "get": {
+        "operationId": "GetTopColors",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "hex": {
+                    "description": "hex",
+                    "type": "string"
+                  },
+                  "hsv": {
+                    "description": "hsv",
+                    "properties": {
+                      "hue": {
+                        "description": "hue",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "saturation": {
+                        "description": "saturation",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "value": {
+                        "description": "value",
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rgb": {
+                    "description": "rgb",
+                    "properties": {
+                      "blue": {
+                        "description": "blue",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "green": {
+                        "description": "green",
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "red": {
+                        "description": "red",
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "GetTopColors"
+      }
+    },
+    "/palettes/new": {
+      "get": {
+        "operationId": "GetNewPalettes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "colors": {
+                    "description": "colors",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "Get new palettes"
+      }
+    },
+    "/palettes/random": {
+      "get": {
+        "operationId": "GetRandomPalettes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "colors": {
+                    "description": "colors",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "Get random palettes"
+      }
+    },
+    "/palettes/top": {
+      "get": {
+        "operationId": "GetTopPalettes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "colors": {
+                    "description": "colors",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "GetTopPalettes"
+      }
+    },
+    "/patterns/new": {
+      "get": {
+        "operationId": "GetNewPatterns",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "colors": {
+                    "description": "colors",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "template": {
+                    "description": "template",
+                    "properties": {
+                      "author": {
+                        "description": "author",
+                        "properties": {
+                          "url": {
+                            "description": "url",
+                            "type": "string"
+                          },
+                          "userName": {
+                            "description": "userName",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "title": {
+                        "description": "title",
+                        "type": "string"
+                      },
+                      "url": {
+                        "description": "url",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "GetNewPatterns"
+      }
+    },
+    "/patterns/random": {
+      "get": {
+        "operationId": "GetRandomPalette",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "colors": {
+                    "description": "colors",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "template": {
+                    "description": "template",
+                    "properties": {
+                      "author": {
+                        "description": "author",
+                        "properties": {
+                          "url": {
+                            "description": "url",
+                            "type": "string"
+                          },
+                          "userName": {
+                            "description": "userName",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "title": {
+                        "description": "title",
+                        "type": "string"
+                      },
+                      "url": {
+                        "description": "url",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "GetRandomPalette"
+      }
+    },
+    "/patterns/top": {
+      "get": {
+        "operationId": "GetTopPatterns",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "items": {
+                "properties": {
+                  "apiUrl": {
+                    "description": "apiUrl",
+                    "type": "string"
+                  },
+                  "badgeUrl": {
+                    "description": "badgeUrl",
+                    "type": "string"
+                  },
+                  "colors": {
+                    "description": "colors",
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "dateCreated": {
+                    "description": "dateCreated",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "description",
+                    "type": "string"
+                  },
+                  "id": {
+                    "description": "id",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "imageUrl": {
+                    "description": "imageUrl",
+                    "type": "string"
+                  },
+                  "numComments": {
+                    "description": "numComments",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numHearts": {
+                    "description": "numHearts",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numViews": {
+                    "description": "numViews",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "numVotes": {
+                    "description": "numVotes",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "rank": {
+                    "description": "rank",
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "template": {
+                    "description": "template",
+                    "properties": {
+                      "author": {
+                        "description": "author",
+                        "properties": {
+                          "url": {
+                            "description": "url",
+                            "type": "string"
+                          },
+                          "userName": {
+                            "description": "userName",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "title": {
+                        "description": "title",
+                        "type": "string"
+                      },
+                      "url": {
+                        "description": "url",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "title": {
+                    "description": "title",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "url",
+                    "type": "string"
+                  },
+                  "userName": {
+                    "description": "userName",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "GetTopPatterns"
+      }
+    }
+  },
+  "produces": [],
+  "responses": {},
+  "schemes": [
+    "https"
+  ],
+  "security": [],
+  "securityDefinitions": {},
+  "swagger": "2.0",
+  "tags": []
+}

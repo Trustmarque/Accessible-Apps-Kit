@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{b473ef92-a721-4fad-86ce-80c8983e37e2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="tm_reference" select="1" icon="1" preview="1">
+        <row name="result" id="tm_settransformsid">
+          <cell name="tm_reference" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="tm_settransforms">
+          <attribute name="tm_settransformsid" />
+          <attribute name="tm_reference" />
+          <attribute name="createdon" />
+          <order attribute="tm_reference" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Set Transforms" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

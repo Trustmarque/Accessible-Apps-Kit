@@ -1,0 +1,524 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://uk-001.azure-apim.net/apim/tm-5fcolour-20lovers-5f8a45c0360df7547e" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="Defaulttitle" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Default title">COLOURLOVERS API</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://uk-001.azure-apim.net/apim/tm-5fcolour-20lovers-5f8a45c0360df7547e" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <integer name="GetRandomPalettes_responses_default_def_items_def_id_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_title_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_userName_def" />
+      <integer name="GetRandomPalettes_responses_default_def_items_def_numViews_def" />
+      <integer name="GetRandomPalettes_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetRandomPalettes_responses_default_def_items_def_numComments_def" />
+      <integer name="GetRandomPalettes_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetRandomPalettes_responses_default_def_items_def_rank_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_colors_def_items_def" />
+      <array type="string" name="GetRandomPalettes_responses_default_def_items_def_colors_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_description_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_url_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetRandomPalettes_responses_default_def_items_def_apiUrl_def" />
+      <object name="GetRandomPalettes_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="colors" typeRef="GetRandomPalettes_responses_default_def_items_def_colors_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+      </object>
+      <array typeRef="GetRandomPalettes_responses_default_def_items_def" name="GetRandomPalettes_responses_default_def" />
+      <integer name="GetNewPalettes_responses_default_def_items_def_id_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_title_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_userName_def" />
+      <integer name="GetNewPalettes_responses_default_def_items_def_numViews_def" />
+      <integer name="GetNewPalettes_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetNewPalettes_responses_default_def_items_def_numComments_def" />
+      <integer name="GetNewPalettes_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetNewPalettes_responses_default_def_items_def_rank_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_colors_def_items_def" />
+      <array type="string" name="GetNewPalettes_responses_default_def_items_def_colors_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_description_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_url_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetNewPalettes_responses_default_def_items_def_apiUrl_def" />
+      <object name="GetNewPalettes_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="colors" typeRef="GetNewPalettes_responses_default_def_items_def_colors_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+      </object>
+      <array typeRef="GetNewPalettes_responses_default_def_items_def" name="GetNewPalettes_responses_default_def" />
+      <integer name="GetTopPalettes_responses_default_def_items_def_id_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_title_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_userName_def" />
+      <integer name="GetTopPalettes_responses_default_def_items_def_numViews_def" />
+      <integer name="GetTopPalettes_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetTopPalettes_responses_default_def_items_def_numComments_def" />
+      <integer name="GetTopPalettes_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetTopPalettes_responses_default_def_items_def_rank_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_colors_def_items_def" />
+      <array type="string" name="GetTopPalettes_responses_default_def_items_def_colors_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_description_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_url_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetTopPalettes_responses_default_def_items_def_apiUrl_def" />
+      <object name="GetTopPalettes_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="colors" typeRef="GetTopPalettes_responses_default_def_items_def_colors_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+      </object>
+      <array typeRef="GetTopPalettes_responses_default_def_items_def" name="GetTopPalettes_responses_default_def" />
+      <integer name="GetRandomPalette_responses_default_def_items_def_id_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_title_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_userName_def" />
+      <integer name="GetRandomPalette_responses_default_def_items_def_numViews_def" />
+      <integer name="GetRandomPalette_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetRandomPalette_responses_default_def_items_def_numComments_def" />
+      <integer name="GetRandomPalette_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetRandomPalette_responses_default_def_items_def_rank_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_colors_def_items_def" />
+      <array type="string" name="GetRandomPalette_responses_default_def_items_def_colors_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_description_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_url_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_apiUrl_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_template_def_title_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_template_def_url_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_template_def_author_def_userName_def" />
+      <string name="GetRandomPalette_responses_default_def_items_def_template_def_author_def_url_def" />
+      <object name="GetRandomPalette_responses_default_def_items_def_template_def_author_def">
+        <property name="userName" type="string" />
+        <property name="url" type="string" />
+      </object>
+      <object name="GetRandomPalette_responses_default_def_items_def_template_def">
+        <property name="title" type="string" />
+        <property name="url" type="string" />
+        <property name="author" typeRef="GetRandomPalette_responses_default_def_items_def_template_def_author_def" />
+      </object>
+      <object name="GetRandomPalette_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="colors" typeRef="GetRandomPalette_responses_default_def_items_def_colors_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+        <property name="template" typeRef="GetRandomPalette_responses_default_def_items_def_template_def" />
+      </object>
+      <array typeRef="GetRandomPalette_responses_default_def_items_def" name="GetRandomPalette_responses_default_def" />
+      <integer name="GetTopPatterns_responses_default_def_items_def_id_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_title_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_userName_def" />
+      <integer name="GetTopPatterns_responses_default_def_items_def_numViews_def" />
+      <integer name="GetTopPatterns_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetTopPatterns_responses_default_def_items_def_numComments_def" />
+      <integer name="GetTopPatterns_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetTopPatterns_responses_default_def_items_def_rank_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_colors_def_items_def" />
+      <array type="string" name="GetTopPatterns_responses_default_def_items_def_colors_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_description_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_url_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_apiUrl_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_template_def_title_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_template_def_url_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_template_def_author_def_userName_def" />
+      <string name="GetTopPatterns_responses_default_def_items_def_template_def_author_def_url_def" />
+      <object name="GetTopPatterns_responses_default_def_items_def_template_def_author_def">
+        <property name="userName" type="string" />
+        <property name="url" type="string" />
+      </object>
+      <object name="GetTopPatterns_responses_default_def_items_def_template_def">
+        <property name="title" type="string" />
+        <property name="url" type="string" />
+        <property name="author" typeRef="GetTopPatterns_responses_default_def_items_def_template_def_author_def" />
+      </object>
+      <object name="GetTopPatterns_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="colors" typeRef="GetTopPatterns_responses_default_def_items_def_colors_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+        <property name="template" typeRef="GetTopPatterns_responses_default_def_items_def_template_def" />
+      </object>
+      <array typeRef="GetTopPatterns_responses_default_def_items_def" name="GetTopPatterns_responses_default_def" />
+      <integer name="GetNewPatterns_responses_default_def_items_def_id_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_title_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_userName_def" />
+      <integer name="GetNewPatterns_responses_default_def_items_def_numViews_def" />
+      <integer name="GetNewPatterns_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetNewPatterns_responses_default_def_items_def_numComments_def" />
+      <integer name="GetNewPatterns_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetNewPatterns_responses_default_def_items_def_rank_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_colors_def_items_def" />
+      <array type="string" name="GetNewPatterns_responses_default_def_items_def_colors_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_description_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_url_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_apiUrl_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_template_def_title_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_template_def_url_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_template_def_author_def_userName_def" />
+      <string name="GetNewPatterns_responses_default_def_items_def_template_def_author_def_url_def" />
+      <object name="GetNewPatterns_responses_default_def_items_def_template_def_author_def">
+        <property name="userName" type="string" />
+        <property name="url" type="string" />
+      </object>
+      <object name="GetNewPatterns_responses_default_def_items_def_template_def">
+        <property name="title" type="string" />
+        <property name="url" type="string" />
+        <property name="author" typeRef="GetNewPatterns_responses_default_def_items_def_template_def_author_def" />
+      </object>
+      <object name="GetNewPatterns_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="colors" typeRef="GetNewPatterns_responses_default_def_items_def_colors_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+        <property name="template" typeRef="GetNewPatterns_responses_default_def_items_def_template_def" />
+      </object>
+      <array typeRef="GetNewPatterns_responses_default_def_items_def" name="GetNewPatterns_responses_default_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_id_def" />
+      <string name="GetNewColors_responses_default_def_items_def_title_def" />
+      <string name="GetNewColors_responses_default_def_items_def_userName_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_numViews_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_numComments_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_rank_def" />
+      <string name="GetNewColors_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetNewColors_responses_default_def_items_def_hex_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_rgb_def_red_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_rgb_def_green_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_rgb_def_blue_def" />
+      <object name="GetNewColors_responses_default_def_items_def_rgb_def">
+        <property name="red" type="integer" />
+        <property name="green" type="integer" />
+        <property name="blue" type="integer" />
+      </object>
+      <integer name="GetNewColors_responses_default_def_items_def_hsv_def_hue_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_hsv_def_saturation_def" />
+      <integer name="GetNewColors_responses_default_def_items_def_hsv_def_value_def" />
+      <object name="GetNewColors_responses_default_def_items_def_hsv_def">
+        <property name="hue" type="integer" />
+        <property name="saturation" type="integer" />
+        <property name="value" type="integer" />
+      </object>
+      <string name="GetNewColors_responses_default_def_items_def_description_def" />
+      <string name="GetNewColors_responses_default_def_items_def_url_def" />
+      <string name="GetNewColors_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetNewColors_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetNewColors_responses_default_def_items_def_apiUrl_def" />
+      <object name="GetNewColors_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="hex" type="string" />
+        <property name="rgb" typeRef="GetNewColors_responses_default_def_items_def_rgb_def" />
+        <property name="hsv" typeRef="GetNewColors_responses_default_def_items_def_hsv_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+      </object>
+      <array typeRef="GetNewColors_responses_default_def_items_def" name="GetNewColors_responses_default_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_id_def" />
+      <string name="GetTopColors_responses_default_def_items_def_title_def" />
+      <string name="GetTopColors_responses_default_def_items_def_userName_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_numViews_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_numComments_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_rank_def" />
+      <string name="GetTopColors_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetTopColors_responses_default_def_items_def_hex_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_rgb_def_red_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_rgb_def_green_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_rgb_def_blue_def" />
+      <object name="GetTopColors_responses_default_def_items_def_rgb_def">
+        <property name="red" type="integer" />
+        <property name="green" type="integer" />
+        <property name="blue" type="integer" />
+      </object>
+      <integer name="GetTopColors_responses_default_def_items_def_hsv_def_hue_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_hsv_def_saturation_def" />
+      <integer name="GetTopColors_responses_default_def_items_def_hsv_def_value_def" />
+      <object name="GetTopColors_responses_default_def_items_def_hsv_def">
+        <property name="hue" type="integer" />
+        <property name="saturation" type="integer" />
+        <property name="value" type="integer" />
+      </object>
+      <string name="GetTopColors_responses_default_def_items_def_description_def" />
+      <string name="GetTopColors_responses_default_def_items_def_url_def" />
+      <string name="GetTopColors_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetTopColors_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetTopColors_responses_default_def_items_def_apiUrl_def" />
+      <object name="GetTopColors_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="hex" type="string" />
+        <property name="rgb" typeRef="GetTopColors_responses_default_def_items_def_rgb_def" />
+        <property name="hsv" typeRef="GetTopColors_responses_default_def_items_def_hsv_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+      </object>
+      <array typeRef="GetTopColors_responses_default_def_items_def" name="GetTopColors_responses_default_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_id_def" />
+      <string name="GetRandomColor_responses_default_def_items_def_title_def" />
+      <string name="GetRandomColor_responses_default_def_items_def_userName_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_numViews_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_numVotes_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_numComments_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_numHearts_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_rank_def" />
+      <string name="GetRandomColor_responses_default_def_items_def_dateCreated_def" />
+      <string name="GetRandomColor_responses_default_def_items_def_hex_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_rgb_def_red_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_rgb_def_green_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_rgb_def_blue_def" />
+      <object name="GetRandomColor_responses_default_def_items_def_rgb_def">
+        <property name="red" type="integer" />
+        <property name="green" type="integer" />
+        <property name="blue" type="integer" />
+      </object>
+      <integer name="GetRandomColor_responses_default_def_items_def_hsv_def_hue_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_hsv_def_saturation_def" />
+      <integer name="GetRandomColor_responses_default_def_items_def_hsv_def_value_def" />
+      <object name="GetRandomColor_responses_default_def_items_def_hsv_def">
+        <property name="hue" type="integer" />
+        <property name="saturation" type="integer" />
+        <property name="value" type="integer" />
+      </object>
+      <string name="GetRandomColor_responses_default_def_items_def_description_def" />
+      <string name="GetRandomColor_responses_default_def_items_def_url_def" />
+      <string name="GetRandomColor_responses_default_def_items_def_imageUrl_def" />
+      <string name="GetRandomColor_responses_default_def_items_def_badgeUrl_def" />
+      <string name="GetRandomColor_responses_default_def_items_def_apiUrl_def" />
+      <object name="GetRandomColor_responses_default_def_items_def">
+        <property name="id" type="integer" />
+        <property name="title" type="string" />
+        <property name="userName" type="string" />
+        <property name="numViews" type="integer" />
+        <property name="numVotes" type="integer" />
+        <property name="numComments" type="integer" />
+        <property name="numHearts" type="integer" />
+        <property name="rank" type="integer" />
+        <property name="dateCreated" type="string" />
+        <property name="hex" type="string" />
+        <property name="rgb" typeRef="GetRandomColor_responses_default_def_items_def_rgb_def" />
+        <property name="hsv" typeRef="GetRandomColor_responses_default_def_items_def_hsv_def" />
+        <property name="description" type="string" />
+        <property name="url" type="string" />
+        <property name="imageUrl" type="string" />
+        <property name="badgeUrl" type="string" />
+        <property name="apiUrl" type="string" />
+      </object>
+      <array typeRef="GetRandomColor_responses_default_def_items_def" name="GetRandomColor_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://uk-001.azure-apim.net/apim/tm-5fcolour-20lovers-5f8a45c0360df7547e">
+    <resource path="/{connectionId}/palettes/random">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetRandomPalettes" actionName="GetRandomPalettes" siena:isDeprecated="false">
+        <doc title="Get random palettes" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetRandomPalettes_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/palettes/new">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetNewPalettes" actionName="GetNewPalettes" siena:isDeprecated="false">
+        <doc title="Get new palettes" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetNewPalettes_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/palettes/top">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetTopPalettes" actionName="GetTopPalettes" siena:isDeprecated="false">
+        <doc title="GetTopPalettes" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetTopPalettes_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/patterns/random">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetRandomPalette" actionName="GetRandomPalette" siena:isDeprecated="false">
+        <doc title="GetRandomPalette" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetRandomPalette_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/patterns/top">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetTopPatterns" actionName="GetTopPatterns" siena:isDeprecated="false">
+        <doc title="GetTopPatterns" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetTopPatterns_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/patterns/new">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetNewPatterns" actionName="GetNewPatterns" siena:isDeprecated="false">
+        <doc title="GetNewPatterns" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetNewPatterns_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/colors/new">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetNewColors" actionName="GetNewColors" siena:isDeprecated="false">
+        <doc title="GetNewColors" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetNewColors_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/colors/top">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetTopColors" actionName="GetTopColors" siena:isDeprecated="false">
+        <doc title="GetTopColors" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetTopColors_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/colors/random">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="GetRandomColor" actionName="GetRandomColor" siena:isDeprecated="false">
+        <doc title="GetRandomColor" />
+        <request>
+          <param style="query" name="format" type="xs:string" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:GetRandomColor_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_tm-5fcolour-20lovers-5f8a45c0360df7547e" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

@@ -1,0 +1,118 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentDefinitionInfo": {
+    "AllowAccessToGlobals": false,
+    "Children": [],
+    "ControlPropertyState": [
+      "Fill",
+      "Height",
+      "Width",
+      "X",
+      "Y",
+      "ZIndex",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "\"Text\"",
+        "InvariantPropertyName": "DecodedURL",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
+      "UrlToDecode"
+    ],
+    "LastModifiedTimestamp": "638011299464507797",
+    "Name": "DecodeURL",
+    "Rules": [
+      {
+        "Category": "Data",
+        "InvariantScript": "Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Substitute(Last(Split(DecodeURL.UrlToDecode,\",\")).Result,\"%20\",\" \"),\"%21\",\"!\"),\"%22\",\"'\"),\"%23\",\"#\"),\"%24\",\"$\"),\"%25\",\"%\"),\"%26\",\"&\"),\"%27\",\"'\"),\"%28\",\"(\"),\"%29\",\")\"),\"%2A\",\"*\"),\"%2B\",\"+\"),\"%2C\",\",\"),\"%3C\",\"<\"),\"%3E\",\">\"),\"%2D\",\"-\"),\"%2F\",\"/\"),\"%2E\",\".\"),\"%7B\",\"{\"),\"%7D\",\"}\"),\"%7C\",\"|\"),\"%5C\",\"\"),\"%5E\",\"^\"),\"%7E\",\"~\"),\"%5B\",\"[\"),\"%5D\",\"]\"),\"%60\",\"`\"),\"%80\",\"`\"),\"%2F\",\"/\"),\"%3A\",\":\"),\"%3B\",\";\"),\"%3D\",\"=\"),\"%3F\",\"?\"),\"%40\",\"@\"),\"%27\",\"'\")",
+        "Property": "DecodedURL",
+        "RuleProviderType": "System"
+      },
+      {
+        "Category": "Data",
+        "InvariantScript": "\"Text\"",
+        "Property": "UrlToDecode",
+        "RuleProviderType": "System"
+      },
+      {
+        "Category": "Design",
+        "InvariantScript": "1",
+        "Property": "ZIndex",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "InvariantScript": "0",
+        "Property": "Y",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "InvariantScript": "0",
+        "Property": "X",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "InvariantScript": "640",
+        "Property": "Width",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "InvariantScript": "640",
+        "Property": "Height",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "InvariantScript": "RGBA(0, 0, 0, 0)",
+        "Property": "Fill",
+        "RuleProviderType": "System"
+      }
+    ]
+  },
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "DecodeURL",
+    "TemplateGuid": "8b6a00b4f85f4599a23d82d20b1c863b"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "DecodedURL",
+      "Hidden": true,
+      "Name": "DecodedURL",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "UrlToDecode",
+      "Hidden": false,
+      "Name": "UrlToDecode",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638011299464507797",
+  "Name": "8b6a00b4f85f4599a23d82d20b1c863b",
+  "OverridableProperties": {},
+  "Version": "637999091805185953"
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tm_themecolors",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tm_themecolor",
+    "MaxGetRowsCount": 2000,
+    "Name": "Theme Colors",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tm_a": "A",
+      "tm_b": "B",
+      "tm_ColorPair": "Color Pair",
+      "tm_g": "G",
+      "tm_hex": "HEX",
+      "tm_name": "Name",
+      "tm_pairedwithname": "Paired With Name",
+      "tm_r": "R",
+      "tm_relativeluminance": "Relative Luminance",
+      "tm_themecolor_AsyncOperations": "System Jobs",
+      "tm_themecolor_BulkDeleteFailures": "Bulk Delete Failures",
+      "tm_themecolor_DuplicateBaseRecord": "Duplicate Records (tm_themecolor_DuplicateBaseRecord)",
+      "tm_themecolor_DuplicateMatchingRecord": "Duplicate Records (tm_themecolor_DuplicateMatchingRecord)",
+      "tm_themecolor_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tm_themecolor_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tm_themecolor_ProcessSession": "Process Sessions",
+      "tm_themecolor_SyncErrors": "Sync Errors",
+      "tm_themecolorid": "Theme Color",
+      "tm_ThemeId": "Theme",
+      "tm_tm_themecolor_ColorPair_tm_themecolor": "Theme Colors",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Theme Colors",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Theme Colors (Views)",
+    "Name": "_tm_themecolor_views",
+    "RelatedEntityName": "Theme Colors",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0eb47e48-5286-4c30-ae4b-095420e7f33a": "Theme Color Lookup View",
+      "2285e368-94dc-40d4-8450-a839cbc3ee0e": "Inactive Theme Colors",
+      "8a942ead-faf0-4d42-a71d-06dad7414bd0": "Active Theme Colors",
+      "a381402e-d17c-4e13-bff5-64c04dc3ae68": "Theme Color Advanced Find View",
+      "ce1d517f-3256-421d-a3ea-329277fb7c45": "Theme Color Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Theme Colors)",
+    "Name": "tm_themecolor_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Theme Colors"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Theme Colors",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Theme Colors)",
+    "Name": "tm_themecolor_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Theme Colors"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Theme Colors",
+    "Type": "OptionSetInfo"
+  }
+]

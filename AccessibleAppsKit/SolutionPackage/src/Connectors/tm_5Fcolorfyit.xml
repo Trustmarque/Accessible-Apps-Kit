@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>1975dab0-e381-4262-ae56-dbdcb0092d5f</connectorid>
+  <description>Coloyfyit API</description>
+  <displayname>Colorfyit</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>tm_5Fcolorfyit</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/tm_5Fcolorfyit_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/tm_5Fcolorfyit_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/tm_5Fcolorfyit_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/tm_5Fcolorfyit_iconblob.Png</iconblob>
+</Connector>

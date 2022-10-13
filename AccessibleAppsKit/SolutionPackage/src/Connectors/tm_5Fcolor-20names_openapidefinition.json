@@ -1,0 +1,55 @@
+{
+  "basePath": "/search/json/",
+  "consumes": [],
+  "definitions": {},
+  "host": "colornames.org",
+  "info": {
+    "description": "Get Colour Name from colornames.org",
+    "title": "Default title",
+    "version": "1.0"
+  },
+  "parameters": {},
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "GetColorName",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "hex",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "properties": {
+                "hexCode": {
+                  "description": "hexCode",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "name",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "GetColorName"
+      }
+    }
+  },
+  "produces": [],
+  "responses": {},
+  "schemes": [
+    "https"
+  ],
+  "security": [],
+  "securityDefinitions": {},
+  "swagger": "2.0",
+  "tags": []
+}

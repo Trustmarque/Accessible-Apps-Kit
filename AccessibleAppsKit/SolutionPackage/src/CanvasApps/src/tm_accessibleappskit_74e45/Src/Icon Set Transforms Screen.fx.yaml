@@ -1,0 +1,1110 @@
+"'Icon Set Transforms Screen' As screen":
+    OnVisible: |-
+        =UpdateContext({locDeleteIconSet:false})
+
+    conScreen_hs_2 As groupContainer.verticalAutoLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        X: =0.00
+        ZIndex: =1
+
+        conHeader_hs_2 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            FillPortions: =0
+            Height: =65
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =1
+
+            Header_3 As Header:
+                BackButtonVisible: =true
+                ContentWidth: =Parent.Width
+                Height: =65
+                LeftButtonImage: |-
+                    =
+                    "data:image/svg+xml;," & EncodeUrl("<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100'><defs><style>.cls-1{fill:#fff;}.cls-2{fill:url(#linear-gradient-2);}.cls-2,.cls-3{mix-blend-mode:multiply;opacity:.1;}.cls-3{fill:url(#linear-gradient);}.cls-4{isolation:isolate;}</style><linearGradient id='linear-gradient' x1='-182.54' y1='-36.31' x2='-182.54' y2='-16.54' gradientTransform='translate(226.77 29.42)' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='#010101'/><stop offset='1' stop-color='#010101' stop-opacity='0'/></linearGradient><linearGradient id='linear-gradient-2' x1='-343.35' y1='-937.2' x2='-343.35' y2='-917.43' gradientTransform='translate(399.12 1005.31)' xlink:href='#linear-gradient'/></defs><g class='cls-4'><g id='Layer_1'><g><g><polygon class='cls-1' points='75 25 75 0 25 0 0 25 0 75 25 75 25 25 75 25'/><polygon class='cls-1' points='75 25 75 75 25 75 25 100 75 100 100 75 100 25 75 25'/></g><rect class='cls-3' x='31.73' y='-6.73' width='25' height='38.46' transform='translate(31.73 56.73) rotate(-90)'/><rect class='cls-2' x='43.27' y='68.27' width='25' height='38.46' transform='translate(143.27 31.73) rotate(90)'/></g></g></g></svg>")
+                OnBackSelect: =Back()
+                OnRightButtonSelect: =Navigate('Icon Set Transforms Screen',ScreenTransition.Fade)
+                Text: ="Accessible App Kit"
+                Theme: =AppTheme
+                Width: =Parent.Width
+
+        SubheaderContainer_TS_3 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =44
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =2
+
+            Label1_1 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                FillPortions: =1
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                PaddingBottom: =0
+                PaddingLeft: =10
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =FontSizes.Title
+                Text: ="Transforms"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =250
+                ZIndex: =3
+
+            "Icon9_1 As 'Fluent Icon (1.0.8)'":
+                DisplayMode: =DisplayMode.Edit
+                Height: =40
+                IconName: ="Refresh"
+                LayoutMinHeight: =200
+                LayoutMinWidth: =200
+                OnChange: =Refresh('Icon Sets')
+                TextAlignment: ='''PowerCAT.Icon.TextAlignment'''.Center
+                Width: =50
+                X: =0
+                Y: =0
+                ZIndex: =4
+
+        conMain_hs_2 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            ZIndex: =3
+
+            Container1_8 As groupContainer.horizontalAutoLayoutContainer:
+                Height: =Parent.Height
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width
+                ZIndex: =1
+
+                Container2_6 As groupContainer.manualLayoutContainer:
+                    FillPortions: =0
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    ZIndex: =1
+
+                    "Elevation17 As 'Fluent Elevation (1.0.8)'":
+                        Depth: ='''PowerCAT.Elevation.Depth'''.Depth16
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =Parent.Height -24
+                        HoverDepth: ='''PowerCAT.Elevation.HoverDepth'''.Depth16
+                        Width: =Parent.Width -32
+                        X: =16
+                        Y: =0
+                        ZIndex: =1
+
+                    frmUpdateIconSet As form:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        DataSource: ='Icon Sets'
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =839
+                        Item: =chosenIconSet
+                        Width: =468
+                        X: =16
+                        Y: =44
+                        ZIndex: =2
+
+                        Name_DataCard2 As typedDataCard.textualEditCard:
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="tm_name"
+                            Default: =ThisItem.Name
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@'Icon Sets'],DataSourceInfo.DisplayName,"tm_name")
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =50
+                            MaxLength: =DataSourceInfo([@'Icon Sets'], DataSourceInfo.MaxLength, "tm_name")
+                            Required: =true
+                            Update: =DataCardValue7.Text
+                            Width: =468
+                            X: =0
+                            Y: =0
+                            ZIndex: =1
+
+                            DataCardKey7 As label:
+                                AutoHeight: =true
+                                Height: =34
+                                Text: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                Wrap: =false
+                                X: =30
+                                Y: =10
+                                ZIndex: =1
+
+                            DataCardValue7 As text:
+                                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                Default: =Parent.Default
+                                DelayOutput: =true
+                                DisplayMode: =Parent.DisplayMode
+                                MaxLength: =Parent.MaxLength
+                                PaddingBottom: =5
+                                PaddingLeft: =5
+                                PaddingRight: =5
+                                PaddingTop: =5
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Tooltip: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                                ZIndex: =2
+
+                            ErrorMessage12 As label:
+                                AutoHeight: =true
+                                Height: =10
+                                Live: =Live.Assertive
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =Parent.Error
+                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardValue7.Y + DataCardValue7.Height
+                                ZIndex: =3
+
+                            StarVisible12 As label:
+                                Align: =Align.Center
+                                Height: =DataCardKey7.Height
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                Wrap: =false
+                                Y: =DataCardKey7.Y
+                                ZIndex: =4
+
+                        ShortCode_DataCard2 As typedDataCard.textualEditCard:
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="tm_shortcode"
+                            Default: =ThisItem.ShortCode
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@'Icon Sets'],DataSourceInfo.DisplayName,"tm_shortcode")
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =50
+                            MaxLength: =DataSourceInfo([@'Icon Sets'], DataSourceInfo.MaxLength, "tm_shortcode")
+                            Required: =false
+                            Update: =DataCardValue13.Text
+                            Width: =468
+                            X: =0
+                            Y: =1
+                            ZIndex: =1
+
+                            DataCardKey13 As label:
+                                AutoHeight: =true
+                                Height: =34
+                                Text: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                Wrap: =false
+                                X: =30
+                                Y: =10
+                                ZIndex: =1
+
+                            DataCardValue13 As text:
+                                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                Default: =Parent.Default
+                                DelayOutput: =true
+                                DisplayMode: =Parent.DisplayMode
+                                MaxLength: =Parent.MaxLength
+                                PaddingBottom: =5
+                                PaddingLeft: =5
+                                PaddingRight: =5
+                                PaddingTop: =5
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Tooltip: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardKey13.Y + DataCardKey13.Height + 5
+                                ZIndex: =2
+
+                            ErrorMessage13 As label:
+                                AutoHeight: =true
+                                Height: =10
+                                Live: =Live.Assertive
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =Parent.Error
+                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardValue13.Y + DataCardValue13.Height
+                                ZIndex: =3
+
+                            StarVisible13 As label:
+                                Align: =Align.Center
+                                Height: =DataCardKey13.Height
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                Wrap: =false
+                                Y: =DataCardKey13.Y
+                                ZIndex: =4
+
+                        Author_DataCard2 As typedDataCard.textualEditCard:
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="tm_author"
+                            Default: =ThisItem.Author
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@'Icon Sets'],DataSourceInfo.DisplayName,"tm_author")
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =74
+                            MaxLength: =DataSourceInfo([@'Icon Sets'], DataSourceInfo.MaxLength, "tm_author")
+                            Required: =false
+                            Update: =DataCardValue14.Text
+                            Width: =468
+                            X: =0
+                            Y: =2
+                            ZIndex: =1
+
+                            DataCardKey14 As label:
+                                AutoHeight: =true
+                                Height: =34
+                                Text: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                Wrap: =false
+                                X: =30
+                                Y: =10
+                                ZIndex: =1
+
+                            DataCardValue14 As text:
+                                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                Default: =Parent.Default
+                                DelayOutput: =true
+                                DisplayMode: =Parent.DisplayMode
+                                MaxLength: =Parent.MaxLength
+                                PaddingBottom: =5
+                                PaddingLeft: =5
+                                PaddingRight: =5
+                                PaddingTop: =5
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Tooltip: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardKey14.Y + DataCardKey14.Height + 5
+                                ZIndex: =2
+
+                            ErrorMessage14 As label:
+                                AutoHeight: =true
+                                Height: =10
+                                Live: =Live.Assertive
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =Parent.Error
+                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardValue14.Y + DataCardValue14.Height
+                                ZIndex: =3
+
+                            StarVisible14 As label:
+                                Align: =Align.Center
+                                Height: =DataCardKey14.Height
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                Wrap: =false
+                                Y: =DataCardKey14.Y
+                                ZIndex: =4
+
+                        "'GitHub Link_DataCard2' As typedDataCard.urlEditCard":
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="tm_githublink"
+                            Default: =ThisItem.'GitHub Link'
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@'Icon Sets'],DataSourceInfo.DisplayName,"tm_githublink")
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =97
+                            Required: =false
+                            Update: =DataCardValue15.Text
+                            Width: =468
+                            X: =0
+                            Y: =3
+                            ZIndex: =1
+
+                            DataCardKey15 As label:
+                                AutoHeight: =true
+                                Height: =34
+                                Text: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                Wrap: =false
+                                X: =30
+                                Y: =10
+                                ZIndex: =1
+
+                            DataCardValue15 As text:
+                                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                Default: =Parent.Default
+                                DelayOutput: =true
+                                DisplayMode: =Parent.DisplayMode
+                                PaddingBottom: =5
+                                PaddingLeft: =5
+                                PaddingRight: =5
+                                PaddingTop: =5
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Tooltip: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                                ZIndex: =2
+
+                            ErrorMessage15 As label:
+                                AutoHeight: =true
+                                Height: =10
+                                Live: =Live.Assertive
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =Parent.Error
+                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardValue15.Y + DataCardValue15.Height
+                                ZIndex: =3
+
+                            StarVisible15 As label:
+                                Align: =Align.Center
+                                Height: =DataCardKey15.Height
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                Wrap: =false
+                                Y: =DataCardKey15.Y
+                                ZIndex: =4
+
+                        "'Icon SVG_DataCard2' As typedDataCard.textualMultiLineEditCard":
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="tm_iconsvg"
+                            Default: =ThisItem.'Icon SVG'
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@'Icon Sets'],DataSourceInfo.DisplayName,"tm_iconsvg")
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =437
+                            Required: =false
+                            Update: =DataCardValue16.Text
+                            Width: =468
+                            X: =0
+                            Y: =4
+                            ZIndex: =1
+
+                            DataCardKey16 As label:
+                                AutoHeight: =true
+                                Height: =34
+                                Text: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                Wrap: =false
+                                X: =30
+                                Y: =10
+                                ZIndex: =1
+
+                            DataCardValue16 As text:
+                                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                Default: =Parent.Default
+                                DelayOutput: =true
+                                DisplayMode: =Parent.DisplayMode
+                                Height: =384
+                                Mode: =TextMode.MultiLine
+                                PaddingBottom: =5
+                                PaddingLeft: =5
+                                PaddingRight: =5
+                                PaddingTop: =5
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Tooltip: =Parent.DisplayName
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =40
+                                ZIndex: =2
+
+                            ErrorMessage16 As label:
+                                AutoHeight: =true
+                                Height: =10
+                                Live: =Live.Assertive
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =Parent.Error
+                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =DataCardValue16.Y + DataCardValue16.Height
+                                ZIndex: =3
+
+                            StarVisible16 As label:
+                                Align: =Align.Center
+                                Height: =DataCardKey16.Height
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                Wrap: =false
+                                Y: =DataCardKey16.Y
+                                ZIndex: =4
+
+                    Button1_2 As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 120, 212, 1)
+                        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+                        OnSelect: =SubmitForm(frmUpdateIconSet)
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =15
+                        Text: ="Update"
+                        X: =(Parent.Width-Self.Width)/2
+                        Y: =Parent.Height - Self.Height -40
+                        ZIndex: =3
+
+                    Label1_3 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        PaddingBottom: =0
+                        PaddingLeft: =10
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Size: =FontSizes.Title
+                        Text: ="Icon Set"
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =250
+                        X: =38
+                        Y: =4
+                        ZIndex: =4
+
+                Container3_7 As groupContainer.manualLayoutContainer:
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    Width: =Parent.Width -500
+                    ZIndex: =2
+
+                    "Elevation18 As 'Fluent Elevation (1.0.8)'":
+                        Depth: ='''PowerCAT.Elevation.Depth'''.Depth16
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =Parent.Height -24
+                        HoverDepth: ='''PowerCAT.Elevation.HoverDepth'''.Depth16
+                        Width: =Parent.Width -32
+                        X: =8
+                        Y: =0
+                        ZIndex: =1
+
+                    Label14 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =34
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Size: =13
+                        Text: ="Icon transforms tell the icon browser how to update the SVG, it will substitute 'Transform From' to 'Transform To'"
+                        Width: =1034
+                        X: =24
+                        Y: =61
+                        ZIndex: =2
+
+                    Label29 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Bold
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Size: =FontSizes.Title
+                        Text: ="Icon Transforms"
+                        Width: =234
+                        X: =24
+                        Y: =21
+                        ZIndex: =3
+
+                    "Icon12 As 'Fluent Icon (1.0.8)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =44
+                        IconName: ="Add"
+                        IconType: ='''PowerCAT.Icon.IconType'''.ActionButton
+                        OnChange: |-
+                            =NewForm(frmNewTransform);UpdateContext({newIconSet:true,edit:false})
+                        Text: ="Add Transform"
+                        Width: =128
+                        X: =Parent.Width -Self.Width -32
+                        Y: =8
+                        ZIndex: =4
+
+                    galTransforms As gallery.galleryVertical:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =798
+                        Items: =Filter('Set Transforms','Icon Set'.'Icon Set' = chosenIconSet.'Icon Set')
+                        Layout: =Layout.Vertical
+                        TemplateSize: =81
+                        Width: =Parent.Width -100
+                        X: =40
+                        Y: =112
+                        ZIndex: =5
+
+                        "Elevation19 As 'Fluent Elevation (1.0.8)'":
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =81
+                            Width: =Parent.TemplateWidth -25
+                            X: =0
+                            Y: =0
+                            ZIndex: =1
+
+                        Label30 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =19
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Size: =FontSizes.AddPicture
+                            Text: =ThisItem.Reference
+                            Width: =358
+                            ZIndex: =2
+
+                        Label31 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =41
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Size: =13
+                            Text: =ThisItem.'Transform From'
+                            Width: =416
+                            X: =182
+                            Y: =21
+                            ZIndex: =3
+
+                        Label31_1 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =41
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Size: =13
+                            Text: =ThisItem.'Transform To'
+                            Width: =416
+                            X: =630
+                            Y: =21
+                            ZIndex: =4
+
+                        Label31_2 As label:
+                            Align: =Align.Right
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =42
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Size: =13
+                            Text: |-
+                                ="From:"
+                            Width: =115
+                            X: =67
+                            Y: =20
+                            ZIndex: =5
+
+                        Label31_3 As label:
+                            Align: =Align.Right
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =42
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Size: =13
+                            Text: |-
+                                ="To:"
+                            Width: =115
+                            X: =515
+                            Y: =19
+                            ZIndex: =6
+
+                        "Icon13 As 'Fluent Icon (1.0.8)'":
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =40
+                            IconName: ="Trash"
+                            OnChange: =Remove('Set Transforms',ThisItem)
+                            Width: =39
+                            X: =1304
+                            Y: =0
+                            ZIndex: =7
+
+                        "Icon13_1 As 'Fluent Icon (1.0.8)'":
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =40
+                            IconName: ="Edit"
+                            OnChange: |-
+                                =EditForm(frmNewTransform);UpdateContext({newIconSet:true,edit:true})
+                            Width: =39
+                            X: =1265
+                            Y: =0
+                            ZIndex: =8
+
+    conAddTransform As groupContainer.manualLayoutContainer:
+        Height: =Parent.Height
+        Visible: =newIconSet
+        Width: =Parent.Width 
+        ZIndex: =2
+
+        Panel_3 As Panel:
+            DialogWidth: =500
+            Fill: =Panel_3.OverlayColor
+            OnButtonSelect: |-
+                =If(Self.SelectedButton.Label = "Ok", SubmitForm(frmNewTransform));UpdateContext({newIconSet:false})
+            OnCloseSelect: |-
+                =UpdateContext({newIconSet:false})
+            OverlayColor: =ThisTheme.Color5Alpha
+            Subtitle: ="Transforms allow the Icon Browser to modify the SVG code to update the colors."
+            Title: =If(edit,"Edit Set Transform","Add New Set Transform")
+            Width: =Parent.Width
+            ZIndex: =1
+
+        frmNewTransform As form:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            DataSource: ='Set Transforms'
+            DefaultMode: =FormMode.New
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =880
+            Item: =galTransforms.Selected
+            Width: =503
+            X: =Parent.Width -Self.Width
+            Y: =126
+            ZIndex: =2
+
+            "'Transform From_DataCard1' As typedDataCard.textualEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_transformfrom"
+                Default: =ThisItem.'Transform From'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Set Transforms'],DataSourceInfo.DisplayName,"tm_transformfrom")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@'Set Transforms'], DataSourceInfo.MaxLength, "tm_transformfrom")
+                Required: =false
+                Update: =DataCardValue21.Text
+                Width: =501
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey21 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue21 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    HintText: ="path d="
+                    MaxLength: =Parent.MaxLength
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage19 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue21.Y + DataCardValue21.Height
+                    ZIndex: =3
+
+                StarVisible19 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey21.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey21.Y
+                    ZIndex: =4
+
+            "'Transform To_DataCard1' As typedDataCard.textualEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_transformto"
+                Default: =ThisItem.'Transform To'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Set Transforms'],DataSourceInfo.DisplayName,"tm_transformto")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@'Set Transforms'], DataSourceInfo.MaxLength, "tm_transformto")
+                Required: =false
+                Update: =DataCardValue22.Text
+                Width: =501
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey22 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue22 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    HintText: ="path fill='{{IconColor}}' d="
+                    MaxLength: =Parent.MaxLength
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey22.Y + DataCardKey22.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage20 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue22.Y + DataCardValue22.Height
+                    ZIndex: =3
+
+                StarVisible20 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey22.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey22.Y
+                    ZIndex: =4
+
+            "'Icon Set_DataCard1' As typedDataCard.comboBoxEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_IconSetId"
+                Default: =ThisItem.'Icon Set'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Set Transforms'],DataSourceInfo.DisplayName,"tm_IconSetId")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue23.Selected
+                Visible: =false
+                Width: =501
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey23 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue23 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =chosenIconSet
+                    DisplayFields: =["tm_name"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Set Transforms'].tm_IconSetId)
+                    MoreItemsButtonColor: =Self.ChevronBackground
+                    PaddingBottom: =5
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    SearchFields: =["tm_name"]
+                    SearchItems: =Search(Choices([@'Set Transforms'].tm_IconSetId),DataCardValue23.SearchText,"tm_name")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage21 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue23.Y + DataCardValue23.Height
+                    ZIndex: =3
+
+                StarVisible21 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey23.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey23.Y
+                    ZIndex: =4
+
+            Reference_DataCard1 As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tm_reference"
+                Default: =ThisItem.Reference
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Set Transforms'],DataSourceInfo.DisplayName,"tm_reference")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@'Set Transforms'], DataSourceInfo.MaxLength, "tm_reference")
+                Required: =true
+                Update: =DataCardValue19.Text
+                Visible: =false
+                Width: =503
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+                DataCardKey19 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue19 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: ="TR-" & chosenIconSet.Name & "-" & CountRows(Filter('Set Transforms','Icon Set'.'Icon Set' = chosenIconSet.'Icon Set'))+1
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    MaxLength: =Parent.MaxLength
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage18 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue19.Y + DataCardValue19.Height
+                    ZIndex: =3
+
+                StarVisible18 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey19.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey19.Y
+                    ZIndex: =4
+
+        Label34 As label:
+            AutoHeight: =true
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            LineHeight: =1.8
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Size: =13
+            Text: |-
+                ="To replace the color use the tokens:
+                
+                   fill='{{IconColor}}'
+                   fill='{{BackgroundColor}}'
+                   fill='{{Color1}}'
+                   fill='{{Color2}}'
+                   fill='{{Color3}}'
+                   fill='{{Color4}}'"
+            Width: =411
+            X: =Parent.Width -460
+            Y: =354
+            ZIndex: =3
+

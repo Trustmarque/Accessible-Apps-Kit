@@ -1,0 +1,105 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tm_icons",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tm_icon",
+    "MaxGetRowsCount": 2000,
+    "Name": "Icons",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tm_description": "Description",
+      "tm_icon": "Icon (tm_icon)",
+      "tm_icon_AsyncOperations": "System Jobs",
+      "tm_icon_BulkDeleteFailures": "Bulk Delete Failures",
+      "tm_icon_DuplicateBaseRecord": "Duplicate Records (tm_icon_DuplicateBaseRecord)",
+      "tm_icon_DuplicateMatchingRecord": "Duplicate Records (tm_icon_DuplicateMatchingRecord)",
+      "tm_icon_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tm_icon_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tm_icon_ProcessSession": "Process Sessions",
+      "tm_icon_SyncErrors": "Sync Errors",
+      "tm_iconid": "Icon (tm_iconid)",
+      "tm_IconSetId": "Icon Set",
+      "tm_id": "ID",
+      "tm_name": "Name",
+      "tm_set": "Set",
+      "tm_size": "Size",
+      "tm_tm_myfavouriteicon_tm_icon_tm_IconId": "My Favourite Icons",
+      "tm_unicode": "Unicode",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Icons",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Icons (Views)",
+    "Name": "_tm_icon_views",
+    "RelatedEntityName": "Icons",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "015576c8-9191-48f8-8dc1-0f204b5422bf": "Active Icons",
+      "0d717518-1065-401d-bb05-567e6a22d504": "Icon Lookup View",
+      "31966ec8-b950-4a61-96ed-b3cd7727894e": "Icon Advanced Find View",
+      "3cb380d2-b61f-47a0-81dc-c3df578e93fc": "Inactive Icons",
+      "64824d86-d72f-4fa4-a9ad-349efc33deb6": "Icon Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Icons)",
+    "Name": "tm_icon_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Icons"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Icons",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Icons)",
+    "Name": "tm_icon_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Icons"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Icons",
+    "Type": "OptionSetInfo"
+  }
+]

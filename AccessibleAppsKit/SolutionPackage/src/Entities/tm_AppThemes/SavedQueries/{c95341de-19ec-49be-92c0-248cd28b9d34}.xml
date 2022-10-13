@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{c95341de-19ec-49be-92c0-248cd28b9d34}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="tm_themename" select="1" icon="1" preview="1">
+        <row name="result" id="tm_appthemesid">
+          <cell name="tm_themename" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="tm_appthemes">
+          <attribute name="tm_appthemesid" />
+          <attribute name="tm_themename" />
+          <attribute name="createdon" />
+          <order attribute="tm_themename" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive App Themes" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
