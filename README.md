@@ -1,3 +1,5 @@
+![TM Logo](Assets/TM_Logo_White.svg)
+
 # Accessible Apps Kit
 
 The Accessible Apps Kit has been built by the Trustmarque team to help you get started providing accessible experiences in the Power Platform.
